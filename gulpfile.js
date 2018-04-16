@@ -24,7 +24,7 @@ gulp.task("browser-sync", function() {
     server: {
       baseDir: "./"
     },
-    startPath: path.buildPath,
+    startPath: path.sourcePath,
     notify: false
   });
 });
