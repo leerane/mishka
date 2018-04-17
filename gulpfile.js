@@ -6,6 +6,7 @@ var path = {
   buildPath: "./build",
   scssPath: "/scss",
   cssPath: "/css",
+  blocksPath: "/common.blocks",
   scssPattern: "/**/*.scss",
   pugPattern: "/**/!(_)*.pug",
   htmlPattern: "/**/*.html"
@@ -18,6 +19,7 @@ var gulp = require("gulp"),
   pug = require("gulp-pug"),
   sourcemaps = require("gulp-sourcemaps"),
   htmlbeautify = require("gulp-html-beautify"),
+  gulpBemCss = require("gulp-bem-css"),
   browserSync = require("browser-sync").create();
 
 gulp.task("browser-sync", function() {
@@ -56,6 +58,17 @@ gulp.task("pug", function () {
     .pipe(pug({pretty: true}))
     .pipe(gulp.dest(path.buildPath))
     .pipe(browserSync.stream());
+});
+
+gulp.task("bem-html", function () {
+  gulp.src(path.sourcePath + path.htmlPattern)
+    .pipe(gulpBemCss({
+      folder: path.sourcePath + path.scssPath + path.blocksPath,
+      extension: "scss",
+      elementSeparator: "__",
+      modifierSeparator: "--"
+    }))
+    .pipe(gulp.dest(path.sourcePath))
 });
 
 gulp.task("watch", ["browser-sync", "sass"], function() {
