@@ -46,8 +46,8 @@ gulp.task("sort-sass", function () {
 });
 
 gulp.task("sort-html", function () {
-  return gulp.src(path.sourcePath + path.htmlPattern)
-    .pipe(htmlbeautify("options"))
+  gulp.src(path.sourcePath + path.htmlPattern)
+    .pipe(htmlbeautify())
     .pipe(gulp.dest(path.sourcePath))
 });
 
@@ -63,4 +63,4 @@ gulp.task("watch", ["browser-sync", "sass"], function() {
   gulp.watch(path.sourcePath + path.htmlPattern).on("change", browserSync.reload);
 });
 
-gulp.task("prettify", ["sort-sass", "sort-html"]);
+gulp.task("beautify", ["sort-sass", "sort-html"]);

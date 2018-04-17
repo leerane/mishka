@@ -12,26 +12,27 @@ input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
   position: absolute;
 
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-
   width: 1px;
   height: 1px;
   margin: -1px;
   padding: 0;
+  overflow: hidden;
 
   white-space: nowrap;
 
   border: 0;
 
+  clip: rect(0 0 0 0);
+          clip-path: inset(100%);
+
   -webkit-clip-path: inset(100%);
-  clip-path: inset(100%);
 }
 
 .main-page {
-  background-color: #ffffff;
   margin: 0;
   padding: 0;
+
+  background-color: #ffffff;
 }
 
 .main-title {
@@ -40,15 +41,14 @@ input[type="radio"].visually-hidden {
 }
 
 .link {
+  font-size: 20px;
   color: #000000;
   text-decoration: none;
-  font-size: 20px;
 }
 
 .container {
-  max-width: 1150px;
-
   min-width: 320px;
+  max-width: 1150px;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -56,16 +56,19 @@ input[type="radio"].visually-hidden {
 .main-header {
   margin: 0;
   padding: 0;
+
   background-color: transparent;
 
   &__top {
-    background-color: #fff;
     min-height: 79px;
+
+    background-color: #ffffff;
   }
 
   &__bottom {
-    background-color: transparent;
     min-height: 79px;
+
+    background-color: transparent;
   }
 }
 
@@ -81,33 +84,33 @@ input[type="radio"].visually-hidden {
 }
 
 .button {
-  color: #444444;
   display: block;
   padding: 31px 0 31px 0;
+
+  color: #444444;
   text-decoration: none;
+
   border: 2px solid #444444;
   cursor: pointer;
 
   &--primary {
+    color: #ffffff;
+
     background-color: #63d1bb;
     border: 0;
-    color: #ffffff;
   }
 }
 
 .promo-things {
-  background-color: #f1f1f1;
   min-height: 177px;
+
+  background-color: #f1f1f1;
   &__button-wrapper {
     flex: 0 0 100%;
   }
 }
 
-.social-link {
-  &__svg {
 
-  }
-}
 
 .svg-image {
   display: block;
@@ -116,7 +119,6 @@ input[type="radio"].visually-hidden {
 }
 
 .main-logo {
-
   &__svg {
     @media (min-width: 321px) {
       display: none;
@@ -134,8 +136,10 @@ input[type="radio"].visually-hidden {
   top: 0;
   left: 0;
   z-index: 9999;
+
   width: 100%;
   height: 100%;
+
   background-color: rgba(255,255,255,0.75);
 }
 
@@ -147,9 +151,11 @@ input[type="radio"].visually-hidden {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
+
   padding: 30px;
+
+  background-color: #ffffff;
+  transform: translate(-50%, -50%);
 }
 
 .checkbox {
@@ -166,37 +172,43 @@ input[type="radio"].visually-hidden {
 }
 
 .checkbox__label {
-  cursor: pointer;
   position: relative;
+
+  cursor: pointer;
 
   &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
+
     width: 40px;
     height: 40px;
+
     border: 2px solid #000000;
   }
 
   &::after {
     content: "";
-    display: none;
     position: absolute;
     top: 50%;
     left: 0;
-    margin-left: 6px;
-    margin-top: -4px;
+
+    display: none;
     width: 32px;
     height: 22px;
+    margin-top: -4px;
+    margin-left: 6px;
+
     background-image: url("../img/svg/checkbox-mark-icon.svg");
     background-repeat: no-repeat;
   }
 
   &--mark {
-    padding-left: 60px;
-    font-size: 17px;
     padding-top: 11px;
+    padding-left: 60px;
+
+    font-size: 17px;
   }
 }
 
@@ -208,7 +220,8 @@ input[type="radio"].visually-hidden {
 
 .form-list__item {
   min-height: 150px;
-  background-color: #fff;
+
+  background-color: #ffffff;
 
   @media (min-width: 321px) {
     &:nth-child(2n) {
@@ -218,9 +231,10 @@ input[type="radio"].visually-hidden {
 }
 
 .order-form__list {
-  list-style: none;
   margin: 0;
   padding: 0;
+
+  list-style: none;
 }
 
 .form-group {
@@ -236,38 +250,44 @@ input[type="radio"].visually-hidden {
 }
 
 .radio__label {
-  cursor: pointer;
   position: relative;
+
+  cursor: pointer;
 
   &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
+
     width: 40px;
     height: 40px;
+
     border: 2px solid #000000;
     border-radius: 50%;
   }
 
   &::after {
     content: "";
-    display: none;
     position: absolute;
     top: 50%;
     left: 0;
-    margin-left: 14px;
-    margin-top: -1px;
+
+    display: none;
     width: 16px;
     height: 16px;
+    margin-top: -1px;
+    margin-left: 14px;
+
     background-color: #63d1bb;
     border-radius: 50%;
   }
 
   &--dot {
-    padding-left: 60px;
-    font-size: 17px;
     padding-top: 11px;
+    padding-left: 60px;
+
+    font-size: 17px;
   }
 }
 
@@ -299,25 +319,30 @@ input[type="radio"].visually-hidden {
 }
 
 .input__control--icon {
-  font-size: 17px;
   padding-top: 11px;
   padding-right: 30px;
+
+  font-size: 17px;
 }
 
 .input__icon {
-  width: 25px;
-  height: 24px;
   position: absolute;
   top: 0;
   right: 0;
+
+  width: 25px;
+  height: 24px;
+
   background-color: red;
 }
 
 .textarea__control {
   width: 100%;
-  border: 2px solid #000000;
-  resize: vertical;
   min-height: 142px;
+
+  border: 2px solid #000000;
+
+  resize: vertical;
 }
 
 .main-footer {
@@ -333,20 +358,21 @@ input[type="radio"].visually-hidden {
 }
 
 .products__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
-.product-card {
-}
+
 .product-card__inner {
   display: flex;
   flex-direction: column;
-  border: 1px solid #ececec;
   min-height: 399px;
+
+  border: 1px solid #ececec;
 }
 
 .product-card__bottom {
@@ -357,5 +383,6 @@ input[type="radio"].visually-hidden {
 .social-list {
   margin: 0;
   padding: 0;
+
   list-style: none;
 }
