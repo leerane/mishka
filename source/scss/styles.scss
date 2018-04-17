@@ -33,6 +33,12 @@ input[type="radio"].visually-hidden {
   margin: 0;
   padding: 0;
 }
+
+.main-title {
+  margin: 0;
+  padding: 0;
+}
+
 .link {
   color: #000000;
   text-decoration: none;
@@ -67,6 +73,11 @@ input[type="radio"].visually-hidden {
   &__list {
     list-style: none;
   }
+}
+
+.main-content {
+  margin: 0;
+  padding: 0;
 }
 
 .button {
@@ -319,5 +330,32 @@ input[type="radio"].visually-hidden {
   @media (min-width: 321px) {
     display: block;
   }
+}
 
+.products__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card {
+}
+.product-card__inner {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ececec;
+  min-height: 399px;
+}
+
+.product-card__bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.social-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
