@@ -1,24 +1,4 @@
 // --- Variables ---
 
 $color: #ffffff !default;
-h1 {
-  color: $color;
-}
 
-h2 {
-  color: darken($color, 50%);
-  color: red;
-
-  background-color: #000000;
-}
-
-
-$map: (
-  red: red,
-  white: #ffffff,
-  green: #f1f1f1
-);
-
-h3 {
-  color: map_get($map, green);
-}
