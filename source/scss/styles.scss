@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 svg path {
   fill: inherit;
   stroke: inherit;
@@ -25,7 +29,9 @@ input[type="radio"].visually-hidden {
 }
 
 .main-page {
-  background-color: #fafafa;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
 }
 .link {
   color: #000000;
@@ -35,9 +41,10 @@ input[type="radio"].visually-hidden {
 
 .container {
   max-width: 1150px;
-  width: 320px;
+
+  min-width: 320px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 30px;
 }
 
 .main-header {
@@ -62,10 +69,6 @@ input[type="radio"].visually-hidden {
   }
 }
 
-.promo-things {
-  min-height: 490px;
-}
-
 .button {
   color: #444444;
   display: block;
@@ -82,7 +85,8 @@ input[type="radio"].visually-hidden {
 }
 
 .promo-things {
-
+  background-color: #f1f1f1;
+  min-height: 177px;
   &__button-wrapper {
     flex: 0 0 100%;
   }
@@ -103,11 +107,11 @@ input[type="radio"].visually-hidden {
 .main-logo {
 
   &__svg {
-    @media (min-width: 320px) {
+    @media (min-width: 321px) {
       display: none;
     }
     &--mobile {
-      @media (min-width: 320px) {
+      @media (min-width: 321px) {
         display: block;
       }
     }
@@ -137,6 +141,183 @@ input[type="radio"].visually-hidden {
   padding: 30px;
 }
 
+.checkbox {
+  padding: 20px 0 0 0;
+}
+
+.form-group__inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group__checkbox {
+  margin: 0 0 30px 0;
+}
+
 .checkbox__label {
   cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000000;
+  }
+
+  &::after {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-left: 6px;
+    margin-top: -4px;
+    width: 32px;
+    height: 22px;
+    background-image: url("../img/svg/checkbox-mark-icon.svg");
+    background-repeat: no-repeat;
+  }
+
+  &--mark {
+    padding-left: 60px;
+    font-size: 17px;
+    padding-top: 11px;
+  }
+}
+
+.checkbox__control--mark:checked {
+  ~ .checkbox__control--mark::after {
+    display: block;
+  }
+}
+
+.form-list__item {
+  min-height: 150px;
+  background-color: #fff;
+
+  @media (min-width: 321px) {
+    &:nth-child(2n) {
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+.order-form__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.form-group {
+  min-height: 156px;
+}
+
+.radio {
+  padding: 20px 0 0 0;
+}
+
+.form-group__radio {
+  margin: 0 0 30px 0;
+}
+
+.radio__label {
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-left: 14px;
+    margin-top: -1px;
+    width: 16px;
+    height: 16px;
+    background-color: #63d1bb;
+    border-radius: 50%;
+  }
+
+  &--dot {
+    padding-left: 60px;
+    font-size: 17px;
+    padding-top: 11px;
+  }
+}
+
+.radio__control:checked {
+  ~ .radio__label::after {
+    display: block;
+  }
+}
+
+.input {
+  padding: 20px 0 0 0;
+}
+
+.input__control {
+  border: 0;
+  border-bottom: 2px solid #000000;
+}
+
+.form-group__input {
+  margin: 0 0 30px 0;
+}
+
+.input__wrap {
+  position: relative;
+}
+
+.input__control {
+  width: 100%;
+}
+
+.input__control--icon {
+  font-size: 17px;
+  padding-top: 11px;
+  padding-right: 30px;
+}
+
+.input__icon {
+  width: 25px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+}
+
+.textarea__control {
+  width: 100%;
+  border: 2px solid #000000;
+  resize: vertical;
+  min-height: 142px;
+}
+
+.main-footer {
+  background-color: #f1f1f1;
+}
+
+.main-footer__logo {
+  display: none;
+
+  @media (min-width: 321px) {
+    display: block;
+  }
+
 }
