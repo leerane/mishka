@@ -6,10 +6,11 @@ var path = {
   buildPath: "./build",
   scssPath: "/scss",
   cssPath: "/css",
-  blocksPath: "/common.blocks",
-  scssPattern: "/**/*.scss",
+  blocksPath: "/blocks",
+  scssPattern: "/**/*.{scss, sass}",
   pugPattern: "/**/!(_)*.pug",
-  htmlPattern: "/**/*.html"
+  htmlPattern: "/**/*.html",
+  levels: ["blocks"]
 };
 
 // Packages

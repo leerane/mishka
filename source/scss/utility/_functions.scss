@@ -1,3 +1,13 @@
 // --- Functions ---
 
+// Color
+
+@function color($color-map, $color-value) {
+  @if map-has-key($color-map, $color-value) {
+    @return map-get($color-map, $color-value)
+  }
+}
+
+// Font
+
 

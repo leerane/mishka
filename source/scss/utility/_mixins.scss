@@ -1,2 +1,30 @@
 // --- Mixins ---
 
+// Font
+
+@mixin font-face($font-family, $font-path, $font-file-name, $font-style: normal, $font-weight: normal, $font-svg-id: null, $text-rendering: null, $font-formats: (eot: embedded-opentype, woff2: woff2, woff: woff, ttf: truetype, otf: opentype, svg: svg)) {
+  $font-src: ();
+
+  @each $font-ext, $font-format in $font-formats {
+    @if ($font-ext == "eot") {
+      $font-ext: "#{$font-ext}#iefix";
+    } @else if ($font-ext == "svg" and $font-svg-id != null) {
+      $font-ext: "#{$font-ext}#{$font-svg-id}";
+    }
+
+    $font-src: append($font-src, url("#{$font-path}#{$font-file-name}.#{$font-ext}") format("#{$font-format}"), comma);
+  }
+
+  @at-root {
+    @font-face {
+      font-family: "#{$font-family}";
+      @if (map-has-key($font-formats, eot)) {
+        src: url("#{$font-path}#{$font-file-name}.eot");
+      }
+      src: $font-src;
+      font-style: $font-style;
+      font-weight: $font-weight;
+      text-rendering: $text-rendering;
+    }
+  }
+}
