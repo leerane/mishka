@@ -164,8 +164,8 @@ gulp.task("bem-css", () => {
     .pipe(gulp.dest(path.sourcePath))
 });
 
-gulp.task("server", ["browser-sync", "css", "js", "libs-js"], function() {
-  gulp.watch(path.sourcePath + path.scssPath + path.scssPattern, ["sass"]);
+gulp.task("server", ["browser-sync", "css", "libs-js", "js"], () => {
+  gulp.watch(path.sourcePath + path.scssPath + path.scssPattern, ["css"]);
   gulp.watch(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, ["js"]);
   gulp.watch(path.sourcePath + path.htmlPattern).on("change", reload);
 });
