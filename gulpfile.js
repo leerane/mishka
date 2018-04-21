@@ -7,7 +7,8 @@ var name = {
   cssFile: "styles.css",
   scssFile: "styles.scss",
   libsFile: "libs.js",
-  configFile: "_config.scss"
+  configFile: "_config.scss",
+  spriteFile: "_sprite.scss"
 };
 
 // Path variables
@@ -18,14 +19,19 @@ var path = {
   scssPath: "/sass",
   cssPath: "/css",
   jsPath: "/js",
+  imgPath: "/img",
+  svgPath: "/svg",
+  spritePath: "/sprite",
   jsModulesPath: "/modules",
   libsPath: "/libs",
   blocksPath: "/blocks",
   utilityPath: "/utility",
   scssPattern: "/**/*.{scss, sass}",
+  svgPattern: "/*.svg",
   _scssPattern: "/**/_*.{scss, sass}",
   _configFilePattern: "/" + name.configFile,
   scssFilePattern: "/" + name.scssFile,
+  _spriteFilePattern: "/" + name.spriteFile,
   pugPattern: "/**/!(_)*.pug",
   htmlPattern: "/**/!(_)*.html",
   jsPattern: "/**/!(_)*.js",
@@ -50,8 +56,11 @@ var gulp = require("gulp"),
   rename = require("gulp-rename"),
   replace = require("gulp-replace"),
   uglify = require("gulp-uglify"),
-  svgsprite = require("gulp-svg-sprites"),
+  svgSprite = require("gulp-svg-sprites"),
   svgmin = require("gulp-svgmin"),
+  svgo = require("gulp-svgo"),
+  size = require("gulp-size"),
+  util = require("gulp-util"),
   jsbeautify = require("js-beautify"),
   mergeStream = require("merge-stream"),
   autoprefixer = require("autoprefixer"),
@@ -85,11 +94,14 @@ gulp.task("sass-concat", () => {
 });
 
 gulp.task("sass-styles", ["sass-concat"], () => {
+  var processors = [
+    autoprefixer
+  ];
   return gulp.src(path.sourcePath + path.scssPath + path.scssPattern)
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: "expanded"}).on("error", sass.logError))
-    .pipe(postcss([ autoprefixer() ]))
+    .pipe(postcss(processors))
     .pipe(csscomb("csscomb.json"))
     .pipe(gulp.dest(path.sourcePath + path.cssPath))
     .pipe(postcss([ cssnano({ minifyFontWeight: false }) ]))
@@ -164,7 +176,31 @@ gulp.task("bem-css", () => {
     .pipe(gulp.dest(path.sourcePath))
 });
 
+gulp.task("sprite", () => {
+  return gulp.src(path.sourcePath + path.imgPath + path.svgPath + path.svgPattern)
+    .pipe(cheerio({
+      run: function ($) {
+        $('[fill]').removeAttr('fill');
+        $('[stroke]').removeAttr('stroke');
+        $('[style]').removeAttr('style');
+      },
+      parserOptions: {xmlMode: true}
+    }))
+    .pipe(replace('&gt;', '>'))
+    .pipe(svgSprite({
+      mode: "symbols",
+      svgPath: path.sourcePath + path.imgPath + path.svgPath + path.spritePath,
+      svg: {
+        symbols: "sprite.svg"
+      },
+      preview: false
+    }))
+    .pipe(gulp.dest(path.sourcePath + path.imgPath + path.svgPath + path.spritePath))
+    .pipe(reload({ stream: true }));
+});
+
 gulp.task("server", ["browser-sync", "css", "libs-js", "js"], () => {
+  gulp.watch(path.sourcePath + path.imgPath + path.svgPath + path.svgPattern, ["sprite"]);
   gulp.watch(path.sourcePath + path.scssPath + path.scssPattern, ["css"]);
   gulp.watch(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, ["js"]);
   gulp.watch(path.sourcePath + path.htmlPattern).on("change", reload);

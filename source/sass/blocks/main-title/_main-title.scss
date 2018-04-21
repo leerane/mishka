@@ -1,11 +1,16 @@
 .main-title {
-
+  margin: 0;
+  padding: 0;
+  @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
 }
 
-.main-title.main-title--size--l {
-
+.main-title--size--l {
+  font-size: font-size(h2-m-l);
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .main-title.main-title--size--s {
 
-}
+}

@@ -1,9 +1,22 @@
 .button {
-
+  @include border(2px, solid, color($main-c, secondary));
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, secondary), font-lh(base-md));
+  background-color: transparent;
+  text-transform: uppercase;
+  padding: 10px 85px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin: 0;
 }
 
-.button.button--primary {
-
+.button--primary {
+  background-color: color($main-c, primary);
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-d), normal, color($base-c, white), font-lh(base-md));
+  text-transform: none;
+  border: 0;
+  padding-left: 30px;
+  text-align: left;
 }
 
 .button.button--icon--interior {
@@ -16,4 +29,4 @@
 
 .button .button__text {
 
-}
+}

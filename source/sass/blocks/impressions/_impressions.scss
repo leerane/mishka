@@ -2,42 +2,42 @@
 
 }
 
-.impressions .impressions__title {
+.impressions__title {
 
 }
 
-.impressions .impressions__blockquote {
+.impressions__blockquote {
+  @include clear-list();
+}
+
+.impressions__footer {
 
 }
 
-.impressions .impressions__footer {
+.impressions__author {
+  @include clear-list();
+}
+
+.impressions__author-name {
 
 }
 
-.impressions .impressions__author {
+.impressions__author-contact {
 
 }
 
-.impressions .impressions__author-name {
+.impressions__buttons-wrapper {
 
 }
 
-.impressions .impressions__author-contact {
+.impressions__slider-button {
 
 }
 
-.impressions .impressions__buttons-wrapper {
+.impressions__button-wrapper {
 
 }
 
-.impressions .impressions__slider-button {
+.impressions__button {
 
 }
-
-.impressions .impressions__button-wrapper {
-
-}
-
-.impressions .impressions__button {
-
-}

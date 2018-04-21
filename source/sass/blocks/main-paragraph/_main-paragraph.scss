@@ -1,3 +1,4 @@
 .main-paragraph {
-
-}
+  @include clear-list();
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-md));
+}

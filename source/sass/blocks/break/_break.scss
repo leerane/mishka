@@ -1,0 +1,6 @@
+.break-text {
+
+  @media (min-width: breakpoint(tablet)) {
+    display: none;
+  }
+}

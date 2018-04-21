@@ -1,5 +1,5 @@
 .link {
-
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-md));
 }
 
 .link.link--icon {
@@ -10,6 +10,6 @@
 
 }
 
-.link .link__text {
+.link__text {
 
-}
+}

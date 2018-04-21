@@ -1,7 +1,31 @@
 .main-footer {
+  background-color: color($grey-c, default);
 
+  &:hover {
+    .main-footer__logo-svg {
+      fill: color($main-c, accent);
+    }
+  }
+
+  &:active {
+    .social-link__svg {
+      fill: color($main-c, accent);
+      opacity: 0.3;
+    }
+  }
 }
 
-.main-footer .main-footer__inner {
+.main-footer__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+}
 
-}
+.main-footer__logo-svg {
+  display: none;
+
+  @media (min-width: breakpoint(tablet)) {
+    display: block;
+  }
+}

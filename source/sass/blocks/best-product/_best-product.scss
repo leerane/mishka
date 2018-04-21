@@ -46,10 +46,13 @@
 
 }
 
-.best-product .best-product__button-wrapper {
-
+.best-product__button-wrapper {
+  min-width: 259px;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .best-product .best-product__right {
 
-}
+}

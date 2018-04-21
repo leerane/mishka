@@ -2,20 +2,21 @@
 
 }
 
-.about-us .about-us__inner {
+.about-us__inner {
   background-color: #fff;
+  @include font-par();
 }
 
-.about-us .about-us__title {
-
+.about-us__title {
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base));
 }
 
 .about-us .about-us__list-wrapper {
 
 }
 
-.about-us .about-us__list {
-
+.about-us__list {
+  @include clear-list();
 }
 
 .about-us .about-us__item {

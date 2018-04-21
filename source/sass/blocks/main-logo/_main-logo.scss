@@ -1,11 +1,27 @@
 .main-logo {
-
+  @include centerer(null, null, both);
 }
 
-.main-logo .main-logo__svg {
+.main-logo__svg {
+  display: none;
 
+  @media (min-width: breakpoint(desktop)) {
+    display: block;
+  }
 }
 
-.main-logo .main-logo__svg.main-logo__svg--mobile {
+.main-logo__svg--mobile {
+  display: block;
 
-}
+  @media (min-width: breakpoint(tablet)) {
+    display: none;
+  }
+}
+
+.main-logo__svg--tablet {
+  display: none;
+
+  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
+    display: block;
+  }
+}

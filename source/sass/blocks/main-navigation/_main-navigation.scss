@@ -1,15 +1,16 @@
 .main-navigation {
+  position: relative;
+}
+
+.main-navigation__list {
+  @include clear-list();
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-md));
+}
+
+.main-navigation__item {
 
 }
 
-.main-navigation .main-navigation__list {
-
+.main-navigation__link {
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), font-lh(base-md));
 }
-
-.main-navigation .main-navigation__item {
-
-}
-
-.main-navigation .main-navigation__link {
-
-}

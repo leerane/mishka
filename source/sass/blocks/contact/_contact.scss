@@ -2,12 +2,12 @@
 
 }
 
-.contact .contact__inner {
+.contact__inner {
 
 }
 
-.contact .contact__description {
-
+.contact__description {
+  @include clear-list();
 }
 
 .contact .contact__item {
@@ -28,4 +28,4 @@
 
 .contact .contact__button-wrapper {
 
-}
+}

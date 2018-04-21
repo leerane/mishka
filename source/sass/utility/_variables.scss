@@ -2,19 +2,48 @@
 
 // Breakpoints
 
-$breakpoints: (
+$screen-xs: 0 !default;
+$screen-sm: 320px !default;
+$screen-md: 768px !default;
+$screen-lg: 992px !default;
+$screen-xl: 1150px !default;
+$screen-xxl: 1800px !default;
 
+$container-sm: 100% !default;
+$container-md: 100% !default;
+$container-lg: ($screen-lg - 30) !default;
+$container-xl: ($screen-xl - 30) !default;
+$container-xxl: ($screen-xxl - 30) !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+
+$breakpoints: (
+  mobile: $screen-xs,
+  mobile-top: $screen-sm,
+  tablet: $screen-md,
+  tablet-top:  ($screen-xl - 1),
+  desktop: $screen-xl
 );
 
 // Colors
 
+$grey: #f1f1f1 !default;
+$grey--light: #f9f9f9 !default;
+$grey--lighten: #fdfdfd !default;
+$grey--dark: #ececec !default;
+$grey--darker: #e5e5e5 !default;
+$grey--darken: #cccccc !default;
+$grey--darkest: #444444 !default;
+
 $grey-c: (
-  grey: #f1f1f1,
-  grey--light: #f9f9f9,
-  grey--lighten: #fdfdfd,
-  grey--dark: #ececec,
-  grey--darken: #cccccc,
-  grey--darkest: #444444
+  default: $grey,
+  light: $grey--light,
+  lighten: $grey--lighten,
+  dark: $grey--dark,
+  darker: $grey--darker,
+  darken: $grey--darken,
+  darkest: $grey--darkest
 );
 
 $base-c: (
@@ -22,17 +51,108 @@ $base-c: (
   white: #ffffff
 );
 
+$primary-color: #63d1bb !default;
+$secondary-color: map-get($grey-c,  darkest) !default;
+$accent-color: #46c1ae !default;
+$success-color: #39b54a !default;
+$warning-color: #f9c301 !default;
+$danger-color: #f43f3b !default;
+$info-color: #0074e6 !default;
+
 $main-c: (
-  color--primary: #63d1bb,
-  color--secondary: map_get($grey-c, grey--darkest),
-  //color--success: ,
-  //color--danger: ,
-  //color--warning: ,
- // color--info:
+  primary: $primary-color,
+  secondary: $secondary-color,
+  accent: $accent-color,
+  success: $success-color,
+  warning: $warning-color,
+  danger: $danger-color,
+  info: $info-color
+);
+
+$brand-color--facebook: #3b5998;
+$brand-color--github: #333;
+$brand-color--google: #dc4e41;
+$brand-color--instagram: #3f729b;
+$brand-color--linkedin: #0077b5;
+$brand-color--medium: #00ab6b;
+$brand-color--messenger: #0084ff;
+$brand-color--rss: #f26522;
+$brand-color--spotify: #2ebd59;
+$brand-color--twitter: #55acee;
+$brand-color--telegram: #0088cc;
+$brand-color--vk: #45668e;
+
+$brand-c: (
+  facebook: $brand-color--facebook,
+  github: $brand-color--github,
+  google: $brand-color--google,
+  instagram: $brand-color--instagram,
+  linkedin: $brand-color--linkedin,
+  medium: $brand-color--medium,
+  messenger: $brand-color--messenger,
+  rss: $brand-color--rss,
+  spotify: $brand-color--spotify,
+  twitter: $brand-color--twitter,
+  telegram: $brand-color--telegram,
+  vk: $brand-color--vk
 );
 
 // Fonts
 
-$font-weight: (
-
+$font-weights: (
+  thin: 100,
+  extra-light: 200,
+  ultra-light: 200,
+  light: 300,
+  normal: 400,
+  book: 400,
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  demi-bold: 600,
+  bold: 700,
+  extra-bold: 800,
+  ultra-bold: 900,
+  heavy: 900,
+  black: 900,
+  ultra: 900,
+  ultra-black: 900,
+  extra-ultra: 900
 );
+
+$font-size--xxxx-large: 53px !default;
+$font-size--xxx-large: 43px !default;
+$font-size--xx-large: 27px !default;
+$font-size--x-large: 25px !default;
+$font-size--large: 20px !default;
+$font-size--regular: 19px !default;
+$font-size--small: 18px !default;
+$font-size--smaller: 17px !default;
+$font-size--smallest: 15px !default;
+
+$font-sizes: (
+  base-m: $font-size--smallest,
+  base-t: $font-size--smaller,
+  base-d: $font-size--regular,
+  h2-m-s: $font-size--small,
+  h2-m: $font-size--x-large,
+  h2-m-l: $font-size--xx-large,
+  h2-t: $font-size--xxx-large,
+  h2-d: $font-size--xxxx-large,
+  other: $font-size--small,
+  other-l: $font-size--large
+);
+
+$font-line-height: (
+  base: 20px,
+  base-md: 24px,
+  base-l: 30px,
+  title: 30px,
+  title-md: 50px,
+  title-l: 57px
+);
+
+$font-stack: (
+  opensans: ("Open Sans", Arial, sans-serif),
+);
+

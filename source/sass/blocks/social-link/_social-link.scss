@@ -1,7 +1,23 @@
 .social-link {
+  cursor: pointer;
+  display: block;
+
+  &:hover {
+    .social-link__svg {
+      fill: color($main-c, accent);
+    }
+  }
+
+  &:active {
+    .social-link__svg {
+      fill: color($main-c, accent);
+      opacity: 0.3;
+    }
+  }
 
 }
 
-.social-link .social-link__svg {
+.social-link__svg {
 
-}
+}
+

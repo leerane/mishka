@@ -1,7 +1,16 @@
 .social-list {
-
+  @include clear-list();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
-.social-list .social-list__item {
+.social-list__item {
+  margin-right: 41px;
+  margin-bottom: 6px;
 
-}
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+}
