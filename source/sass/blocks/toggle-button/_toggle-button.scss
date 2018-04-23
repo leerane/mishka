@@ -1,10 +1,15 @@
 .toggle-button {
-  background-color: color($base-c, white);
-  width: 40px;
-  height: 40px;
+  background-color: transparent;
   border: none;
+  margin: 0;
+  padding: 0 1px 1px 0;
+  height: 40px;
   cursor: pointer;
   @include flex-centerer();
+
+  @media (min-width: breakpoint(tablet)) {
+    display: none;
+  }
 }
 
 .toggle-button__svg {

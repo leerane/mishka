@@ -1,16 +1,87 @@
 .main-navigation {
   position: relative;
+  width: 100%;
+  display: flex;
+  background-color: transparent;
+  flex-direction: column;
+  flex-wrap: wrap;
+  z-index: 1;
+
+  @media (min-width: breakpoint(tablet)) {
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 0 50px;
+    max-height: 89px;
+
+  }
 }
 
 .main-navigation__list {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
   @include clear-list();
   @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-md));
+
+  @media (min-width: breakpoint(tablet)) {
+    flex-direction: row;
+  }
 }
 
-.main-navigation__item {
+.main-navigation__list--first {
+  @media (min-width: breakpoint(tablet)) {
+    order: -1;
 
+    .main-navigation__item {
+      @include box-shadow(1px, 0, 0, 0, color($grey-c, darker), true);
+      padding: 29px 31px 36px 31px;
+    }
+
+    .main-navigation__link {
+      padding-left: 31px;
+    }
+  }
+}
+.main-navigation__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 75px;
+  background-color: transparent;
+  padding-top: 26px;
+  padding-bottom: 29px;
+  @include box-shadow(0, -1px, 0, 0, color($grey-c, darker), true);
+
+  @media (min-width: breakpoint(tablet)) {
+    min-width: 82px;
+    box-shadow: none;
+    padding: 36px 31px 25px 0;
+    @include font-par(font-family(opensans), font-weight(bold), font-size(base-m), normal, color($base-c, black), font-lh(base-md));
+  }
 }
 
 .main-navigation__link {
+  position: relative;
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), font-lh(base-md));
 }
+
+.main-navigation__text {
+  @media (min-width: breakpoint(tablet)) {
+    @include visually-hidden();
+  }
+}
+
+.main-navigation__icon {
+  position: absolute;
+  top: 5px;
+  left: -43px;
+  fill: rgba(color($base-c, svg), 0.3);
+
+  @media (min-width: breakpoint(tablet)) {
+    top: 0;
+    left: 0;
+  }
+}
+
+

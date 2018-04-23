@@ -1,21 +1,32 @@
 .best-product {
-
+  padding-top: 34px;
 }
 
-.best-product .best-product__inner {
-
+.best-product__inner {
+  display: flex;
+  flex-direction: column;
 }
 
-.best-product .best-product__top {
-
+.best-product__top {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
-.best-product .best-product__subtitle {
-
+.best-product__subtitle {
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, primary), font-lh(base));
+  text-transform: uppercase;
+  order: -1;
 }
 
-.best-product .best-product__title {
+.best-product__title {
+  padding-left: 2px;
+}
 
+.best-product__paragraph {
+  @include clear-list();
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-md));
+  margin-bottom: 33px;
 }
 
 .best-product .best-product__content {

@@ -1,6 +1,6 @@
 .button {
-  @include border(2px, solid, color($main-c, secondary));
-  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, secondary), font-lh(base-md));
+  @include box-shadow(0, 0, 0, 2px, color($main-c, secondary), true);
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, secondary), font-lh(base));
   background-color: transparent;
   text-transform: uppercase;
   padding: 10px 85px;
@@ -10,23 +10,113 @@
   margin: 0;
 }
 
+.button__inner {
+  width: 100%;
+  padding: 25px 0 15px 30px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 25px 0 15px 36px;
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 25px 0 15px 37px;
+  }
+}
+
 .button--primary {
+  width: 100%;
   background-color: color($main-c, primary);
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-d), normal, color($base-c, white), font-lh(base-md));
   text-transform: none;
   border: 0;
-  padding-left: 30px;
+  box-shadow: none;
   text-align: left;
+  min-height: 103px;
+
+  @media (min-width: breakpoint(tablet))  {
+    font-size: font-size(other-l);
+    line-height: font-lh(base-l);
+  }
 }
 
-.button.button--icon--interior {
+.button--icon--interior {
+  &:hover {
+    position: relative;
+    background-color: #59d5bc;
 
+    .button__inner--icon--interior {
+      position: absolute;
+      left: 0;
+      bottom: 5px;
+      background-color: #59d5bc;
+    }
+
+    .button__svg--interior {
+      fill: rgba(#149080, 0.7);
+    }
+  }
+
+  &:active {
+    background-color: #59d5bc;
+    color: rgba(#ffffff, 0.3);
+
+    .button__svg--interior {
+      fill: rgba(#149080, 0.3);
+    }
+  }
 }
 
-.button.button--icon--toy {
+.button--icon--toy {
+  background-color: #56c3b2;
 
+  &:hover {
+    position: relative;
+    background-color: color($main-c, accent);
+
+    .button__inner--icon--toy {
+      position: absolute;
+      left: 0;
+      bottom: 5px;
+      background-color: color($main-c, accent);
+    }
+
+    .button__svg--toy {
+      fill: rgba(#149080, 0.7);
+    }
+  }
+
+  &:active {
+    background-color: color($main-c, accent);
+    color: rgba(#ffffff, 0.3);
+
+    .button__svg--interior {
+      fill: rgba(#149080, 0.3);
+    }
+  }
 }
 
-.button .button__text {
+.button__text {
+  white-space: pre-line;
+}
 
+.button__svg--interior {
+  margin-right: 36px;
+  fill: rgba(#149080, 0.5);
+}
+
+.button__svg--toy {
+  margin-right: 27px;
+  fill: rgba(#149080, 0.5);
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-right: 33px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-right: 35px;
+  }
 }
