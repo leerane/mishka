@@ -13,10 +13,38 @@
 // --- Base styles ---
 @import "./utility/base.scss";
 
-.break-text {
+.about-us {
 
-  @media (min-width: breakpoint(tablet)) {
-    display: none;
+}
+
+.about-us__inner {
+  background-color: #fff;
+  @include font-par();
+}
+
+.about-us__title {
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base));
+}
+
+.about-us .about-us__list-wrapper {
+
+}
+
+.about-us__list {
+  @include clear-list();
+}
+
+.about-us .about-us__item {
+
+}
+
+.about-us .about-us__text {
+
+}
+
+@media (min-resolution: 2dppx) {
+  .image {
+    background-image: url(image@2x.png);
   }
 }
 
@@ -90,38 +118,10 @@
 
 }
 
-.about-us {
+.break-text {
 
-}
-
-.about-us__inner {
-  background-color: #fff;
-  @include font-par();
-}
-
-.about-us__title {
-  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base));
-}
-
-.about-us .about-us__list-wrapper {
-
-}
-
-.about-us__list {
-  @include clear-list();
-}
-
-.about-us .about-us__item {
-
-}
-
-.about-us .about-us__text {
-
-}
-
-@media (min-resolution: 2dppx) {
-  .image {
-    background-image: url(image@2x.png);
+  @media (min-width: breakpoint(tablet)) {
+    display: none;
   }
 }
 
@@ -283,6 +283,21 @@
 .catalog-video .catalog-video__button-wrapper {
 
 }
+.checkbox {
+
+}
+
+.checkbox .checkbox__control {
+
+}
+
+.checkbox .checkbox__label {
+
+}
+
+.checkbox .checkbox__label.checkbox__label--size-m {
+
+}
 .contact {
 
 }
@@ -315,21 +330,6 @@
 
 }
 
-.checkbox {
-
-}
-
-.checkbox .checkbox__control {
-
-}
-
-.checkbox .checkbox__label {
-
-}
-
-.checkbox .checkbox__label.checkbox__label--size-m {
-
-}
 .container {
   width: auto;
   padding: 0 30px;
@@ -700,6 +700,15 @@
     }
   }
 }
+
+.main-navigation__list--second {
+  @media (min-width: breakpoint(tablet)) {
+    .main-navigation__link {
+      font-size: font-size(base-m);
+    }
+  }
+}
+
 .main-navigation__item {
   display: flex;
   flex-direction: row;
@@ -714,7 +723,7 @@
   @media (min-width: breakpoint(tablet)) {
     min-width: 82px;
     box-shadow: none;
-    padding: 36px 31px 25px 0;
+    padding: 25px 37px 25px 0;
     @include font-par(font-family(opensans), font-weight(bold), font-size(base-m), normal, color($base-c, black), font-lh(base-md));
   }
 }

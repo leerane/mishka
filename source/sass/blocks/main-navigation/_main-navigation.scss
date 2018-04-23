@@ -42,6 +42,15 @@
     }
   }
 }
+
+.main-navigation__list--second {
+  @media (min-width: breakpoint(tablet)) {
+    .main-navigation__link {
+      font-size: font-size(base-m);
+    }
+  }
+}
+
 .main-navigation__item {
   display: flex;
   flex-direction: row;
@@ -56,7 +65,7 @@
   @media (min-width: breakpoint(tablet)) {
     min-width: 82px;
     box-shadow: none;
-    padding: 36px 31px 25px 0;
+    padding: 25px 37px 25px 0;
     @include font-par(font-family(opensans), font-weight(bold), font-size(base-m), normal, color($base-c, black), font-lh(base-md));
   }
 }
