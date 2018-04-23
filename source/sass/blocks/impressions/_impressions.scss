@@ -1,13 +1,49 @@
 .impressions {
+  padding-top: 28px;
+}
 
+.impressions__inner {
+  width: auto;
+  padding: 0 30px;
+  margin: 0 auto;
+
+
+  @media (min-width: breakpoint(tablet)) {
+    position: relative;
+    width: auto;
+    padding: 0 50px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: auto;
+    padding: 0 100px;
+    max-width: 1150px;
+  }
 }
 
 .impressions__title {
+  margin: 0 0 24px -2px;
+  padding: 0;
+  @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
 
+  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
+    font-size: font-size(h2-t);
+    line-height: font-lh(title-md);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    font-size: font-size(h2-d);
+    line-height: font-lh(title-l);
+  }
 }
 
 .impressions__blockquote {
   @include clear-list();
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($base-c, black), 30px);
+
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(base-t);
+  }
 }
 
 .impressions__footer {
@@ -19,11 +55,20 @@
 }
 
 .impressions__author-name {
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), font-lh(base-md));
+  margin-bottom: 20px;
 
+  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
+    font-size: font-size(other);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    font-size: font-size(base-m);
+  }
 }
 
 .impressions__author-contact {
-
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-l));
 }
 
 .impressions__buttons-wrapper {

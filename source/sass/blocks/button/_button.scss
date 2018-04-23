@@ -3,7 +3,7 @@
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, secondary), font-lh(base));
   background-color: transparent;
   text-transform: uppercase;
-  padding: 10px 85px;
+  padding: 16px 85px;
   width: 100%;
   display: block;
   text-align: center;
@@ -12,7 +12,7 @@
 
 .button__inner {
   width: 100%;
-  padding: 25px 0 15px 30px;
+  padding: 25px 0 15px 29px;
   margin: 0;
   display: flex;
   flex-direction: row;
@@ -105,11 +105,13 @@
 
 .button__svg--interior {
   margin-right: 36px;
+  margin-top: -2px;
   fill: rgba(#149080, 0.5);
 }
 
 .button__svg--toy {
   margin-right: 27px;
+  margin-top: -4px;
   fill: rgba(#149080, 0.5);
 
   @media (min-width: breakpoint(tablet)) {

@@ -16,6 +16,16 @@
     }
   }
 }
+
+.link--search {
+
+}
+
+.link--cart {
+  @media (min-width: breakpoint(tablet)) {
+    padding-left: 52px;
+  }
+}
 .link.link--mail {
 
 }

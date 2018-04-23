@@ -35,41 +35,43 @@
           </button>
         </div>
       </div>
-      <ul class="main-navigation__list main-navigation__list--second">
-        <li class="main-navigation__item">
-          <a href="catalog.html" class="link main-navigation__link">Каталог товаров</a>
-        </li>
-        <li class="main-navigation__item">
-          <a href="form.html" class="link main-navigation__link">Вязание на заказ</a>
-        </li>
-      </ul>
-      <ul class="main-navigation__list main-navigation__list--first">
-        <li class="main-navigation__item">
-          <a href="" class="link main-navigation__link link--icon">
-            <svg aria-hidden="true" width="17.6" height="17.6" class="svg-image main-navigation__icon">
-              <use xlink:href="img/svg/sprite/sprite.svg#search-icon"/>
-            </svg>
-            <span class="link__text main-navigation__text">Поиск по сайту</span>
-          </a>
-        </li>
-        <li class="main-navigation__item">
-          <a href="#" class="link main-navigation__link link--icon">
-            <svg aria-hidden="true" width="20.29" height="18.85" class="svg-image main-navigation__icon">
-              <use xlink:href="img/svg/sprite/sprite.svg#cart-icon"/>
-            </svg>
-            Корзина:
-            <span class="link__text">пока пуста</span> </a>
-        </li>
-      </ul>
-      <ul class="main-navigation__list visually-hidden">
-        <li class="main-navigation__item">
-          <a href="catalog.html" class="link main-navigation__link">Новые поступления</a>
-        </li>
-        <li class="main-navigation__item">
-          <a href="form.html" class="link main-navigation__link">Распродажа</a>
-        </li>
-      </ul>
-      <p class="main-navigation__text visually-hidden">Бесплатная доставка по России</p>
+      <div class="main-header__bottom">
+        <ul class="main-navigation__list main-navigation__list--second">
+          <li class="main-navigation__item">
+            <a href="catalog.html" class="link main-navigation__link">Каталог товаров</a>
+          </li>
+          <li class="main-navigation__item">
+            <a href="form.html" class="link main-navigation__link">Вязание на заказ</a>
+          </li>
+        </ul>
+        <ul class="main-navigation__list main-navigation__list--first">
+          <li class="main-navigation__item">
+            <a href="" class="link main-navigation__link link--icon link--search">
+              <svg aria-hidden="true" width="17.6" height="17.6" class="svg-image main-navigation__icon main-navigation__icon--search">
+                <use xlink:href="img/svg/sprite/sprite.svg#search-icon"/>
+              </svg>
+              <span class="link__text main-navigation__hidden">Поиск по сайту</span>
+            </a>
+          </li>
+          <li class="main-navigation__item">
+            <a href="#" class="link main-navigation__link link--icon link--cart">
+              <svg aria-hidden="true" width="20.29" height="18.85" class="svg-image main-navigation__icon main-navigation__icon--cart">
+                <use xlink:href="img/svg/sprite/sprite.svg#cart-icon"/>
+              </svg>
+              Корзина:
+              <span class="link__text">пока пуста</span> </a>
+          </li>
+        </ul>
+        <ul class="main-navigation__list visually-hidden">
+          <li class="main-navigation__item">
+            <a href="catalog.html" class="link main-navigation__link">Новые поступления</a>
+          </li>
+          <li class="main-navigation__item">
+            <a href="form.html" class="link main-navigation__link">Распродажа</a>
+          </li>
+        </ul>
+        <p class="main-navigation__text">Бесплатная доставка по России</p>
+      </div>
     </nav>
   </header>
   <main class="main-content">
@@ -105,10 +107,10 @@
     </section>
     <section class="best-product">
       <h1 class="visually-hidden">Товар недели</h1>
-      <div class="best-product__inner container">
+      <div class="best-product__inner">
         <div class="best-product__top">
           <span class="best-product__subtitle">Товар недели</span>
-          <h2 class="main-title best-product__title">Вязаные корзинки</h2>
+          <h2 class="best-product__title">Вязаные корзинки</h2>
         </div>
         <div class="best-product__content">
           <div class="best-product__description">
@@ -116,7 +118,7 @@
             <table class="best-product__table">
               <tr class="best-product__row">
                 <td>Цвет:</td>
-                <td>«Тиффани»\серый</td>
+                <td>«Тиффани»/серый</td>
               </tr>
               <tr class="best-product__row">
                 <td>Диаметр:</td>
@@ -128,6 +130,9 @@
               </tr>
             </table>
           </div>
+          <div class="best-product__right">
+            <img src="img/triple-set-mobile@1x.jpg" class="best-product__image" width="260" height="315" alt="Вязаные корзинки">
+          </div>
           <div class="best-product__buy">
             <p class="best-product__text">
               Цена: <span class="best-product__price-text">990 руб.</span>
@@ -136,48 +141,57 @@
               <a href="#" class="button">Заказать</a>
             </div>
           </div>
-          <div class="best-product__right">
-            <img src="http://via.placeholder.com/260x315" alt="Вязаные корзинки">
-          </div>
         </div>
       </div>
     </section>
     <section class="about-us">
-      <div class="about-us__inner container">
-        <h2 class="main-title about-us__title">Коротко о нас</h2>
+      <div class="about-us__inner">
+        <h2 class="about-us__title">Коротко о нас:</h2>
         <div class="about-us__list-wrapper">
           <ul class="about-us__list">
             <li class="about-us__item">
-              ИКОНКА SVG
-              <p class="about-us__text">Экологически чистые материалы</p>
+              <svg aria-hidden="true" width="31.97" height="37.3" class="svg-image about-us__svg about-us__svg--flower">
+                <use xlink:href="img/svg/sprite/sprite.svg#flower-icon"/>
+              </svg>
+              <p class="about-us__text">Экологически<br>чистые материалы</p>
             </li>
             <li class="about-us__item">
-              ИКОНКА SVG
-              <p class="about-us__text">Скандинавский стиль по российской цене</p>
+              <svg aria-hidden="true" width="46.58" height="27.33" class="svg-image about-us__svg about-us__svg--money">
+                <use xlink:href="img/svg/sprite/sprite.svg#money-icon"/>
+              </svg>
+              <p class="about-us__text">Скандинавский стиль<br>по российской цене</p>
             </li>
             <li class="about-us__item">
-              ИКОНКА SVG
-              <p class="about-us__text">Увеличивает лайки на фотографиях</p>
+              <svg aria-hidden="true" width="33.05" height="27.86" class="svg-image about-us__svg about-us__svg--heart">
+                <use xlink:href="img/svg/sprite/sprite.svg#heart-icon"/>
+              </svg>
+              <p class="about-us__text">Увеличивает лайки<br>на фотографиях</p>
             </li>
             <li class="about-us__item">
-              ИКОНКА SVG
-              <p class="about-us__text">Связано вручную с любовью и умилением</p>
+              <svg aria-hidden="true" width="34.37" height="34.37" class="svg-image about-us__svg about-us__svg--ball">
+                <use xlink:href="img/svg/sprite/sprite.svg#ball-icon"/>
+              </svg>
+              <p class="about-us__text">Связано вручную с<br>любовью и умилением</p>
             </li>
             <li class="about-us__item">
-              ИКОНКА SVG
-              <p class="about-us__text">Поддержка отечественного производителя</p>
+              <svg aria-hidden="true" width="54.16" height="23.18" class="svg-image about-us__svg about-us__svg--rocket">
+                <use xlink:href="img/svg/sprite/sprite.svg#rocket-icon"/>
+              </svg>
+              <p class="about-us__text">Поддержка отечественного<br>производителя</p>
             </li>
             <li class="about-us__item">
-              ИКОНКА SVG
-              <p class="about-us__text">Поставляется в подарочной упаковке</p>
+              <svg aria-hidden="true" width="32.67" height="32.49" class="svg-image about-us__svg about-us__svg--gift">
+                <use xlink:href="img/svg/sprite/sprite.svg#gift-icon"/>
+              </svg>
+              <p class="about-us__text">Поставляется в<br>подарочной упаковке</p>
             </li>
           </ul>
         </div>
       </div>
     </section>
     <section class="impressions">
-      <div class="impressions-inner container">
-        <h2 class="main-title impressions__title">Отзывы</h2>
+      <div class="impressions__inner">
+        <h2 class="impressions__title">Отзывы</h2>
         <blockquote class="impressions__blockquote">
           Я молодая мама, но все равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!
           <footer class="impressions__footer">

@@ -177,21 +177,6 @@
   }
 }
 
-/* @mixin button($text, $background-color, $outline: true, $padding, $color-text-hover) {
-  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, white), font-lh(base));
-  @include box-shadow(0, 0, 0, color($main-c, white), true, 2px);
-  background-color: transparent;
-
-  &:hover {
-    background-color: color($main-c, secondary);
-  }
-
-  &:active {
-    color: rgba(color($base-c, white), 0.3);
-  }
-}
-*/
-
 @mixin link() {
   @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($base-c, black), font-lh(base-md));
 

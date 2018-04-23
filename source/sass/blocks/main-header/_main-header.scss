@@ -18,9 +18,19 @@
   @include box-shadow(0, -1px, 0, 0, color($grey-c, darker), true);
 
   @media (min-width: breakpoint(tablet)) {
+    position: absolute;
     box-shadow: none;
     order: -2;
-    margin-right: 20%;
+  }
+}
+
+.main-header__bottom {
+  @media (min-width: breakpoint(tablet)) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
   }
 }
 
@@ -41,6 +51,7 @@
     width: auto;
     padding: 0;
     margin: 0;
+    justify-content: flex-start;
   }
 
   @media (min-width: breakpoint(desktop)) {

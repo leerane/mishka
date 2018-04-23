@@ -9,6 +9,12 @@
     top: 0;
     left: 0;
     transform: translate(0, 0);
+    padding-top: 11px;
+    padding-right: 2px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    @include centerer(null, null, both);
   }
 }
 
