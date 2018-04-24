@@ -23,7 +23,8 @@
 
 .link--cart {
   @media (min-width: breakpoint(tablet)) {
-    padding-left: 52px;
+    padding-left: 51px;
+    padding-right: 1px;
   }
 }
 .link.link--mail {

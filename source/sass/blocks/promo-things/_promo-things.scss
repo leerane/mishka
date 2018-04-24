@@ -1,5 +1,29 @@
 .promo-things {
   background-color: color($grey-c, light);
+  position: relative;
+
+  @media (min-width: breakpoint(tablet)) {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      padding-top: (34px/1150px)*100%;
+      height: 24px;
+      max-height: 34px;
+      display: block;
+      width: 100%;
+      background-image: url("../img/svg/zigzag-fill.svg");
+      background-repeat: repeat-x;
+      background-position: 50% 100%;
+    }
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    &::after {
+      height: 34px;
+    }
+  }
 }
 
 .promo-things__inner {
@@ -36,10 +60,11 @@
   @media (min-width: breakpoint(tablet)) {
     margin: 0 auto;
     flex-direction: row;
-    padding: 0 50px;
+    width: (950px/1150px)*100%;
+    min-width: 668px;
   }
 
   @media (min-width: breakpoint(desktop)) {
-    max-width: 1150px;
+    width: 950px;
   }
 }

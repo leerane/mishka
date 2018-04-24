@@ -50,7 +50,8 @@
   flex-direction: column;
 
   @media (min-width: breakpoint(tablet)) {
-
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
@@ -62,6 +63,26 @@
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    flex-basis: 50%;
+
+    &:first-child {
+      order: -3;
+    }
+
+    &:nth-child(4) {
+      order: -2;
+    }
+
+    &:nth-child(2) {
+      order: -1;
+    }
+
+    &:nth-child(5) {
+      order: -1;
+    }
   }
 }
 

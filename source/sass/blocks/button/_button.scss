@@ -19,10 +19,11 @@
   justify-content: space-between;
 
   @media (min-width: breakpoint(tablet)) {
-    padding: 25px 0 15px 36px;
+    padding: 28px 0 15px 36px;
+    min-height: 119px;
   }
 
-  @media (min-width: breakpoint(tablet)) {
+  @media (min-width: breakpoint(desktop)) {
     padding: 25px 0 15px 37px;
   }
 }
@@ -40,6 +41,7 @@
   @media (min-width: breakpoint(tablet))  {
     font-size: font-size(other-l);
     line-height: font-lh(base-l);
+    min-height: 119px;
   }
 }
 
@@ -107,6 +109,14 @@
   margin-right: 36px;
   margin-top: -2px;
   fill: rgba(#149080, 0.5);
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: 2px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-right: 35px;
+  }
 }
 
 .button__svg--toy {
@@ -115,6 +125,7 @@
   fill: rgba(#149080, 0.5);
 
   @media (min-width: breakpoint(tablet)) {
+    margin-top: 3px;
     margin-right: 33px;
   }
 
