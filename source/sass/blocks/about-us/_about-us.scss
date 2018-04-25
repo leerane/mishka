@@ -1,6 +1,16 @@
 .about-us {
   padding-top: 27px;
   padding-bottom: 27px;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding-top: 63px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: auto;
+    padding: 0 100px;
+    max-width: 1150px;
+  }
 }
 
 .about-us__inner {
@@ -31,6 +41,8 @@
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
     font-size: font-size(h2-t);
     line-height: font-lh(title-md);
+    margin-left: -6px;
+    margin-bottom: 49px;
   }
 
   @media (min-width: breakpoint(desktop)) {
@@ -67,6 +79,7 @@
 
   @media (min-width: breakpoint(tablet)) {
     flex-basis: 50%;
+    margin-bottom: 113px;
 
     &:first-child {
       order: -3;

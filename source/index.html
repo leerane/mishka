@@ -132,7 +132,11 @@
               </table>
             </div>
             <div class="best-product__right">
-              <img src="img/triple-set-mobile@1x.jpg" class="best-product__image" width="260" height="315" alt="Вязаные корзинки">
+             <picture>
+               <source media="(min-width: 768px)" srcset="img/triple-set-tablet@1x.jpg" class="best-product__image">
+               <source srcset="img/triple-set-mobile@1x.jpg" class="best-product__image" class="best-product__image">
+               <img src="img/triple-set-mobile@1x.jpg" class="best-product__image" width="260" height="315" alt="Вязаные корзинки">
+              </picture>
             </div>
             <div class="best-product__buy">
               <p class="best-product__text">

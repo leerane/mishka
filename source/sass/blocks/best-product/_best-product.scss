@@ -18,9 +18,10 @@
     &::after {
       content: "";
       position: absolute;
-      bottom: -12px;
+      bottom: -15px;
       left: 0;
       display: block;
+      min-width: 768px;
       width: 100%;
       height: 17px;
       max-height: 23px;
@@ -51,7 +52,7 @@
   @media (min-width: breakpoint(tablet)) {
     position: relative;
     width: auto;
-    padding: 0 50px;
+    padding: 0 50px 42px 50px;
   }
 
   @media (min-width: breakpoint(desktop)) {
@@ -137,8 +138,8 @@
 
   @media (min-width: breakpoint(tablet)) {
     width: auto;
-    margin-right: 47px;
-    margin-bottom: 151px;
+    margin-right: 43px;
+    padding-bottom: 151px;
   }
 }
 
@@ -195,8 +196,12 @@
 .best-product__buy {
   @media (min-width: breakpoint(tablet)) {
     position: absolute;
-    bottom: 0;
-    width: 43%;
+    bottom: 13px;
+    left: -2px;
+    width: 100%;
+    min-width: 292px;
+    padding-right: 376px;
+
   }
 }
 
@@ -208,6 +213,7 @@
 
   @media (min-width: breakpoint(tablet)) {
     font-size: font-size(other-l);
+    margin-bottom: 34px;
   }
 }
 
@@ -232,6 +238,7 @@
     max-width: 333px;
     width: 333px;
     height: 404px;
+    margin-right: 1px;
   }
 }
 
@@ -240,4 +247,8 @@
   padding: 0;
   width: 100%;
   height: 100%;
+
+  @media (min-width: breakpoint(tablet)) {
+    height: 404px;
+  }
 }
