@@ -19,9 +19,24 @@
       fill: rgba(color($base-c, black), 0.3);
     }
   }
+
+  @media (min-width: breakpoint(tablet)) {
+    flex-basis: 50px;
+  }
 }
 
 .slider-button__svg {
   margin: 0 4px 0 0;
   padding: 0;
+
+  @media (min-width: breakpoint(tablet)) {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.slider-button__svg--left-arrow {
+  @media (min-width: breakpoint(tablet)) {
+    margin-right: 37px;
+  }
 }

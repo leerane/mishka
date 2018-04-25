@@ -11,6 +11,37 @@
     background-position: 50% 50%;
     background-repeat: repeat-x;
   }
+
+  @media (min-width: breakpoint(tablet)) {
+    padding-top: 0;
+    padding-bottom: 86px;
+    background-image: url("../img/review@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      display: block;
+      min-width: 768px;
+      width: 100%;
+      height: 17px;
+      max-height: 23px;
+      padding-top: (23px/1150px)*100%;
+      background-image: url("../img/svg/zigzag-separator--big.svg");
+      background-repeat: repeat-x;
+      background-position: 50% 100%
+    }
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: auto;
+    padding: 0 100px;
+    max-width: 1150px;
+  }
 }
 
 .impressions__inner {
@@ -21,13 +52,17 @@
 
   @media (min-width: breakpoint(tablet)) {
     position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: auto;
-    padding: 0 50px;
+    padding: 76px 50px 0 50px;
   }
 
   @media (min-width: breakpoint(desktop)) {
     width: auto;
-    padding: 0 100px;
+    padding: 0 50px;
     max-width: 1150px;
   }
 }
@@ -38,8 +73,11 @@
   @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
+    order: -2;
     font-size: font-size(h2-t);
     line-height: font-lh(title-md);
+    margin-left: -5px;
+    margin-bottom: 50px;
   }
 
   @media (min-width: breakpoint(desktop)) {
@@ -54,12 +92,17 @@
   margin-bottom: 29px;
 
   @media (min-width: breakpoint(tablet)) {
+    flex-basis: 100%;
     font-size: font-size(base-t);
   }
 }
 
 .impressions__footer {
   margin-top: 27px;
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: 57px;
+  }
 }
 
 .impressions__author {
@@ -73,6 +116,7 @@
   letter-spacing: 0.1px;
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
+    margin-bottom: 4px;
     font-size: font-size(other);
   }
 
@@ -84,6 +128,10 @@
 .impressions__author-contact {
   display: block;
   @include font-par(font-family(opensans), font-weight(regular), font-size(base-t), normal, color($main-c, secondary), font-lh(base-l));
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-left: -2px;
+  }
 }
 
 .impressions__buttons-wrapper {
@@ -104,6 +152,20 @@
     width: 1px;
     background-color: color($grey-c, dark);
   }
+
+  @media (min-width: breakpoint(tablet)) {
+    position: absolute;
+    bottom: -6px;
+    right: 69px;
+    box-shadow: none;
+    width: 137px;
+
+
+    &::after {
+      height: 0px;
+      width: 0px;
+    }
+  }
 }
 
 .impressions__slider-button {
@@ -111,7 +173,11 @@
 }
 
 .impressions__button-wrapper {
-
+  @media (min-width: breakpoint(tablet)) {
+    order: -1;
+    padding-top: 3px;
+    width: 175px;
+  }
 }
 
 .impressions__button {

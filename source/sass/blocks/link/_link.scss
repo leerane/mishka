@@ -58,6 +58,10 @@
       background-color: rgba(color($main-c, accent), 0.3);
     }
   }
+
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(base-t);
+  }
 }
 
 .link__text {

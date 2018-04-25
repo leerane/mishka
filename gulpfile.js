@@ -195,8 +195,7 @@ gulp.task("sprite", () => {
       },
       preview: false
     }))
-    .pipe(gulp.dest(path.sourcePath + path.imgPath + path.svgPath + path.spritePath))
-    .pipe(reload({ stream: true }));
+    .pipe(gulp.dest(path.sourcePath + path.imgPath + path.svgPath + path.spritePath));
 });
 
 gulp.task("server", ["browser-sync", "css", "libs-js", "js"], () => {

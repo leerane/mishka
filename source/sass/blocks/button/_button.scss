@@ -19,7 +19,9 @@
     color: rgba(color($base-c, white), 0.3);
   }
 
-
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(base-t);
+  }
 }
 
 .button__inner {

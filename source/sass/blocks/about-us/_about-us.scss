@@ -4,6 +4,7 @@
 
   @media (min-width: breakpoint(tablet)) {
     padding-top: 63px;
+    padding-bottom: 83px;
   }
 
   @media (min-width: breakpoint(desktop)) {
@@ -51,7 +52,7 @@
   }
 }
 
-.about-us .about-us__list-wrapper {
+.about-us__list-wrapper {
 
 }
 
@@ -79,7 +80,7 @@
 
   @media (min-width: breakpoint(tablet)) {
     flex-basis: 50%;
-    margin-bottom: 113px;
+    margin-bottom: 111px;
 
     &:first-child {
       order: -3;
@@ -96,6 +97,12 @@
     &:nth-child(5) {
       order: -1;
     }
+  }
+}
+
+.about-us__item--heart {
+  @media (min-width: breakpoint(tablet)) {
+    margin-bottom: 0;
   }
 }
 

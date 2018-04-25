@@ -20,4 +20,14 @@
   margin-top: 5px;
   margin-right: -5px;
   fill: color($main-c, primary);
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: 6px;
+    margin-right: -8px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-top: 6px;
+    margin-right: -8px;
+  }
 }

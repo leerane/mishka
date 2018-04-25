@@ -42,6 +42,10 @@
     background-image: url("../img/hero-big@1x.jpg");
     background-position: 50% 1%;
   }
+
+  @media (min-width: breakpoint(desktop)){
+    padding-bottom: 359px;
+  }
 }
 
 .promo-things__title {
@@ -64,11 +68,12 @@
   @media (min-width: breakpoint(tablet)) {
     margin: 0 auto;
     flex-direction: row;
-    width: (950px/1150px)*100%;
+    width: auto;
+    padding: 0 50px;
     min-width: 668px;
   }
 
   @media (min-width: breakpoint(desktop)) {
-    width: 950px;
+    max-width: 1150px;
   }
 }

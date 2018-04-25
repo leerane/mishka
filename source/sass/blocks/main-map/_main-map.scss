@@ -7,6 +7,11 @@
   position: relative;
   margin-bottom: 39px;
 
+  @media (min-width: breakpoint(tablet)) {
+    width: 768px;
+    margin: 0 auto 55px auto;
+  }
+
   @media (min-width: breakpoint(desktop)) {
     width: 525px;
   }

@@ -1,18 +1,5 @@
 .main-footer {
   background-color: color($grey-c, default);
-
-  &:hover {
-    .main-footer__logo-svg {
-      fill: color($main-c, accent);
-    }
-  }
-
-  &:active {
-    .social-link__svg {
-      fill: color($main-c, accent);
-      opacity: 0.3;
-    }
-  }
 }
 
 .main-footer__inner {
@@ -25,9 +12,13 @@
   flex-direction: column;
 
   @media (min-width: breakpoint(tablet)) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
+    min-height: 143px;
     width: auto;
-    padding: 0 50px;
+    padding: 44px 50px 44px 50px
   }
 
   @media (min-width: breakpoint(desktop)) {
@@ -37,10 +28,39 @@
   }
 }
 
+
+.main-footer__logo {
+  display: none;
+
+  &:focus, &:hover {
+    .main-footer__logo-svg {
+      fill: color($main-c, accent);
+    }
+  }
+
+  &:active {
+    .main-footer__logo-svg {
+      fill: rgba(color($main-c, accent), 0.3);
+    }
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    display: block;
+    position: static;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    padding-top: 0;
+    padding-bottom: 7px;
+    padding-right: 2px;
+  }
+}
+
 .main-footer__logo-svg {
   display: none;
 
   @media (min-width: breakpoint(tablet)) {
     display: block;
+    fill: #231f20;
   }
 }
