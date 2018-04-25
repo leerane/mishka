@@ -1,3 +1,21 @@
 .main-map {
+  min-height: 457px;
+  max-height: 457px;
+  width: 100%;
+  background-color: #f6e9d6;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 39px;
 
-}
+  @media (min-width: breakpoint(desktop)) {
+    width: 525px;
+  }
+}
+
+.main-map__image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 768px;
+}

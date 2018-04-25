@@ -1,7 +1,23 @@
 .htmlacademy-logo {
+  margin: 0;
+  padding: 0;
 
+  &:focus, &:hover {
+    .htmlacademy-logo__svg {
+      fill: color($main-c, accent);
+    }
+  }
+
+  &:active {
+    color: rgba(color($base-c, black), 0.3);
+    .htmlacademy-logo__svg {
+      color: rgba(color($main-c, accent), 0.3);
+    }
+  }
 }
 
-.htmlacademy-logo .htmlacademy-logo__svg {
-
-}
+.htmlacademy-logo__svg {
+  margin-top: 5px;
+  margin-right: -5px;
+  fill: color($main-c, primary);
+}

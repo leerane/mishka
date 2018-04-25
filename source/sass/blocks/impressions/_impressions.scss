@@ -1,10 +1,21 @@
 .impressions {
+  position: relative;
   padding-top: 28px;
+
+  &::after {
+    content: "";
+    background-image: url("../img/svg/zigzag-separator.svg");
+    height: 6px;
+    display: block;
+    background-size: auto;
+    background-position: 50% 50%;
+    background-repeat: repeat-x;
+  }
 }
 
 .impressions__inner {
   width: auto;
-  padding: 0 30px;
+  padding: 0 30px 45px 30px;
   margin: 0 auto;
 
 
@@ -40,6 +51,7 @@
 .impressions__blockquote {
   @include clear-list();
   @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($base-c, black), 30px);
+  margin-bottom: 29px;
 
   @media (min-width: breakpoint(tablet)) {
     font-size: font-size(base-t);
@@ -47,7 +59,7 @@
 }
 
 .impressions__footer {
-
+  margin-top: 27px;
 }
 
 .impressions__author {
@@ -56,23 +68,42 @@
 
 .impressions__author-name {
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), font-lh(base-md));
-  margin-bottom: 20px;
+  display: block;
+  margin-bottom: 3px;
+  letter-spacing: 0.1px;
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
     font-size: font-size(other);
   }
 
   @media (min-width: breakpoint(desktop)) {
-    font-size: font-size(base-m);
+    font-size: font-size(base-t);
   }
 }
 
 .impressions__author-contact {
-  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-l));
+  display: block;
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-t), normal, color($main-c, secondary), font-lh(base-l));
 }
 
 .impressions__buttons-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+  @include box-shadow(0, 0, 0, 1px, color($grey-c, dark), true);
 
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 50px;
+    width: 1px;
+    background-color: color($grey-c, dark);
+  }
 }
 
 .impressions__slider-button {

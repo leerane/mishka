@@ -1,3 +1,27 @@
 .slider-button {
+  margin: 0;
+  padding: 13px 0;
+  border: 0;
+  background-color: transparent;
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-}
+  &:focus, &:hover {
+    .slider-button__svg {
+      fill: rgba(color($base-c, black), 0.6);
+    }
+  }
+
+  &:active {
+    .slider-button__svg {
+      fill: rgba(color($base-c, black), 0.3);
+    }
+  }
+}
+
+.slider-button__svg {
+  margin: 0 4px 0 0;
+  padding: 0;
+}

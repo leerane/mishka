@@ -17,9 +17,24 @@
 
 .main-footer__inner {
   position: relative;
+  width: auto;
+  margin: 0 auto;
+  padding: 26px 30px 15px 30px;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  padding-top: 25px;
+
+  @media (min-width: breakpoint(tablet)) {
+    position: relative;
+    width: auto;
+    padding: 0 50px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: auto;
+    padding: 0 50px;
+    max-width: 1150px;
+  }
 }
 
 .main-footer__logo-svg {

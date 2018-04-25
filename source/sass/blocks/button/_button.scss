@@ -1,18 +1,31 @@
 .button {
   @include box-shadow(0, 0, 0, 2px, color($main-c, secondary), true);
-  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, secondary), font-lh(base));
+  @include font-par(font-family(opensans), font-weight(bold), font-size(other), normal, color($main-c, secondary), font-lh(base));
   background-color: transparent;
   text-transform: uppercase;
-  padding: 16px 85px;
+  padding: 15px 40px 17px 40px;
   width: 100%;
   display: block;
   text-align: center;
   margin: 0;
+  cursor: pointer;
+
+  &:focus, &:hover {
+    background-color: color($main-c, secondary);
+    color: color($base-c, white);
+  }
+
+  &:active {
+    color: rgba(color($base-c, white), 0.3);
+  }
+
+
 }
 
 .button__inner {
   width: 100%;
   padding: 25px 0 15px 29px;
+  min-height: 103px;
   margin: 0;
   display: flex;
   flex-direction: row;
@@ -46,7 +59,7 @@
 }
 
 .button--icon--interior {
-  &:hover {
+  &:focus, &:hover {
     position: relative;
     background-color: #59d5bc;
 
@@ -75,7 +88,7 @@
 .button--icon--toy {
   background-color: #56c3b2;
 
-  &:hover {
+  &:focus, &:hover {
     position: relative;
     background-color: color($main-c, accent);
 
@@ -132,4 +145,8 @@
   @media (min-width: breakpoint(desktop)) {
     margin-right: 35px;
   }
+}
+
+.button--t--s {
+  font-size: font-size(base-t);
 }

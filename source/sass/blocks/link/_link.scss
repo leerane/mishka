@@ -27,8 +27,37 @@
     padding-right: 1px;
   }
 }
-.link.link--mail {
 
+.link--mail {
+  position: relative;
+  line-height: font-lh(base-l);
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: " ";
+    height: 1px;
+    width: 100%;
+    background-color: color($main-c, primary);
+  }
+
+  &:focus, &:hover {
+    color: color($main-c, accent);
+
+    &::after {
+      background-color: color($main-c, accent);
+    }
+  }
+
+  &:active {
+    color: rgba(color($main-c, accent), 0.3);
+
+    &::after {
+      width: 88%;
+      background-color: rgba(color($main-c, accent), 0.3);
+    }
+  }
 }
 
 .link__text {

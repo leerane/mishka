@@ -23,6 +23,7 @@
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
     font-size: font-size(h2-t);
     line-height: font-lh(title-md);
+    margin-left: 3px;
   }
 
   @media (min-width: breakpoint(desktop)) {

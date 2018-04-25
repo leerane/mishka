@@ -22,21 +22,25 @@
   @media (min-width: breakpoint(desktop)) {
     &::after {
       height: 34px;
+      padding-top: 0;
     }
   }
 }
 
 .promo-things__inner {
   padding-top: 70px;
+  background-color: color($grey-c, light);
   background-image: url("../img/hero-mobile@1x.jpg");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
+  background-position: 49.7% 20%;
   padding-bottom: 122px;
 
   @media (min-width: breakpoint(tablet)){
     padding-top: 153px;
     padding-bottom: 373px;
+    background-color: color($grey-c, light);
+    background-image: url("../img/hero-big@1x.jpg");
+    background-position: 50% 1%;
   }
 }
 
