@@ -9,11 +9,23 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-
+    padding-bottom: 105px;
   }
 }
 
 .contact__inner {
+  @media (min-width: breakpoint(desktop)) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: auto;
+    margin: 0 auto;
+    max-width: 1150px;
+    padding: 79px 50px 0 223px;
+  }
+}
+
+.contact__info-wrapper {
   width: auto;
   margin: 0 auto;
   padding: 0 30px 7px 30px;
@@ -38,9 +50,22 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
+    position: relative;
     width: auto;
-    padding: 0 50px;
-    max-width: 1150px;
+    display: block;
+    margin: 0;
+    padding: 0 0 49px 0;
+
+    &::after {
+      position: absolute;
+      top: -8px;
+      left: -110px;
+      content: "";
+      width: 47px;
+      height: 81px;
+      background-image: url("../img/svg/flag.svg");
+      background-repeat: no-repeat;
+    }
   }
 }
 
@@ -59,6 +84,8 @@
   @media (min-width: breakpoint(desktop)) {
     font-size: font-size(h2-d);
     line-height: font-lh(title-l);
+    letter-spacing: -0.8px;
+    margin-bottom: 49px;
   }
 }
 
@@ -72,7 +99,8 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-
+    flex-direction: column;
+    margin-left: 2px;
   }
 }
 
@@ -85,7 +113,7 @@
   flex-basis: 100%;
   @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-l));
 
-  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
+  @media (min-width: breakpoint(tablet)) {
     font-size: font-size(base-t);
     line-height: font-lh(base-l);
   }
@@ -105,7 +133,8 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-
+    flex-basis: auto;
+    margin-right: 26px;
   }
 }
 
@@ -146,6 +175,8 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-
+    margin: 0 0 0 2px;
+    padding: 0;
+    max-width: 230px;
   }
 }

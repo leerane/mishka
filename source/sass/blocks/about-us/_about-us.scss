@@ -9,8 +9,7 @@
 
   @media (min-width: breakpoint(desktop)) {
     width: auto;
-    padding: 0 100px;
-    max-width: 1150px;
+    padding-top: 74px;
   }
 }
 
@@ -29,7 +28,7 @@
 
   @media (min-width: breakpoint(desktop)) {
     width: auto;
-    padding: 0 100px;
+    padding: 0 100px 0 224px;
     max-width: 1150px;
   }
 }
@@ -49,6 +48,8 @@
   @media (min-width: breakpoint(desktop)) {
     font-size: font-size(h2-d);
     line-height: font-lh(title-l);
+    letter-spacing: -0.5px;
+    margin-bottom: 49px;
   }
 }
 
@@ -65,6 +66,11 @@
   @media (min-width: breakpoint(tablet)) {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-left: 2px;
+    max-width: 700px;
   }
 }
 
@@ -97,6 +103,10 @@
     &:nth-child(5) {
       order: -1;
     }
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    flex-basis: 50%;
   }
 }
 

@@ -10,15 +10,16 @@
 
   &:active {
     color: rgba(color($base-c, black), 0.3);
+
     .htmlacademy-logo__svg {
       color: rgba(color($main-c, accent), 0.3);
     }
   }
 }
 
-.htmlacademy-logo__svg {
+.htmlacademy-logo {
   margin-top: 5px;
-  margin-right: -5px;
+  margin-right: -7px;
   fill: color($main-c, primary);
 
   @media (min-width: breakpoint(tablet)) {

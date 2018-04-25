@@ -31,6 +31,7 @@
 
 .main-footer__logo {
   display: none;
+  cursor: pointer;
 
   &:focus, &:hover {
     .main-footer__logo-svg {
@@ -53,6 +54,10 @@
     padding-top: 0;
     padding-bottom: 7px;
     padding-right: 2px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-left: 1px;
   }
 }
 

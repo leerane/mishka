@@ -57,7 +57,7 @@
 
   @media (min-width: breakpoint(desktop)) {
     width: auto;
-    padding: 0 50px;
+    padding: 0 50px 81px 50px;
     max-width: 1150px;
   }
 }
@@ -73,6 +73,17 @@
     align-items: center;
     margin-bottom: 44px;
   }
+
+  @media (min-width: breakpoint(desktop)) {
+    position: relative;
+    top: 79px;
+    left: 48px;
+    z-index: 1;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 123px;
+  }
 }
 
 .best-product__subtitle {
@@ -83,6 +94,11 @@
     line-height: 17px;
     text-align: center;
     margin-right: 26px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    order: -1;
+    margin-right: 51px;
   }
 }
 
@@ -109,6 +125,8 @@
   @media (min-width: breakpoint(desktop)) {
     font-size: font-size(h2-d);
     line-height: font-lh(title-l);
+    letter-spacing: -0.2px;
+    margin-top: -1px;
   }
 }
 
@@ -121,6 +139,10 @@
     font-size: font-size(base-t);
     line-height: font-lh(base-l);
     margin-bottom: 38px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: 50px;
   }
 }
 
@@ -141,6 +163,11 @@
     margin-right: 43px;
     padding-bottom: 151px;
   }
+
+  @media (min-width: breakpoint(desktop)) {
+    max-width: 292px;
+    padding-bottom: 79px;
+  }
 }
 
 .best-product__middle {
@@ -150,6 +177,12 @@
     position: relative;
     display: flex;
     flex-direction: row;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    position: static;
+    flex-direction: column;
+    padding-left: 175px;
   }
 }
 
@@ -191,6 +224,17 @@
         letter-spacing: -0.1px;
     }
   }
+
+  @media (min-width: breakpoint(desktop)) {
+    td {
+      padding-top: 8px;
+      padding-bottom: 12px;
+    }
+
+    td:last-child {
+      margin-left: -4px;
+    }
+  }
 }
 
 .best-product__buy {
@@ -201,7 +245,12 @@
     width: 100%;
     min-width: 292px;
     padding-right: 376px;
+  }
 
+  @media (min-width: breakpoint(desktop)) {
+    position: static;
+    max-width: 292px;
+    padding-right: 0;
   }
 }
 
@@ -240,6 +289,16 @@
     height: 404px;
     margin-right: 1px;
   }
+
+  @media (min-width: breakpoint(desktop)) {
+    position: absolute;
+    top: 18px;
+    right: 49px;
+    flex-shrink: 0;
+    max-width: 525px;
+    width: 525px;
+    height: 636px;
+  }
 }
 
 .best-product__image {
@@ -250,5 +309,9 @@
 
   @media (min-width: breakpoint(tablet)) {
     height: 404px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    height: 636px;
   }
 }

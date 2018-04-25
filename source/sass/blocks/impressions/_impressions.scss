@@ -14,11 +14,7 @@
 
   @media (min-width: breakpoint(tablet)) {
     padding-top: 0;
-    padding-bottom: 86px;
-    background-image: url("../img/review@1x.jpg");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: auto;
+    padding-bottom: 69px;
 
     &::after {
       content: "";
@@ -38,9 +34,26 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-    width: auto;
-    padding: 0 100px;
-    max-width: 1150px;
+    padding-bottom: 82px;
+
+    &::after {
+      height: 23px;
+      padding-top: 0;
+    }
+  }
+}
+
+.impressions__img-wrapper {
+  @media (min-width: breakpoint(tablet)) {
+    background-image: url("../img/review@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: auto;
+    min-height: 457px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    background-image: none;
   }
 }
 
@@ -62,8 +75,24 @@
 
   @media (min-width: breakpoint(desktop)) {
     width: auto;
-    padding: 0 50px;
+    padding: 76px 50px 0 223px;
     max-width: 1150px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 50px;
+      width: 350px;
+      height: 457px;
+      padding: 0;
+      z-index: -1;
+      background-image: url("../img/review@1x.jpg");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: auto;
+    }
   }
 }
 
@@ -81,8 +110,10 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
+    order: -2;
     font-size: font-size(h2-d);
     line-height: font-lh(title-l);
+    margin-bottom: 50px;
   }
 }
 
@@ -95,6 +126,19 @@
     flex-basis: 100%;
     font-size: font-size(base-t);
   }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-left: 2px;
+    flex-basis: 90%;
+  }
+}
+
+.impressions__break {
+  display: none;
+
+  @media (min-width: breakpoint(desktop)) {
+    display: block;
+  }
 }
 
 .impressions__footer {
@@ -102,6 +146,10 @@
 
   @media (min-width: breakpoint(tablet)) {
     margin-top: 57px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-top: 39px;
   }
 }
 
@@ -131,6 +179,10 @@
 
   @media (min-width: breakpoint(tablet)) {
     margin-left: -2px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-left: 0;
   }
 }
 
@@ -176,6 +228,12 @@
   @media (min-width: breakpoint(tablet)) {
     order: -1;
     padding-top: 3px;
+    width: 175px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    order: -1;
+    padding-top: 10px;
     width: 175px;
   }
 }
