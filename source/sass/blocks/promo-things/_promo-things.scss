@@ -57,11 +57,12 @@
 
   @media (min-width: breakpoint(tablet)){
     padding-top: 95px;
-    padding-bottom: 80px;
+    padding-bottom: 79px;
   }
 
   @media (min-width: breakpoint(desktop)){
-    padding-bottom: 359px;
+    padding-top: 93px;
+    padding-bottom: 102px;
   }
 }
 

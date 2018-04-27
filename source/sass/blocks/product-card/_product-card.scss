@@ -17,8 +17,7 @@
 
   @media (min-width: breakpoint(desktop)) {
     width: auto;
-    padding: 0 50px 81px 50px;
-    max-width: 1150px;
+    flex-direction: column;
   }
 }
 
@@ -47,17 +46,27 @@
   }
 
   @media (min-width: breakpoint(tablet)) {
-    flex-basis: 50%;
+    flex-basis: auto;
+    width: 50%;
     margin: 0;
     min-height: 334px;
-    width: 100%;
+    height: auto;
     padding-bottom: 0;
     flex-shrink: 0;
     background-color: #cacecd;
+    overflow: visible;
   }
 
   @media (min-width: breakpoint(tablet)) {
-    flex-basis: 50%;
+    flex-basis: auto;
+    width: 100%;
+    margin: 0;
+    max-height: 462px;
+    height: auto;
+    padding-bottom: 0;
+    flex-shrink: 0;
+    background-color: #cacecd;
+    overflow: visible;
   }
 }
 
@@ -71,16 +80,6 @@
 .product-card__top {
   margin-bottom: 41px;
   position: relative;
-
-  &::after {
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    content: "";
-    width: 100%;
-    height: 1px;
-    background-color: color($grey-c, dark);
-  }
 }
 
 .product-card__description {
@@ -89,8 +88,24 @@
   @include box-shadow(0, 0, 0, 1px, color($grey-c, dark), true);
 
   @media (min-width: breakpoint(tablet)) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 335px;
-    flex-basis: 50%;
+    flex-basis: auto;
+    width: 50%;
+    padding-top: 26px;
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 316px;
+    flex-basis: auto;
+    width: 100%;
+    padding-top: 26px;
+    height: 197px;
   }
 }
 
@@ -101,6 +116,7 @@
 
   @media (min-width: breakpoint(tablet)) {
     font-size: font-size(other-l);
+    width: 86%;
   }
 
   @media (min-width: breakpoint(desktop)) {
@@ -131,6 +147,33 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: -22px;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: color($grey-c, dark);
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    padding-left: 4px;
+    padding-right: 6px;
+    margin-bottom: -1px;
+
+    &::after {
+      position: absolute;
+      top: -23px;
+      left: 4px;
+      content: "";
+      width: 96%;
+      height: 1px;
+      background-color: color($grey-c, dark);
+    }
+  }
 }
 
 .product-card__link {
