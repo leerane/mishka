@@ -16,17 +16,11 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 a {
   text-decoration: none;
-}
-
-svg path,
-rect,
-g {
-  fill: inherit;
-  stroke: inherit;
 }
 
 @include font-face(Open Sans, "/fonts")

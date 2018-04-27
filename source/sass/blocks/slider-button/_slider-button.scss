@@ -23,6 +23,10 @@
 
   @media (min-width: breakpoint(tablet)) {
     flex-basis: 50px;
+
+    &:first-of-type {
+      margin-right: 37px;
+    }
   }
 }
 
@@ -33,11 +37,5 @@
   @media (min-width: breakpoint(tablet)) {
     margin: 0;
     padding: 0;
-  }
-}
-
-.slider-button__svg--left-arrow {
-  @media (min-width: breakpoint(tablet)) {
-    margin-right: 37px;
   }
 }

@@ -23,15 +23,14 @@
 
   @media (min-width: breakpoint(desktop)) {
     width: auto;
-    padding: 0 50px;
+    padding: 44px 50px;
     max-width: 1150px;
   }
 }
 
-
 .main-footer__logo {
   display: none;
-  cursor: pointer;
+  pointer-events: none;
 
   &:focus, &:hover {
     .main-footer__logo-svg {

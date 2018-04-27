@@ -8,7 +8,8 @@ var name = {
   scssFile: "styles.scss",
   libsFile: "libs.js",
   configFile: "_config.scss",
-  spriteFile: "_sprite.scss"
+  spriteFile: "_sprite.scss",
+  lastAttrFile: "_last-attr.scss"
 };
 
 // Path variables
@@ -29,6 +30,7 @@ var path = {
   scssPattern: "/**/*.{scss, sass}",
   svgPattern: "/*.svg",
   _scssPattern: "/**/_*.{scss, sass}",
+  _lastAttrPattern: "/" + name.lastAttrFile,
   _configFilePattern: "/" + name.configFile,
   scssFilePattern: "/" + name.scssFile,
   _spriteFilePattern: "/" + name.spriteFile,
@@ -83,7 +85,8 @@ gulp.task("browser-sync", () => {
 gulp.task("sass-concat", () => {
   return gulp.src(
     [path.sourcePath + path.scssPath + path.utilityPath + path._configFilePattern,
-      path.sourcePath + path.scssPath + path.blocksPath + path._scssPattern]
+      path.sourcePath + path.scssPath + path.blocksPath + path._scssPattern,
+    path.sourcePath + path.scssPath + path.utilityPath + path._lastAttrPattern]
   )
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -199,7 +202,6 @@ gulp.task("sprite", () => {
 });
 
 gulp.task("server", ["browser-sync", "css", "libs-js", "js"], () => {
-  gulp.watch(path.sourcePath + path.imgPath + path.svgPath + path.svgPattern, ["sprite"]);
   gulp.watch(path.sourcePath + path.scssPath + path.scssPattern, ["css"]);
   gulp.watch(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, ["js"]);
   gulp.watch(path.sourcePath + path.htmlPattern).on("change", reload);

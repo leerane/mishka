@@ -4,8 +4,12 @@
 }
 
 .link--icon {
-  &:hover {
+  &:focus, :hover {
     .main-navigation__icon {
+      fill: color($main-c, primary);
+    }
+
+    .product-card__icon {
       fill: color($main-c, primary);
     }
   }
@@ -14,11 +18,11 @@
     .main-navigation__icon {
       fill: rgba(color($main-c, primary), 0.3);
     }
+
+    .product-card__icon {
+      fill: rgba(color($main-c, primary), 0.3);
+    }
   }
-}
-
-.link--search {
-
 }
 
 .link--cart {

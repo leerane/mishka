@@ -75,7 +75,8 @@
 }
 
 .about-us__item {
-  flex-basis: 100%;
+  flex-basis: auto;
+  width: 100%;
   max-width: 100%;
   margin-bottom: 83px;
   position: relative;
@@ -85,7 +86,8 @@
   }
 
   @media (min-width: breakpoint(tablet)) {
-    flex-basis: 50%;
+    flex-basis: auto;
+    width: 50%;
     margin-bottom: 111px;
 
     &:first-child {

@@ -26,8 +26,8 @@
       height: 17px;
       max-height: 23px;
       padding-top: (23px/1150px)*100%;
+      background-repeat: no-repeat;
       background-image: url("../img/svg/zigzag-separator--big.svg");
-      background-repeat: repeat-x;
       background-position: 50% 100%
     }
   }
@@ -38,6 +38,7 @@
     &::after {
       height: 23px;
       padding-top: 0;
+      background-size: 1052px;
     }
   }
 }
@@ -271,7 +272,6 @@
 }
 
 .best-product__button-wrapper {
-  min-width: 259px;
   width: auto;
   display: flex;
   justify-content: space-between;
@@ -302,6 +302,7 @@
 }
 
 .best-product__image {
+  background-color: #f1f1f1;
   margin: 0;
   padding: 0;
   width: 100%;

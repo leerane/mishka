@@ -28,7 +28,7 @@
       max-height: 23px;
       padding-top: (23px/1150px)*100%;
       background-image: url("../img/svg/zigzag-separator--big.svg");
-      background-repeat: repeat-x;
+      background-repeat: no-repeat;
       background-position: 50% 100%
     }
   }
@@ -39,6 +39,7 @@
     &::after {
       height: 23px;
       padding-top: 0;
+      background-size: 1052px;
     }
   }
 }
@@ -226,12 +227,14 @@
 
 .impressions__button-wrapper {
   @media (min-width: breakpoint(tablet)) {
+    margin-left: auto;
     order: -1;
     padding-top: 3px;
     width: 175px;
   }
 
   @media (min-width: breakpoint(desktop)) {
+    margin-left: auto;
     order: -1;
     padding-top: 10px;
     width: 175px;

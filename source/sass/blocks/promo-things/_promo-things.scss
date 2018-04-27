@@ -49,6 +49,22 @@
   }
 }
 
+.promo-things__inner--no-image {
+  padding-top: 70px;
+  background-color: #f1f1f1;
+  background-image: none;
+  padding-bottom: 76px;
+
+  @media (min-width: breakpoint(tablet)){
+    padding-top: 95px;
+    padding-bottom: 80px;
+  }
+
+  @media (min-width: breakpoint(desktop)){
+    padding-bottom: 359px;
+  }
+}
+
 .promo-things__title {
 
 }
@@ -59,7 +75,8 @@
 }
 
 .promo-things__button-wrapper {
-  flex-basis: 50%;
+  flex-basis: auto;
+  width: 100%;
 }
 
 .promo-things__bottom {

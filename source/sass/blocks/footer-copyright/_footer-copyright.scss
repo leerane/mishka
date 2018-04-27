@@ -34,6 +34,7 @@
   padding: 0;
   display: flex;
   align-items: center;
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-d), normal, color($base-c, black), font-lh(base));
 
   &:focus, &:hover {
     .htmlacademy-logo {
@@ -45,7 +46,7 @@
     color: rgba(color($base-c, black), 0.3);
 
     .htmlacademy-logo {
-      color: rgba(color($main-c, accent), 0.3);
+      fill: rgba(color($main-c, accent), 0.3);
     }
   }
 
@@ -57,7 +58,6 @@
 .footer-copyright__text {
   margin: 0 21px 0 0;
   padding: 0;
-  @include font-par(font-family(opensans), font-weight(bold), font-size(base-d), normal, color($base-c, black), font-lh(base));
 
   @media (min-width: breakpoint(tablet)) {
     margin-right: 22px;

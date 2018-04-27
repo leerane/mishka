@@ -54,7 +54,8 @@
     width: auto;
     display: block;
     margin: 0;
-    padding: 0 0 49px 0;
+    padding: 0;
+    margin-bottom: 49px;
 
     &::after {
       position: absolute;
@@ -119,7 +120,8 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-
+    flex-basis: auto;
+    width: 100%;
   }
 }
 
