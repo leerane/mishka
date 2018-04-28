@@ -1,7 +1,6 @@
 .product-card {
   margin: 0;
   padding: 0;
-
 }
 
 .product-card__inner {
@@ -18,6 +17,7 @@
   @media (min-width: breakpoint(desktop)) {
     width: auto;
     flex-direction: column;
+    height: 100%;
   }
 }
 
@@ -57,7 +57,7 @@
     overflow: visible;
   }
 
-  @media (min-width: breakpoint(tablet)) {
+  @media (min-width: breakpoint(desktop)) {
     flex-basis: auto;
     width: 100%;
     margin: 0;
@@ -80,6 +80,10 @@
 .product-card__top {
   margin-bottom: 41px;
   position: relative;
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: 38px;
+  }
 }
 
 .product-card__description {
@@ -97,15 +101,15 @@
     padding-top: 26px;
   }
 
-  @media (min-width: breakpoint(tablet)) {
+  @media (min-width: breakpoint(desktop)) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-width: 316px;
     flex-basis: auto;
     width: 100%;
-    padding-top: 26px;
-    height: 197px;
+    padding: 26px 20px 28px 28px;
+    height: 100%;
   }
 }
 
@@ -120,8 +124,7 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-    letter-spacing: -0.2px;
-    margin-top: -1px;
+
   }
 }
 
@@ -135,8 +138,7 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-    letter-spacing: -0.2px;
-    margin-top: -1px;
+    margin-top: 0;
   }
 }
 
@@ -170,6 +172,21 @@
       left: 4px;
       content: "";
       width: 96%;
+      height: 1px;
+      background-color: color($grey-c, dark);
+    }
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding-right: 13px;
+    padding-left: 0;
+
+    &::after {
+      position: absolute;
+      top: -23px;
+      left: -1px;
+      content: "";
+      width: 95%;
       height: 1px;
       background-color: color($grey-c, dark);
     }

@@ -7,7 +7,7 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-    padding: 32px 0 0 0;
+    padding: 0;
   }
 }
 
@@ -26,7 +26,7 @@
 
   @media (min-width: breakpoint(desktop)) {
     width: auto;
-    padding: 0 50px 81px 50px;
+    padding: 0 50px 105px 50px;
     max-width: 1150px;
   }
 }
@@ -34,6 +34,7 @@
 .catalog-video__content {
   margin: 0;
   padding: 0;
+  position: relative;
   @include box-shadow(0, 0, 0, 1px, color($grey-c, dark), true);
 
   display: flex;
@@ -46,6 +47,7 @@
 
   @media (min-width: breakpoint(desktop)) {
     width: auto;
+    padding-bottom: 60px;
   }
 }
 
@@ -62,6 +64,15 @@
   @media (min-width: breakpoint(tablet)) {
     padding: 33px 42px 24px 42px;
   }
+
+  @media (min-width: breakpoint(desktop)) {
+    flex-direction: column;
+    width: auto;
+    align-items: flex-start;
+    margin-left: 682px;
+    padding: 41px 80px 24px 80px;
+    margin-bottom: 7px;
+  }
 }
 
 .catalog-video__title {
@@ -77,8 +88,7 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-    letter-spacing: -0.2px;
-    margin-top: -1px;
+    margin-left: -2px;
   }
 }
 
@@ -92,6 +102,10 @@
   @media (min-width: breakpoint(tablet)) {
     margin-right: 32px;
   }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: 17px;
+  }
 }
 
 .catalog-video__media-wrapper {
@@ -101,6 +115,13 @@
   @media (min-width: breakpoint(tablet)) {
     order: -1;
   }
+
+  @media (min-width: breakpoint(desktop)) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 682px;
+  }
 }
 
 .catalog-video__bottom {
@@ -109,6 +130,11 @@
 
   @media (min-width: breakpoint(tablet)) {
     padding: 0 40px 46px 40px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding: 0 56px 0 78px;
+    margin-left: 682px;
   }
 }
 
@@ -187,8 +213,7 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-    letter-spacing: -0.2px;
-    margin-top: -1px;
+    margin-bottom: 46px;
   }
 }
 
