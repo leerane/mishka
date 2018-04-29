@@ -1,15 +1,39 @@
 .radio {
+  padding: 10px 0 0 0;
+}
+
+.radio__control {
 
 }
 
-.radio .radio__control {
+.radio__label {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
 
-}
+  &::before {
+    margin-right: 22px;
+    flex-shrink: 0;
+    margin-top: -9px;
+    content: "";
+    width: 40px;
+    height: 40px;
+    @include border(2px, solid, color($main-c, secondary));
+    @include border-radius(50%);
+  }
 
-.radio .radio__label {
-
+  &::before {
+    margin-right: 22px;
+    flex-shrink: 0;
+    margin-top: -9px;
+    content: "";
+    width: 40px;
+    height: 40px;
+    @include border(2px, solid, color($main-c, secondary));
+    @include border-radius(50%);
+  }
 }
 
 .radio .radio__label.radio__label--dot {
 
-}
+}

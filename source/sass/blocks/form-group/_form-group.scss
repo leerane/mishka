@@ -1,17 +1,49 @@
 .form-group {
+  margin: 0;
+  padding: 0;
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), 18px);
 
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(base-d);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+
+  }
 }
 
 .form-group .form-group__inner {
 
 }
 
-.form-group .form-group__title {
+.form-group__title {
+  margin: 0 0 24px -1px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, primary), 16px);
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+    height: 1px;
+    width: 76%;
+    background-color: color($main-c, primary);
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+
+  }
 
 }
 
-.form-group .form-group__radio {
-
+.form-group__radio {
+  margin-bottom: 14px;
 }
 
 .form-group .form-group__checkbox {
@@ -24,4 +56,4 @@
 
 .form-group .form-group__textarea {
 
-}
+}

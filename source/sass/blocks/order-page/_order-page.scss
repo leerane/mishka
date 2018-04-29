@@ -1,7 +1,45 @@
 .order-page {
+  padding-top: 22px;
 
+  @media (min-width: breakpoint(tablet)) {
+    padding-top: 22px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding-top: 22px;
+  }
 }
 
-.order-page .order-page__paragraph {
+.order-page__paragraph {
+  margin: 0 0 24px 0;
+  padding: 0;
+  @include font-par(font-family(opensans), font-weight(regular), 13px, normal, color($main-c, secondary), font-lh(base-md));
 
-}
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(base-t);
+    line-height: font-lh(base-l);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-top: 0;
+  }
+}
+
+
+.order-page__inner {
+  width: auto;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  @media (min-width: breakpoint(tablet)) {
+    position: relative;
+    width: auto;
+    padding: 0 50px 42px 50px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: auto;
+    padding: 0 49px 3px 49px;
+    max-width: 1150px;
+  }
+}

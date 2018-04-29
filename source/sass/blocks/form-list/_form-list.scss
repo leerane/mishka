@@ -1,11 +1,12 @@
 .form-list {
-
+  @include clear-list();
 }
 
-.form-list .form-list__item {
-
+.form-list__item {
+  margin: 0;
+  padding: 0 0 35px 0;
 }
 
 .form-list .form-list__bottom {
 
-}
+}
