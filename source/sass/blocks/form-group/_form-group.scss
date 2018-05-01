@@ -21,14 +21,14 @@
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, primary), 16px);
   text-transform: uppercase;
 
   &::after {
     content: "";
     height: 1px;
-    width: 76%;
+    margin-left: 20px;
+    width: 100%;
     background-color: color($main-c, primary);
   }
 

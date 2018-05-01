@@ -159,6 +159,7 @@
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
     margin-left: 0;
+    letter-spacing: -0.1px;
   }
 
   @media (min-width: breakpoint(desktop)) {

@@ -12,24 +12,23 @@
   align-items: flex-start;
 
   &::before {
-    margin-right: 22px;
+    margin-right: 23px;
     flex-shrink: 0;
     margin-top: -9px;
     content: "";
-    width: 40px;
-    height: 40px;
+    width: 39px;
+    height: 39px;
     @include border(2px, solid, color($main-c, secondary));
     @include border-radius(50%);
   }
 
-  &::before {
-    margin-right: 22px;
+  &::after {
     flex-shrink: 0;
     margin-top: -9px;
     content: "";
-    width: 40px;
-    height: 40px;
-    @include border(2px, solid, color($main-c, secondary));
+    width: 16px;
+    height: 16px;
+    background-color: color($main-c, primary);
     @include border-radius(50%);
   }
 }
