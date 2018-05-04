@@ -4,7 +4,7 @@
 
   @media (min-width: breakpoint(tablet)) {
     position: relative;
-    padding-top: 77px;
+    padding-top: 75px;
     padding-bottom: 57px;
   }
 
@@ -36,17 +36,6 @@
     position: relative;
     width: auto;
     padding: 0 50px 26px 50px;
-
-    &::after {
-      position: absolute;
-      top: -15px;
-      right: 53px;
-      content: "";
-      width: 47px;
-      height: 81px;
-      background-image: url("../img/svg/flag.svg");
-      background-repeat: no-repeat;
-    }
   }
 
   @media (min-width: breakpoint(desktop)) {
@@ -56,17 +45,30 @@
     margin: 0;
     padding: 0;
     margin-bottom: 49px;
+  }
+}
 
-    &::after {
-      position: absolute;
-      top: -8px;
-      left: -110px;
-      content: "";
-      width: 47px;
-      height: 81px;
-      background-image: url("../img/svg/flag.svg");
-      background-repeat: no-repeat;
-    }
+.contact__info-wrapper::after {
+  @media (min-width: breakpoint(tablet)) {
+    position: absolute;
+    top: -15px;
+    right: 53px;
+    content: "";
+    width: 47px;
+    height: 81px;
+    background-image: url("../img/svg/flag.svg");
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    position: absolute;
+    top: -8px;
+    left: -110px;
+    content: "";
+    width: 47px;
+    height: 81px;
+    background-image: url("../img/svg/flag.svg");
+    background-repeat: no-repeat;
   }
 }
 
@@ -146,10 +148,6 @@
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
     margin-left: 0;
   }
-
-  @media (min-width: breakpoint(desktop)) {
-
-  }
 }
 
 .contact__text {
@@ -160,10 +158,6 @@
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
     margin-left: 0;
     letter-spacing: -0.1px;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-
   }
 }
 

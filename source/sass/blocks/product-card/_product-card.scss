@@ -1,6 +1,14 @@
 .product-card {
   margin: 0;
   padding: 0;
+
+  &:focus, &:hover {
+   @include box-shadow(0, 6px, 10px, 0, rgba(color($base-c, black), 0.1), false);
+  }
+
+  &:active {
+    @include box-shadow(0, 3px, 5px, 0, rgba(color($base-c, black), 0.1), false);
+  }
 }
 
 .product-card__inner {
@@ -28,22 +36,6 @@
   width: 100%;
   padding-bottom: (195px/260px)*100%;
   background-color: #cacecd;
-
-  &:focus, &:hover {
-    + .product-card__description {
-      box-shadow:
-      inset 0 0 0 1px color($grey-c, dark),
-      0 6px 10px 0 rgba(color($base-c, black), 0.1);
-    }
-  }
-
-  &:active {
-    + .product-card__description {
-      box-shadow:
-        inset 0 0 0 1px color($grey-c, dark),
-        0 3px 5px 0 rgba(color($base-c, black), 0.1);
-    }
-  }
 
   @media (min-width: breakpoint(tablet)) {
     flex-basis: auto;
@@ -122,10 +114,6 @@
     font-size: font-size(other-l);
     width: 86%;
   }
-
-  @media (min-width: breakpoint(desktop)) {
-
-  }
 }
 
 .product-card__text {
@@ -165,31 +153,33 @@
     padding-left: 4px;
     padding-right: 6px;
     margin-bottom: -1px;
-
-    &::after {
-      position: absolute;
-      top: -23px;
-      left: 4px;
-      content: "";
-      width: 96%;
-      height: 1px;
-      background-color: color($grey-c, dark);
-    }
   }
 
   @media (min-width: breakpoint(desktop)) {
     padding-right: 13px;
     padding-left: 0;
+  }
+}
 
-    &::after {
-      position: absolute;
-      top: -23px;
-      left: -1px;
-      content: "";
-      width: 95%;
-      height: 1px;
-      background-color: color($grey-c, dark);
-    }
+.product-card__bottom::after {
+  @media (min-width: breakpoint(tablet)) {
+    position: absolute;
+    top: -23px;
+    left: 4px;
+    content: "";
+    width: 96%;
+    height: 1px;
+    background-color: color($grey-c, dark);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    position: absolute;
+    top: -23px;
+    left: -1px;
+    content: "";
+    width: 95%;
+    height: 1px;
+    background-color: color($grey-c, dark);
   }
 }
 

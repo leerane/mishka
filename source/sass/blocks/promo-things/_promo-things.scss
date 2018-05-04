@@ -1,30 +1,31 @@
 .promo-things {
   background-color: color($grey-c, light);
   position: relative;
+}
 
+.promo-things::after {
   @media (min-width: breakpoint(tablet)) {
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -12px;
-      left: 0;
-      padding-top: (34px/1150px)*100%;
-      height: 24px;
-      max-height: 34px;
-      display: block;
-      width: 100%;
-      background-image: url("../img/svg/zigzag-fill.svg");
-      background-repeat: repeat-x;
-      background-position: 50% 100%;
-    }
+    content: "";
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    padding-top: (34px/1150px)*100%;
+    height: 24px;
+    max-height: 34px;
+    display: block;
+    width: 100%;
+    background-image: url("../img/svg/zigzag-fill.svg");
+    background-repeat: repeat-x;
+    background-position: 50% 100%;
   }
 
-  @media (min-width: breakpoint(desktop)) {
-    &::after {
-      height: 34px;
-      bottom: -19px;
-      padding-top: 0;
-    }
+  @media (min-width: breakpoint(tablet)) {
+    bottom: -19px;
+    height: 37px;
+    max-height: 37px;
+    padding-top: 0;
+    background-repeat: repeat-x;
+    background-position: 50% 50%;
   }
 }
 
@@ -48,10 +49,11 @@
     background-image: url("../img/hero-tablet@1x.jpg");
     background-position: 50% 1%;
     background-size: 1150px 746px;
+  }
 
-    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-      background-image: url("../img/hero-tablet@2x.jpg");
-    }
+  @media (min-width: breakpoint(tablet)) and (min-resolution: 144dpi),
+  (min-width: breakpoint(tablet)) and (min-resolution: 1.5dppx) {
+    background-image: url("../img/hero-tablet@2x.jpg");
   }
 
   @media (min-width: breakpoint(desktop)){
@@ -74,10 +76,6 @@
     padding-top: 93px;
     padding-bottom: 102px;
   }
-}
-
-.promo-things__title {
-
 }
 
 .promo-things__button {

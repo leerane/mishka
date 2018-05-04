@@ -60,28 +60,29 @@
     margin-right: 51px;
     display: flex;
   }
+}
 
-  &:last-child {
-    @media (min-width: breakpoint(desktop)) {
-      margin-bottom: 54px;
-    }
-  }
-
-  &:nth-child(3n) {
-    @media (min-width: breakpoint(desktop)) {
-      margin-right: 0;
-    }
+.products__item:last-child {
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: 54px;
   }
 }
 
-@media (min-width: breakpoint(tablet)) {
-  .products__item:nth-of-type(2) .product-card__title {
+.products__item:nth-child(3n) {
+  @media (min-width: breakpoint(desktop)) {
+    margin-right: 0;
+  }
+}
+
+.products__item:nth-of-type(2) .product-card__title {
+  @media (min-width: breakpoint(tablet)) {
     margin-bottom: 5px;
   }
 }
 
-@media (min-width: breakpoint(tablet)) {
-  .products__item:nth-of-type(2) .product-card__text {
+.products__item:nth-of-type(2) .product-card__text {
+  @media (min-width: breakpoint(tablet)) {
     letter-spacing: -0.1px;
   }
 }
+

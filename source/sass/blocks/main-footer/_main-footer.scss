@@ -32,18 +32,6 @@
   display: none;
   pointer-events: none;
 
-  &:focus, &:hover {
-    .main-footer__logo-svg {
-      fill: color($main-c, accent);
-    }
-  }
-
-  &:active {
-    .main-footer__logo-svg {
-      fill: rgba(color($main-c, accent), 0.3);
-    }
-  }
-
   @media (min-width: breakpoint(tablet)) {
     display: block;
     position: static;
@@ -57,6 +45,18 @@
 
   @media (min-width: breakpoint(desktop)) {
     margin-left: 1px;
+  }
+}
+
+.main-footer__logo:focus, .main-footer__logo:hover {
+  .main-footer__logo-svg {
+    fill: color($main-c, accent);
+  }
+}
+
+.main-footer__logo:active {
+  .main-footer__logo-svg {
+    fill: rgba(color($main-c, accent), 0.3);
   }
 }
 

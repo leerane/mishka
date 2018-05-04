@@ -14,18 +14,20 @@
 
   @media (min-width: breakpoint(desktop)) {
     box-shadow: none;
+  }
+}
 
-    &::after {
-      content: "ss";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 100%;
-      transform: translateX(-50%);
-      max-width: 1150px;
-      height: 1px;
-      background-color: color($grey-c, darker);
-    }
+.main-header::after {
+  @media (min-width: breakpoint(desktop)) {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    max-width: 1150px;
+    height: 1px;
+    background-color: color($grey-c, darker);
   }
 }
 

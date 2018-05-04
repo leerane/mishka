@@ -317,10 +317,9 @@
             </div>
             <div class="best-product__right">
              <picture>
-               <source media="(min-width: 1150px)" srcset="img/triple-set-desktop@1x.jpg" class="best-product__image">
-               <source media="(min-width: 768px)" srcset="img/triple-set-tablet@1x.jpg" class="best-product__image">
-               <source srcset="img/triple-set-mobile@1x.jpg" class="best-product__image">
-               <img src="img/triple-set-mobile@1x.jpg" class="best-product__image" width="260" height="315" alt="Вязаные корзинки">
+               <source media="(min-width: 1150px)" srcset="img/triple-set-desktop@1x.jpg 1x, img/triple-set-desktop@2x.jpg 2x">
+               <source media="(min-width: 768px)" srcset="img/triple-set-tablet@1x.jpg 1x, img/triple-set-tablet@2x.jpg 2x">
+               <img src="img/triple-set-mobile@1x.jpg" class="best-product__image" alt="Вязаные корзинки">
               </picture>
             </div>
             <div class="best-product__buy">
@@ -447,7 +446,14 @@
           </ul>
         </div>
         <div class="main-map">
-          <img src="img/map-tablet-pin@1x.jpg" class="main-map__image" alt="Карта" width="768" height="457">
+          <picture>
+            <source type="image/webp" media="(min-width: 1150px)" srcset="img/map-desktop@1x.webp 1x, img/map-desktop@2x.webp 2x">
+            <source media="(min-width: 1150px)" srcset="img/map-desktop@1x.jpg 1x, img/map-desktop@2x.jpg 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/map-tablet@1x.webp 1x, img/map-tablet@2x.webp 2x">
+            <source media="(min-width: 768px)" srcset="img/map-tablet@1x.jpg 1x, img/map-tablet@2x.jpg 2x">
+            <source type="image/webp" srcset="img/map-tablet@1x.webp 1x, img/map-tablet@2x.webp 2x">
+            <img src="img/map-tablet@1x.jpg" alt="Карта" srcset="img/map-tablet@2x.jpg 2x" class="main-map__image">
+          </picture>
         </div>
         <div class="contact__button-wrapper">
           <a href="#" class="button">Напишите нам</a>

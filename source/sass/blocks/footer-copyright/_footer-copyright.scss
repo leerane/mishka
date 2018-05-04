@@ -17,15 +17,17 @@
 
   @media (min-width: breakpoint(tablet)) {
     padding-top: 3px;
-
-    &::before {
-      width: 0px;
-      height: 0px;
-    }
   }
 
   @media (min-width: breakpoint(desktop)) {
     margin-right: 1px;
+  }
+}
+
+.footer-copyright::before {
+  @media (min-width: breakpoint(tablet)) {
+    width: 0px;
+    height: 0px;
   }
 }
 
@@ -36,22 +38,22 @@
   align-items: center;
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-d), normal, color($base-c, black), font-lh(base));
 
-  &:focus, &:hover {
-    .htmlacademy-logo {
-      fill: color($main-c, accent);
-    }
-  }
-
-  &:active {
-    color: rgba(color($base-c, black), 0.3);
-
-    .htmlacademy-logo {
-      fill: rgba(color($main-c, accent), 0.3);
-    }
-  }
-
   @media (min-width: breakpoint(tablet)) {
     margin-bottom: 2px;
+  }
+}
+
+.footer-copyright__link:focus, .footer-copyright__link:hover {
+  .htmlacademy-logo {
+    fill: color($main-c, accent);
+  }
+}
+
+.footer-copyright__link:active {
+  color: rgba(color($base-c, black), 0.3);
+
+  .htmlacademy-logo {
+    fill: rgba(color($main-c, accent), 0.3);
   }
 }
 

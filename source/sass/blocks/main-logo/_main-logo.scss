@@ -5,18 +5,6 @@
   display: block;
   pointer-events: none;
 
-  &:focus, &:hover {
-    .main-logo__svg {
-      fill: rgba(color($base-c, black), 0.6);
-    }
-  }
-
-  &:active {
-    .main-logo__svg {
-      fill: rgba(color($base-c, black), 0.3);
-    }
-  }
-
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
     position: static;
     top: 0;
@@ -28,6 +16,18 @@
 
   @media (min-width: breakpoint(desktop)) {
     @include centerer(null, null, both);
+  }
+}
+
+.main-logo:focus, .main-logo:hover {
+  .main-logo__svg {
+    fill: rgba(color($base-c, black), 0.6);
+  }
+}
+
+.main-logo:active {
+  .main-logo__svg {
+    fill: rgba(color($base-c, black), 0.3);
   }
 }
 

@@ -1,26 +1,11 @@
 .htmlacademy-logo {
-  margin: 0;
+  margin: 5px -6px 0 0;
   padding: 0;
-
-  &:focus, &:hover {
-    .htmlacademy-logo__svg {
-      fill: color($main-c, accent);
-    }
-  }
+  fill: color($main-c, primary);
 
   &:active {
     color: rgba(color($base-c, black), 0.3);
-
-    .htmlacademy-logo__svg {
-      color: rgba(color($main-c, accent), 0.3);
-    }
   }
-}
-
-.htmlacademy-logo {
-  margin-top: 5px;
-  margin-right: -6px;
-  fill: color($main-c, primary);
 
   @media (min-width: breakpoint(tablet)) {
     margin-top: 6px;
@@ -30,5 +15,17 @@
   @media (min-width: breakpoint(desktop)) {
     margin-top: 6px;
     margin-right: -8px;
+  }
+}
+
+.htmlacademy-logo:focus, .htmlacademy-logo:hover {
+  .htmlacademy-logo__svg {
+    fill: color($main-c, accent);
+  }
+}
+
+.htmlacademy-logo:active {
+  .htmlacademy-logo__svg {
+    fill: rgba(color($main-c, accent), 0.3);
   }
 }

@@ -1,0 +1,20 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.68 81.69">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #63d1bb;
+      }
+
+      .cls-2 {
+        fill: #231f20;
+      }
+    </style>
+  </defs>
+  <title>flag</title>
+  <g id="miu">
+    <g id="Artboard-1">
+      <path class="cls-1" d="M7.78,3.89v38.9l38.9-19.45ZM0,81.69V0H3.8V81.69Z"/>
+    </g>
+  </g>
+  <rect class="cls-2" width="3.8" height="81.69"/>
+</svg>
