@@ -2,7 +2,7 @@
 
 // Fonts
 
-@mixin font-face($font-family, $font-path: "../fonts/", $font-file-name: opensans, $font-style: normal, $font-weight: normal, $font-svg-id: null, $text-rendering: null, $font-formats: (eot: embedded-opentype, woff2: woff2, woff: woff, ttf: truetype, otf: opentype, svg: svg)) {
+@mixin font-face($font-family, $font-path: "../fonts/", $font-file-name: opensans, $font-style: normal, $font-weight: normal, $font-display: swap, $font-svg-id: null, $text-rendering: null, $font-formats: (eot: embedded-opentype, woff2: woff2, woff: woff, ttf: truetype, otf: opentype, svg: svg)) {
   $font-src: ();
 
   @each $font-ext, $font-format in $font-formats {
@@ -24,6 +24,7 @@
       src: $font-src;
       font-style: $font-style;
       font-weight: $font-weight;
+      font-display: $font-display;
       text-rendering: $text-rendering;
     }
   }
@@ -89,6 +90,16 @@
 }
 
 // Other
+
+@mixin pseudo-ie11-fix() {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 
 @mixin visually-hidden() {
   position: absolute;

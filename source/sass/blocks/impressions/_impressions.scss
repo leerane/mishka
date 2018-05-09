@@ -4,11 +4,13 @@
 
   &::after {
     content: "";
+    padding: 0;
+    margin: 0;
+    background-repeat: repeat no-repeat;
+    background-size: 319px 100%;
     background-image: url("../img/svg/zigzag-separator--big.svg");
     height: 7px;
     display: block;
-    background-size: 100% 7px;
-    width: 100%;
     transform: rotate(180deg);
   }
 
@@ -27,6 +29,7 @@
     content: "";
     position: absolute;
     bottom: -14px;
+    margin: 0;
     left: 0;
     display: block;
     min-width: 768px;
@@ -41,6 +44,7 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
+    margin: 0;
     height: 23px;
     padding-top: 0;
     width: 1052px;
@@ -72,7 +76,7 @@
 
 .impressions__inner {
   width: auto;
-  padding: 0 30px 44px 30px;
+  padding: 0 30px 45px 30px;
   margin: 0 auto;
 
 
@@ -107,7 +111,7 @@
     background-image: url("../img/review@1x.jpg");
     background-repeat: no-repeat;
     background-position: 0 0;
-    background-size: auto;
+    background-size: 350px 457px;
   }
 
   @media (min-width: breakpoint(desktop)) and (min-resolution: 144dpi),
@@ -126,14 +130,16 @@
     font-size: font-size(h2-t);
     line-height: font-lh(title-md);
     margin-left: -5px;
-    margin-bottom: 50px;
+    margin-top: 1px;
+    margin-bottom: 49px;
   }
 
   @media (min-width: breakpoint(desktop)) {
     order: -2;
     font-size: font-size(h2-d);
     line-height: font-lh(title-l);
-    margin-bottom: 50px;
+    margin-top: 1px;
+    margin-bottom: 49px;
   }
 }
 
@@ -257,3 +263,9 @@
   }
 }
 
+.impressions__button {
+  @media (min-width: breakpoint(tablet)) {
+    padding-top: 17px;
+    padding-bottom: 15px;
+  }
+}

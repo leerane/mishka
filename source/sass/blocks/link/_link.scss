@@ -3,22 +3,34 @@
   display: block;
 }
 
+.link--icon {
+  position: relative;
+
+  &::after {
+    @include pseudo-ie11-fix();
+  }
+}
+
 .link--icon:focus, .link--icon:hover {
   .main-navigation__icon {
+    color: color($main-c, primary);
     fill: color($main-c, primary);
   }
 
   .product-card__icon {
+    color: color($main-c, primary);
     fill: color($main-c, primary);
   }
 }
 
 .link--icon:active {
   .main-navigation__icon {
+    color: rgba(color($main-c, primary), 0.3);
     fill: rgba(color($main-c, primary), 0.3);
   }
 
   .product-card__icon {
+    color: rgba(color($main-c, primary), 0.3);
     fill: rgba(color($main-c, primary), 0.3);
   }
 }

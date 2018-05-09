@@ -1,5 +1,5 @@
 .about-us {
-  padding-top: 27px;
+  padding-top: 26px;
   padding-bottom: 27px;
 
   @media (min-width: breakpoint(tablet)) {
@@ -48,7 +48,8 @@
   @media (min-width: breakpoint(desktop)) {
     font-size: font-size(h2-d);
     line-height: font-lh(title-l);
-    letter-spacing: -0.5px;
+    letter-spacing: -0.4px;
+    margin-left: -4px;
     margin-bottom: 49px;
   }
 }
@@ -134,6 +135,7 @@
 }
 
 .about-us__svg {
+  color: color($main-c, primary);
   fill: color($main-c, primary);
   position: absolute;
   top: -50px;

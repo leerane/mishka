@@ -76,6 +76,10 @@
 
 .products__item:nth-of-type(2) .product-card__title {
   @media (min-width: breakpoint(tablet)) {
+    margin-bottom: 8px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
     margin-bottom: 5px;
   }
 }

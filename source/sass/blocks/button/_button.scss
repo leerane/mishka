@@ -44,6 +44,7 @@
 }
 
 .button--primary {
+  position: relative;
   width: 100%;
   background-color: color($main-c, primary);
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-d), normal, color($base-c, white), font-lh(base-md));
@@ -58,6 +59,10 @@
     line-height: font-lh(base-l);
     min-height: 119px;
   }
+}
+
+.button--primary::after {
+  @include pseudo-ie11-fix();
 }
 
 .button--icon--interior {
@@ -81,12 +86,14 @@
   }
 
   .button__svg--interior {
+    color: rgba(#149080, 0.7);
     fill: rgba(#149080, 0.7);
   }
 }
 
 .button--icon--interior:active {
   .button__svg--interior {
+    color: rgba(#149080, 0.3);
     fill: rgba(#149080, 0.3);
   }
 }
@@ -114,12 +121,14 @@
   }
 
   .button__svg--toy {
+    color: rgba(#149080, 0.7);
     fill: rgba(#149080, 0.7);
   }
 }
 
 .button--icon--toy:active {
   .button__svg--toy {
+    color: rgba(#149080, 0.3);
     fill: rgba(#149080, 0.3);
   }
 }
@@ -131,6 +140,7 @@
 .button__svg--interior {
   margin-right: 36px;
   margin-top: -2px;
+  color: rgba(#149080, 0.5);
   fill: rgba(#149080, 0.5);
 
   @media (min-width: breakpoint(tablet)) {
@@ -145,6 +155,7 @@
 .button__svg--toy {
   margin-right: 27px;
   margin-top: -4px;
+  color: rgba(#149080, 0.5);
   fill: rgba(#149080, 0.5);
 
   @media (min-width: breakpoint(tablet)) {
@@ -158,5 +169,12 @@
 }
 
 .button--t--s {
+  width: 99.8%;
   font-size: font-size(base-t);
+  padding-top: 17px;
+  padding-bottom: 15px;
+
+  @media (min-width: breakpoint(tablet)) {
+    width: 100%;
+  }
 }

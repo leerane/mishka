@@ -95,7 +95,6 @@ gulp.task("browser-sync", () => {
 gulp.task("html", () => {
   return gulp.src(path.sourcePath + path.htmlPattern)
     .pipe(plumber())
-    .pipe(posthtml())
     .pipe(gulp.dest(path.buildPath))
     .pipe(reload({ stream: true }));
 });
@@ -128,7 +127,7 @@ gulp.task("sass-styles", ["sass-concat"], () => {
       extname: ".css"
     }))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(path.build + path.cssPath))
+    .pipe(gulp.dest(path.buildPath + path.cssPath))
     .pipe(reload({ stream: true }));
 });
 
@@ -151,17 +150,16 @@ gulp.task("js", () => {
 });
 
 gulp.task("libs-js", () => {
-  return gulp.src(path.sourcePath + path.libsPath  + path.jsPattern, { base: process.cwd() })
+  return gulp.src(path.sourcePath + path.libsPath  + path.jsPattern)
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(concat(name.libsFile))
     .pipe(uglify())
     .pipe(rename({
       suffix: ".min",
       extname: ".js"
     }))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(path.buildPath + path.jsPath))
+    .pipe(gulp.dest(path.buildPath + path.jsPath + path.libsPath))
 });
 
 gulp.task("compress", () => {
@@ -231,16 +229,6 @@ gulp.task("copy", () => {
 
 gulp.task("sprite", () => {
   return gulp.src(path.sourcePath + path.imgPath + path.svgPath + "/to-sprite" + path.svgPattern)
-    .pipe(cheerio({
-      run: function ($) {
-        $("[fill]").removeAttr("fill");
-        $("[stroke]").removeAttr("stroke");
-        $("[style]").removeAttr("style");
-        $("title").remove();
-      },
-      parserOptions: {xmlMode: true}
-    }))
-    .pipe(replace("&gt;", ">"))
     .pipe(svgSprite({
       mode: "symbols",
       svgPath: path.sourcePath + path.imgPath + path.svgPath + path.spritePath,
@@ -249,15 +237,37 @@ gulp.task("sprite", () => {
       },
       preview: false
     }))
+    .pipe(cheerio({
+      run: function ($) {
+        var elements = [
+          "#mishka-logo--tablet",
+          "#mishka-logo--main",
+          "#play-button-icon"
+        ];
+        var excludeElements = {
+          g: elements.map((e) => { return e + " g"}),
+          path: elements.map((e) => { return e + " path"}),
+          stroke: elements.map((e) => { return e + " [stroke]"}),
+          style: elements.map((e) => { return e + " [style]"})
+        };
+        $("symbol g").not(excludeElements.g.toString()).attr("fill", "currentColor");
+        $("symbol path").not(excludeElements.path.toString()).attr("fill", "currentColor");
+        $("symbol [stroke]").not(excludeElements.stroke.toString()).attr("stroke", "currentColor");
+        $("symbol [style]").not(excludeElements.style.toString()).attr("style", "fill: currentColor");
+        $("title").remove();
+      },
+      parserOptions: { xmlMode: true }
+    }))
+    .pipe(replace("&gt;", ">"))
     .pipe(gulp.dest(path.buildPath + path.imgPath + path.svgPath));
 });
 
 gulp.task("beautify", ["sort-sass", "sort-html"]);
 
-gulp.task("server", ["browser-sync", "css", "compress", "libs-js", "js"], () => {
+gulp.task("server", ["browser-sync", "html", "css", "compress", "libs-js", "js"], () => {
   gulp.watch(path.sourcePath + path.scssPath + path.scssPattern, ["css"]);
   gulp.watch(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, ["js"]);
-  gulp.watch(path.sourcePath + path.htmlPattern).on("change", reload);
+  gulp.watch(path.sourcePath + path.htmlPattern, ["html"]);
 });
 
 

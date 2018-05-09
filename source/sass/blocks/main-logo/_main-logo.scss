@@ -3,14 +3,17 @@
   padding-bottom: 1px;
   padding-right: 2px;
   display: block;
-  pointer-events: none;
+
+  &::after {
+    @include pseudo-ie11-fix();
+  }
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
     position: static;
     top: 0;
     left: 0;
     transform: translate(0, 0);
-    padding-top: 11px;
+    padding-top: 0;
     padding-right: 2px;
   }
 
@@ -21,19 +24,27 @@
 
 .main-logo:focus, .main-logo:hover {
   .main-logo__svg {
+    color: rgba(color($base-c, black), 0.6);
     fill: rgba(color($base-c, black), 0.6);
   }
 }
 
 .main-logo:active {
   .main-logo__svg {
+    color: rgba(color($base-c, black), 0.3);
     fill: rgba(color($base-c, black), 0.3);
   }
 }
 
 .main-logo__svg {
+  color: color($base-c, black);
   fill: color($base-c, black);
   display: none;
+
+  g[data-name="Layer 1"] {
+    color: #ffffff;
+    fill: #ffffff;
+  }
 
   @media (min-width: breakpoint(desktop)) {
     display: block;
