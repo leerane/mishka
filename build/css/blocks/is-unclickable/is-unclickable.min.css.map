@@ -1,0 +1,1 @@
+{"version":3,"sources":["blocks/is-unclickable/is-unclickable.scss"],"names":[],"mappings":"AAAA,gBACE,mBAAoB,CACrB","file":"is-unclickable.min.css","sourcesContent":[".is-unclickable {\n  pointer-events: none;\n}\n"]}
