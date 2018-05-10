@@ -47,7 +47,9 @@
   "scripts": {
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint .",
-    "test": "npm run editorconfig"
+    "test": "npm run editorconfig",
+    "build": "gulp build",
+    "start": "gulp build:watch"
   },
   "editorconfig-cli": [
     "*.json",

@@ -9,6 +9,7 @@
   text-align: center;
   margin: 0;
   cursor: pointer;
+  border: 0;
 
   &:focus, &:hover {
     background-color: color($main-c, secondary);
@@ -45,19 +46,17 @@
 
 .button--primary {
   position: relative;
-  width: 100%;
+  color: color($base-c, white);
   background-color: color($main-c, primary);
-  @include font-par(font-family(opensans), font-weight(bold), font-size(base-d), normal, color($base-c, white), font-lh(base-md));
-  text-transform: none;
-  border: 0;
   box-shadow: none;
-  text-align: left;
-  min-height: 103px;
+  font-size: font-size(base-t);
 
-  @media (min-width: breakpoint(tablet))  {
-    font-size: font-size(other-l);
-    line-height: font-lh(base-l);
-    min-height: 119px;
+  &:focus, &:hover {
+    background-color: #59d5bc;
+  }
+
+  &:active {
+    background-color: #59d5bc;
   }
 }
 

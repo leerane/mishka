@@ -114,8 +114,8 @@ gulp.task("sass-concat", () => {
     .pipe(reload({ stream: true }));
 });
 
-gulp.task("sass-styles", gulp.series("sass-concat", () => {
-  return gulp.src(path.sourcePath + path.scssPath + path.scssPattern, { since: gulp.lastRun("sass-styles") })
+gulp.task("sass-styles", () => {
+  return gulp.src(path.sourcePath + path.scssPath + path.scssPattern, { since: gulp.lastRun("sass-styles")})
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: "expanded"}).on("error", sass.logError))
@@ -130,14 +130,13 @@ gulp.task("sass-styles", gulp.series("sass-concat", () => {
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(path.buildPath + path.cssPath))
     .pipe(reload({ stream: true }));
-}));
+});
 
 gulp.task("css", gulp.series("sass-concat", "sass-styles"));
 
 gulp.task("js", () => {
   return gulp.src(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, {
-    base: process.cwd(),
-    since: gulp.lastRun("js")
+    base: process.cwd()
   })
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -192,7 +191,7 @@ gulp.task("compress", () => {
 });
 
 gulp.task("sprite", () => {
-  return gulp.src(path.sourcePath + path.imgPath + path.svgPath + "/to-sprite" + path.svgPattern, { since: gulp.lastRun("sprite") })
+  return gulp.src(path.sourcePath + path.imgPath + path.svgPath + "/to-sprite" + path.svgPattern)
     .pipe(svgSprite({
       mode: "symbols",
       svgPath: path.sourcePath + path.imgPath + path.svgPath + path.spritePath,

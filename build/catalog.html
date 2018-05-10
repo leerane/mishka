@@ -18,8 +18,8 @@
 <body>
   <header class="main-header">
   <nav class="main-navigation">
-    <div class="main-header__top">
-      <div class="main-header__inner">
+    <div class="main-navigation__top">
+      <div class="main-navigation__inner">
         <a href="index.html" class="main-logo">
           <svg aria-label="Мобильный логотип" width="85.59" height="35.03" class="svg-image main-logo__svg main-logo__svg--mobile">
             <use xlink:href="img/svg/sprite.svg#mishka-logo--mobile"/>
@@ -31,17 +31,10 @@
             <use xlink:href="img/svg/sprite.svg#mishka-logo--main"/>
           </svg>
         </a>
-        <button class="toggle-button js-toggle-button" type="button" aria-label="Кнопка выпадающего меню">
-          <svg aria-label="Открыть меню" width="19.958" height="14" class="svg-image toggle-button__svg visually-hidden">
-            <use xlink:href="img/svg/sprite.svg#icon-menu-open"/>
-          </svg>
-          <svg aria-label="Закрыть меню" width="20.514" height="20.512" class="svg-image toggle-button__svg visually-hidden">
-            <use xlink:href="img/svg/sprite.svg#icon-menu-close"/>
-          </svg>
-        </button>
+        <button class="hamburger-button main-navigation__hamburger-button js-hamburger-button visually-hidden" type="button" aria-label="Кнопка выпадающего меню"></button>
       </div>
     </div>
-    <div class="main-header__bottom">
+    <div class="main-navigation__bottom">
       <ul class="main-navigation__list main-navigation__list--second">
         <li class="main-navigation__item">
           <a class="link main-navigation__link is-unclickable">Каталог товаров</a>

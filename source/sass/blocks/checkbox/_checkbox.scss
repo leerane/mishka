@@ -1,9 +1,17 @@
 .checkbox {
-
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 .checkbox__control {
 
+}
+
+.checkbox__control:checked {
+  + .checkbox__label--size--m {
+    @include box-shadow(0, 0, 0, 2px, color($main-c, primary), true);
+  }
 }
 
 .checkbox__label {
@@ -11,5 +19,10 @@
 }
 
 .checkbox__label--size--m {
-
+  display: block;
+  padding: 18px 0 18px 0;
+  width: 100%;
+  text-align: center;
+  @include box-shadow(0, 0, 0, 2px, rgba(color($main-c, secondary), 0.1), true);
+  transition: box-shadow 0.25s ease;
 }

@@ -1,16 +1,11 @@
 .js-dropdown-navigation {
-  visibility: hidden;
-  position: absolute;
   width: 100%;
-  top: 0;
+  top: 80px;
   background-color: #ffffff;
-  opacity: 0;
+  display: none;
   z-index: -1;
-  transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
 }
 
 .js-dropdown-navigation--active {
-  visibility: visible;
-  opacity: 1;
-  top: 80px;
+  display: block;
 }

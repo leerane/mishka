@@ -1,11 +1,23 @@
 .size-form {
-
+  margin: 0;
+  padding: 0;
 }
 
-.size-form .size-form__inner {
-
+.size-form__inner {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 31px 0;
+  padding: 0;
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, secondary), 16px);
+  text-transform: uppercase;
 }
 
-.size-form .size-form__checkbox {
+.size-form__checkbox {
+  flex-basis: auto;
+  margin-right: 7px;
+  min-width: 82px;
 
-}
+  &:last-child {
+    margin-right: 0;
+  }
+}

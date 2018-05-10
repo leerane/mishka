@@ -6,8 +6,8 @@ var BREAKPOINTS = {
   desktop: "1150px"
 };
 
-var toggleButton = document.querySelector(".js-toggle-button"),
-  mainNav = document.querySelector(".main-header__bottom");
+var toggleButton = document.querySelector(".js-hamburger-button"),
+  mainNav = document.querySelector(".main-navigation__bottom");
 
 
 function loadShow() {
@@ -26,10 +26,10 @@ var mediaEvent = window.matchMedia("(min-width: " + BREAKPOINTS.tablet.toString(
 hideOnMedia(mediaEvent);
 mediaEvent.addListener(hideOnMedia);
 
-window.onload = loadShow;
+window.addEventListener("load", loadShow);
 
 toggleButton.addEventListener("click", function() {
-  this.classList.toggle("js-toggle-button--close");
+  this.classList.toggle("hamburger-button--close");
   mainNav.classList.toggle("js-dropdown-navigation--active");
 });
 

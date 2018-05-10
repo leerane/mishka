@@ -17,69 +17,62 @@
 
 <body class="main-page">
   <header class="main-header">
-    <nav class="main-navigation">
-      <div class="main-header__top">
-        <div class="main-header__inner">
-          <a class="main-logo main-page__main-logo">
-            <svg aria-label="Мобильный логотип" width="85.59" height="35.03" class="svg-image main-logo__svg main-logo__svg--mobile">
-              <use xlink:href="img/svg/sprite.svg#mishka-logo--mobile"/>
+  <nav class="main-navigation">
+    <div class="main-navigation__top">
+      <div class="main-navigation__inner">
+        <a class="main-logo main-page__main-logo">
+          <svg aria-label="Мобильный логотип" width="85.59" height="35.03" class="svg-image main-logo__svg main-logo__svg--mobile">
+            <use xlink:href="img/svg/sprite.svg#mishka-logo--mobile"/>
+          </svg>
+          <svg aria-label="Планшетный логотип" width="112.39" height="46.09" class="svg-image main-logo__svg main-logo__svg--tablet">
+            <use xlink:href="img/svg/sprite.svg#mishka-logo--tablet"/>
+          </svg>
+          <svg aria-label="Десктопный логотип" width="148.05" height="72.71" class="svg-image main-logo__svg">
+            <use xlink:href="img/svg/sprite.svg#mishka-logo--main"/>
+          </svg>
+        </a>
+        <button class="hamburger-button main-navigation__hamburger-button js-hamburger-button visually-hidden" type="button" aria-label="Кнопка выпадающего меню"></button>
+      </div>
+    </div>
+    <div class="main-navigation__bottom">
+      <ul class="main-navigation__list main-navigation__list--second">
+        <li class="main-navigation__item">
+          <a href="catalog.html" class="link main-navigation__link">Каталог товаров</a>
+        </li>
+        <li class="main-navigation__item">
+          <a href="form.html" class="link main-navigation__link is-unclickable">Вязание на заказ</a>
+        </li>
+      </ul>
+      <ul class="main-navigation__list main-navigation__list--first">
+        <li class="main-navigation__item">
+          <a href="#" class="link main-navigation__link link--icon link--search">
+            <svg width="17.6" height="17.6" class="svg-image main-navigation__icon main-navigation__icon--search">
+              <use xlink:href="img/svg/sprite.svg#search-icon"/>
             </svg>
-            <svg aria-label="Планшетный логотип" width="112.39" height="46.09" class="svg-image main-logo__svg main-logo__svg--tablet">
-              <use xlink:href="img/svg/sprite.svg#mishka-logo--tablet"/>
-            </svg>
-            <svg aria-label="Десктопный логотип" width="148.05" height="72.71" class="svg-image main-logo__svg">
-              <use xlink:href="img/svg/sprite.svg#mishka-logo--main"/>
-            </svg>
+            <span class="link__text main-navigation__hidden">Поиск по сайту</span>
           </a>
-          <button class="toggle-button js-toggle-button" type="button" aria-label="Кнопка выпадающего меню">
-            <svg aria-label="Открыть меню" width="19.958" height="14" class="svg-image toggle-button__svg visually-hidden">
-              <use xlink:href="img/svg/sprite.svg#icon-menu-open"/>
+        </li>
+        <li class="main-navigation__item">
+          <a href="#" class="link main-navigation__link link--icon link--cart">
+            <svg width="20.29" height="18.85" class="svg-image main-navigation__icon main-navigation__icon--cart">
+              <use xlink:href="img/svg/sprite.svg#cart-icon"/>
             </svg>
-            <svg aria-label="Закрыть меню" width="20.514" height="20.512" class="svg-image toggle-button__svg visually-hidden">
-              <use xlink:href="img/svg/sprite.svg#icon-menu-close"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div class="main-header__bottom">
-        <ul class="main-navigation__list main-navigation__list--second">
-          <li class="main-navigation__item">
-            <a href="catalog.html" class="link main-navigation__link">Каталог товаров</a>
-          </li>
-          <li class="main-navigation__item">
-            <a href="form.html" class="link main-navigation__link">Вязание на заказ</a>
-          </li>
-        </ul>
-        <ul class="main-navigation__list main-navigation__list--first">
-          <li class="main-navigation__item">
-            <a href="#" class="link main-navigation__link link--icon link--search">
-              <svg width="17.6" height="17.6" class="svg-image main-navigation__icon main-navigation__icon--search">
-                <use xlink:href="img/svg/sprite.svg#search-icon"/>
-              </svg>
-              <span class="link__text main-navigation__hidden">Поиск по сайту</span>
-            </a>
-          </li>
-          <li class="main-navigation__item">
-            <a href="#" class="link main-navigation__link link--icon link--cart">
-              <svg width="20.29" height="18.85" class="svg-image main-navigation__icon main-navigation__icon--cart">
-                <use xlink:href="img/svg/sprite.svg#cart-icon"/>
-              </svg>
-              Корзина:
-              <span class="link__text">пока пуста</span> </a>
-          </li>
-        </ul>
-        <ul class="main-navigation__list main-navigation__list--third">
-          <li class="main-navigation__item">
-            <a href="#" class="link main-navigation__link">Новые поступления</a>
-          </li>
-          <li class="main-navigation__item">
-            <a href="#" class="link main-navigation__link">Распродажа</a>
-          </li>
-        </ul>
-        <p class="main-navigation__text">Бесплатная доставка по России</p>
-      </div>
-    </nav>
-  </header>
+            Корзина:
+            <span class="link__text">пока пуста</span> </a>
+        </li>
+      </ul>
+      <ul class="main-navigation__list main-navigation__list--third">
+        <li class="main-navigation__item">
+          <a href="#" class="link main-navigation__link">Новые поступления</a>
+        </li>
+        <li class="main-navigation__item">
+          <a href="#" class="link main-navigation__link">Распродажа</a>
+        </li>
+      </ul>
+      <p class="main-navigation__text">Бесплатная доставка по России</p>
+    </div>
+  </nav>
+</header>
   <main class="main-content">
     <section class="promo-things">
       <div class="promo-things__inner container">
@@ -271,14 +264,17 @@
           </ul>
         </div>
         <div class="main-map">
-          <picture>
-            <source type="image/webp" media="(min-width: 1150px)" srcset="img/map-desktop@1x.webp 1x, img/map-desktop@2x.webp 2x">
-            <source media="(min-width: 1150px)" srcset="img/map-desktop@1x.jpg 1x, img/map-desktop@2x.jpg 2x">
-            <source type="image/webp" media="(min-width: 768px)" srcset="img/map-tablet@1x.webp 1x, img/map-tablet@2x.webp 2x">
-            <source media="(min-width: 768px)" srcset="img/map-tablet@1x.jpg 1x, img/map-tablet@2x.jpg 2x">
-            <source type="image/webp" srcset="img/map-tablet@1x.webp 1x, img/map-tablet@2x.webp 2x">
-            <img src="img/map-tablet@1x.jpg" alt="Карта" srcset="img/map-tablet@2x.jpg 2x" class="main-map__image">
-          </picture>
+          <div class="main-map__api" id="google-map"></div>
+          <div class="main-map__image-wrapper">
+            <picture>
+              <source type="image/webp" media="(min-width: 1150px)" srcset="img/map-desktop@1x.webp 1x, img/map-desktop@2x.webp 2x">
+              <source media="(min-width: 1150px)" srcset="img/map-desktop@1x.jpg 1x, img/map-desktop@2x.jpg 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/map-tablet@1x.webp 1x, img/map-tablet@2x.webp 2x">
+              <source media="(min-width: 768px)" srcset="img/map-tablet@1x.jpg 1x, img/map-tablet@2x.jpg 2x">
+              <source type="image/webp" srcset="img/map-tablet@1x.webp 1x, img/map-tablet@2x.webp 2x">
+              <img src="img/map-tablet@1x.jpg" alt="Карта" srcset="img/map-tablet@2x.jpg 2x" class="main-map__image">
+            </picture>
+          </div>
         </div>
         <div class="contact__button-wrapper">
           <a href="#" class="button contact__button">Напишите нам</a>
@@ -329,26 +325,26 @@
   <div class="modal-overlay visually-hidden">
     <div class="modal-cart">
       <div class="modal-cart__inner">
-        <h2 class="main-title">Добавить в корзину</h2>
-        <p class="main-paragraph">Выберите размер:</p>
+        <h2 class="modal-cart__title">Добавить в корзину</h2>
+        <p class="modal-cart__paragraph">Выберите размер:</p>
         <form action="https://echo.htmlacademy.ru" method="post" class="size-form">
           <div class="size-form__inner">
             <div class="checkbox size-form__checkbox">
-              <input type="checkbox" name="small" id="small-field" class="visually-hidden checkbox__control">
-              <label for="small-field" class="checkbox__label checkbox__label--size-m">s</label>
+              <input type="checkbox" name="small" id="small-field" checked class="visually-hidden checkbox__control">
+              <label for="small-field" class="checkbox__label checkbox__label--size--m">s</label>
             </div>
             <div class="checkbox size-form__checkbox">
-              <input type="checkbox" name="medium" id="medium" class="visually-hidden checkbox__control">
-              <label for="small-field" class="checkbox__label checkbox__label--size-m">m</label>
+              <input type="checkbox" name="medium" id="medium-field" class="visually-hidden checkbox__control">
+              <label for="medium-field" class="checkbox__label checkbox__label--size--m">m</label>
             </div>
             <div class="checkbox size-form__checkbox">
               <input type="checkbox" name="large" id="large-field" class="visually-hidden checkbox__control">
-              <label for="small-field" class="checkbox__label checkbox__label--size-m">l</label>
+              <label for="large-field" class="checkbox__label checkbox__label--size--m">l</label>
             </div>
           </div>
         </form>
         <div class="modal-cart__button-wrapper">
-          <button class="button button--primary" type="submit">Добавить</button>
+          <button class="button button--primary modal-cart__button" type="submit">Добавить</button>
         </div>
       </div>
     </div>
@@ -356,6 +352,9 @@
   <script src="js/libs/svg4everybody/svg4everybody.min.js"></script>
   <script>svg4everybody();</script>
   <script src="js/main.min.js" async></script>
+<!--
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv3Mue0MjRxWehq81r_XyQS8Lnr-iQ-VQ&callback=initMap"></script>
+-->
 </body>
 
 </html>
