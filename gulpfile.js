@@ -85,15 +85,16 @@ var gulp = require("gulp"),
 gulp.task("browser-sync", () => {
   browserSync.init({
     server: {
-      baseDir: "./"
+      baseDir: path.buildPath
     },
-    startPath: path.buildPath,
     notify: false
   });
+
+  browserSync.watch(path.buildPath).on("change", reload);
 });
 
 gulp.task("html", () => {
-  return gulp.src(path.sourcePath + path.htmlPattern)
+  return gulp.src(path.sourcePath + path.htmlPattern, { since: gulp.lastRun("html") })
     .pipe(plumber())
     .pipe(gulp.dest(path.buildPath))
     .pipe(reload({ stream: true }));
@@ -114,7 +115,7 @@ gulp.task("sass-concat", () => {
 });
 
 gulp.task("sass-styles", gulp.series("sass-concat", () => {
-  return gulp.src(path.sourcePath + path.scssPath + path.scssPattern)
+  return gulp.src(path.sourcePath + path.scssPath + path.scssPattern, { since: gulp.lastRun("sass-styles") })
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: "expanded"}).on("error", sass.logError))
@@ -134,7 +135,10 @@ gulp.task("sass-styles", gulp.series("sass-concat", () => {
 gulp.task("css", gulp.series("sass-concat", "sass-styles"));
 
 gulp.task("js", () => {
-  return gulp.src(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, { base: process.cwd() })
+  return gulp.src(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, {
+    base: process.cwd(),
+    since: gulp.lastRun("js")
+  })
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(concat(name.jsFile))
@@ -150,7 +154,7 @@ gulp.task("js", () => {
 });
 
 gulp.task("libs-js", () => {
-  return gulp.src(path.sourcePath + path.libsPath  + path.jsPattern)
+  return gulp.src(path.sourcePath + path.libsPath + path.jsPattern, { since: gulp.lastRun("libs-js") })
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(uglify())
@@ -163,7 +167,7 @@ gulp.task("libs-js", () => {
 });
 
 gulp.task("compress", () => {
-  return gulp.src(path.sourcePath + path.imgPath + path.imgPattern)
+  return gulp.src(path.sourcePath + path.imgPath + path.imgPattern, { since: gulp.lastRun("compress") })
     .pipe(imagemin([
       imagemin.jpegtran({
         progressive: true
@@ -188,7 +192,7 @@ gulp.task("compress", () => {
 });
 
 gulp.task("sprite", () => {
-  return gulp.src(path.sourcePath + path.imgPath + path.svgPath + "/to-sprite" + path.svgPattern)
+  return gulp.src(path.sourcePath + path.imgPath + path.svgPath + "/to-sprite" + path.svgPattern, { since: gulp.lastRun("sprite") })
     .pipe(svgSprite({
       mode: "symbols",
       svgPath: path.sourcePath + path.imgPath + path.svgPath + path.spritePath,
@@ -235,7 +239,7 @@ gulp.task("sort-html", () => {
 });
 
 gulp.task("pug", () => {
-  return gulp.src(path.sourcePath + path.pugPattern)
+  return gulp.src(path.sourcePath + path.pugPattern, { since: gulp.lastRun("pug") })
     .pipe(pug({pretty: true}))
     .pipe(gulp.dest(path.buildPath))
     .pipe(reload({ stream: true }));
@@ -257,7 +261,8 @@ gulp.task("copy", () => {
     path.sourcePath + path.imgPath + path.svgPath + path.svgPattern,
     path.sourcePath + path.fontsPath + path.fontsPattern
   ], {
-    base: path.sourcePath
+    base: path.sourcePath,
+    since: gulp.lastRun("copy")
   })
     .pipe(gulp.dest(path.buildPath));
 });
@@ -270,10 +275,12 @@ gulp.task("beautify", gulp.series("sort-sass", "sort-html"));
 
 gulp.task("build", gulp.series("clean", "copy", "sprite", "compress", "html", "css", "libs-js", "js"));
 
-gulp.task("build:watch", gulp.series("build", "browser-sync", () => {
-  gulp.watch(path.sourcePath + path.scssPath + path.scssPattern, gulp.series("css"));
+gulp.task("watch", () => {
+  gulp.watch(path.sourcePath + path.scssPath + path._scssPattern, gulp.series("css"));
   gulp.watch(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, gulp.series("js"));
   gulp.watch(path.sourcePath + path.htmlPattern, gulp.series("html"));
-}));
+});
+
+gulp.task("build:watch", gulp.series("build", gulp.parallel("browser-sync", "watch")));
 
 

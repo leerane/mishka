@@ -1,3 +1,23 @@
 .js-toggle-button {
+  background-color: transparent;
+  border: none;
+  margin: 6px -1px 0 0;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-image: url("../img/svg/icon-menu-open.svg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 50% 50%;
+  @include flex-centerer();
 
-}
+  &:focus, &:hover {
+    opacity: 0.6;
+  }
+}
+
+
+.js-toggle-button--close {
+  background-image: url("../img/svg/icon-menu-close.svg");
+}

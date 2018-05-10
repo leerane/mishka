@@ -1,17 +1,17 @@
 // --- Variables ---
-@import "./utility/variables.scss";
+@import "./utility/variables";
 
 // --- Grid ---
-@import "./utility/grid.scss";
+@import "./utility/grid";
 
 // --- Functions ---
-@import "./utility/functions.scss";
+@import "./utility/functions";
 
 // --- Mixins ---
-@import "./utility/mixins.scss";
+@import "./utility/mixins";
 
 // --- Base styles ---
-@import "./utility/base.scss";
+@import "./utility/base";
 
 .about-us {
   padding-top: 26px;
@@ -183,12 +183,6 @@
   &--gift{
     top: -52px;
     left: 3px;
-  }
-}
-
-.break-text {
-  @media (min-width: breakpoint(tablet)) {
-    display: none;
   }
 }
 
@@ -535,6 +529,12 @@
 
   @media (min-width: breakpoint(desktop)) {
     height: 636px;
+  }
+}
+
+.break-text {
+  @media (min-width: breakpoint(tablet)) {
+    display: none;
   }
 }
 
@@ -1343,23 +1343,6 @@
 
 }
 
-.htmlacademy-logo {
-  margin: 5px -6px 0 0;
-  padding: 0;
-  color: color($main-c, primary);
-  fill: color($main-c, primary);
-
-  @media (min-width: breakpoint(tablet)) {
-    margin-top: 6px;
-    margin-right: -8px;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    margin-top: 6px;
-    margin-right: -8px;
-  }
-}
-
 .impressions {
   position: relative;
   padding-top: 28px;
@@ -1632,6 +1615,23 @@
   }
 }
 
+.htmlacademy-logo {
+  margin: 5px -6px 0 0;
+  padding: 0;
+  color: color($main-c, primary);
+  fill: color($main-c, primary);
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: 6px;
+    margin-right: -8px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-top: 6px;
+    margin-right: -8px;
+  }
+}
+
 .input {
   background-color: darkred;
 }
@@ -1665,9 +1665,34 @@
 
 }
 
-.js-toggle-button {
-
+.is-unclickable {
+  pointer-events: none;
 }
+
+.js-toggle-button {
+  background-color: transparent;
+  border: none;
+  margin: 6px -1px 0 0;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-image: url("../img/svg/icon-menu-open.svg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 50% 50%;
+  @include flex-centerer();
+
+  &:focus, &:hover {
+    opacity: 0.6;
+  }
+}
+
+
+.js-toggle-button--close {
+  background-image: url("../img/svg/icon-menu-close.svg");
+}
+
 .link {
   @include link();
   display: block;
@@ -1869,6 +1894,7 @@
   margin: 0;
   padding: 0;
   @include box-shadow(0, -1px, 0, 0, color($grey-c, darker), true);
+  background-color: #ffffff;
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)){
     position: absolute;
@@ -1894,6 +1920,10 @@
   @media (min-width: breakpoint(desktop)) {
     justify-content: space-between;
   }
+}
+
+.main-header__bottom--close {
+  @include visually-hidden();
 }
 
 .main-header__inner {
@@ -1989,61 +2019,21 @@
   }
 }
 
-.main-map {
-  min-height: 457px;
-  max-height: 457px;
-  width: 100%;
-  background-color: #f6e9d6;
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 39px;
-
-  &::after {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-31%, -84%);
-    content: "";
-    width: 67px;
-    height: 100px;
-    background-image: url("../img/svg/map-pin.svg");
-    background-repeat: no-repeat;
-  }
-
-  @media (min-width: breakpoint(tablet)) {
-    width: 768px;
-    margin: 0 auto 55px auto;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    width: 525px;
-    position: absolute;
-    top: 9px;
-    right: 51px;
-  }
-}
-
-.main-map::after {
-  @media (min-width: breakpoint(tablet)) {
-    transform: translate(-30%, -91%);
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    transform: translate(-35%,-83%);
-  }
-}
-
-.main-map__image {
+.js-dropdown-navigation {
+  visibility: hidden;
   position: absolute;
+  width: 100%;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 768px;
+  background-color: #ffffff;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
+}
 
-  @media (min-width: breakpoint(desktop)) {
-    left: 0;
-    transform: translateX(0%);
-  }
+.js-dropdown-navigation--active {
+  visibility: visible;
+  opacity: 1;
+  top: 80px;
 }
 
 .main-navigation {
@@ -2595,98 +2585,62 @@
   color: #d3d2d2;
 }
 
-.products {
-  margin: 0;
-  padding: 30px 0 0 0;
-
-  @media (min-width: breakpoint(tablet)) {
-    padding: 80px 0 0 0;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    padding: 130px 0 0 0;
-  }
-}
-
-.products__inner {
-  width: auto;
-  margin: 0 auto;
-  padding: 0 30px;
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: breakpoint(tablet)) {
-    position: relative;
-    width: auto;
-    padding: 0 50px 42px 50px;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    width: auto;
-    padding: 0 49px 3px 49px;
-    max-width: 1150px;
-  }
-}
-
-.products__list {
-  @include clear-list();
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: breakpoint(desktop)) {
-    flex-direction: row;
-  }
-}
-
-.products__item {
+.main-map {
+  min-height: 457px;
+  max-height: 457px;
   width: 100%;
-  margin-bottom: 30px;
+  background-color: #f6e9d6;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 39px;
 
-  &:last-child {
-    margin-bottom: 0;
+  &::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-31%, -84%);
+    content: "";
+    width: 67px;
+    height: 100px;
+    background-image: url("../img/svg/map-pin.svg");
+    background-repeat: no-repeat;
   }
 
   @media (min-width: breakpoint(tablet)) {
-    padding: 0;
-    margin-bottom: 54px;
+    width: 768px;
+    margin: 0 auto 55px auto;
   }
 
   @media (min-width: breakpoint(desktop)) {
-    flex-basis: auto;
-    width: 316px;
-    margin-right: 51px;
-    display: flex;
+    width: 525px;
+    position: absolute;
+    top: 9px;
+    right: 51px;
   }
 }
 
-.products__item:last-child {
-  @media (min-width: breakpoint(desktop)) {
-    margin-bottom: 54px;
-  }
-}
-
-.products__item:nth-child(3n) {
-  @media (min-width: breakpoint(desktop)) {
-    margin-right: 0;
-  }
-}
-
-.products__item:nth-of-type(2) .product-card__title {
+.main-map::after {
   @media (min-width: breakpoint(tablet)) {
-    margin-bottom: 8px;
+    transform: translate(-30%, -91%);
   }
 
   @media (min-width: breakpoint(desktop)) {
-    margin-bottom: 5px;
+    transform: translate(-35%,-83%);
   }
 }
 
-.products__item:nth-of-type(2) .product-card__text {
-  @media (min-width: breakpoint(tablet)) {
-    letter-spacing: -0.1px;
+.main-map__image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 768px;
+
+  @media (min-width: breakpoint(desktop)) {
+    left: 0;
+    transform: translateX(0%);
   }
 }
-
 
 .promo-things {
   background-color: color($grey-c, light);
@@ -2897,36 +2851,6 @@
   }
 }
 
-.social-link {
-  position: relative;
-  cursor: pointer;
-  display: block;
-
-  &::after {
-    @include pseudo-ie11-fix();
-  }
-}
-
-.social-link:focus, .social-link:hover {
-  .social-link__svg {
-    color: color($main-c, accent);
-    fill: color($main-c, accent);
-  }
-}
-
-.social-link:active {
-  .social-link__svg {
-    color: rgba(color($main-c, accent), 0.3);
-    fill: rgba(color($main-c, accent), 0.3);
-  }
-}
-
-.social-link__svg {
-  color: color($base-c, svg);
-  fill: color($base-c, svg);
-}
-
-
 .social-list {
   @include clear-list();
   display: flex;
@@ -2958,7 +2882,46 @@
   }
 }
 
+.social-link {
+  position: relative;
+  cursor: pointer;
+  display: block;
+
+  &::after {
+    @include pseudo-ie11-fix();
+  }
+}
+
+.social-link:focus, .social-link:hover {
+  .social-link__svg {
+    color: color($main-c, accent);
+    fill: color($main-c, accent);
+  }
+}
+
+.social-link:active {
+  .social-link__svg {
+    color: rgba(color($main-c, accent), 0.3);
+    fill: rgba(color($main-c, accent), 0.3);
+  }
+}
+
+.social-link__svg {
+  color: color($base-c, svg);
+  fill: color($base-c, svg);
+}
+
+
 .svg-image {
+
+}
+
+.toggle-button {
+
+}
+
+
+.toggle-button {
 
 }
 
@@ -2973,24 +2936,6 @@
 .textarea .textarea__control {
 
 }
-.toggle-button {
-  background-color: transparent;
-  border: none;
-  margin: 0;
-  padding: 0 1px 1px 0;
-  height: 40px;
-  cursor: pointer;
-  @include flex-centerer();
-
-  @media (min-width: breakpoint(tablet)) {
-    display: none;
-  }
-}
-
-.toggle-button__svg {
-
-}
-
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
@@ -3010,6 +2955,99 @@ input[type="radio"].visually-hidden {
   -webkit-clip-path: inset(100%);
   clip-path: inset(100%);
 }
+
+.products {
+  margin: 0;
+  padding: 30px 0 0 0;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 80px 0 0 0;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding: 130px 0 0 0;
+  }
+}
+
+.products__inner {
+  width: auto;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: breakpoint(tablet)) {
+    position: relative;
+    width: auto;
+    padding: 0 50px 42px 50px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: auto;
+    padding: 0 49px 3px 49px;
+    max-width: 1150px;
+  }
+}
+
+.products__list {
+  @include clear-list();
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: breakpoint(desktop)) {
+    flex-direction: row;
+  }
+}
+
+.products__item {
+  width: 100%;
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 0;
+    margin-bottom: 54px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    flex-basis: auto;
+    width: 316px;
+    margin-right: 51px;
+    display: flex;
+  }
+}
+
+.products__item:last-child {
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: 54px;
+  }
+}
+
+.products__item:nth-child(3n) {
+  @media (min-width: breakpoint(desktop)) {
+    margin-right: 0;
+  }
+}
+
+.products__item:nth-of-type(2) .product-card__title {
+  @media (min-width: breakpoint(tablet)) {
+    margin-bottom: 8px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: 5px;
+  }
+}
+
+.products__item:nth-of-type(2) .product-card__text {
+  @media (min-width: breakpoint(tablet)) {
+    letter-spacing: -0.1px;
+  }
+}
+
 
 
 

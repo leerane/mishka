@@ -35,6 +35,7 @@
   margin: 0;
   padding: 0;
   @include box-shadow(0, -1px, 0, 0, color($grey-c, darker), true);
+  background-color: #ffffff;
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)){
     position: absolute;
@@ -60,6 +61,10 @@
   @media (min-width: breakpoint(desktop)) {
     justify-content: space-between;
   }
+}
+
+.main-header__bottom--close {
+  @include visually-hidden();
 }
 
 .main-header__inner {
