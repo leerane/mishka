@@ -256,12 +256,6 @@ a {
   left: 3px;
 }
 
-@media (min-width: 768px) {
-  .break-text {
-    display: none;
-  }
-}
-
 .best-product {
   position: relative;
 
@@ -728,6 +722,12 @@ a {
 @media (min-width: 1150px) {
   .best-product__image {
     height: 636px;
+  }
+}
+
+@media (min-width: 768px) {
+  .break-text {
+    display: none;
   }
 }
 
@@ -1288,6 +1288,29 @@ a {
   }
 }
 
+.checkbox {
+  margin: 0;
+  padding: 0;
+
+  cursor: pointer;
+}
+
+.checkbox__control:checked + .checkbox__label--size--m {
+  box-shadow: inset 0 0 0 2px #63d1bb;
+}
+
+.checkbox__label--size--m {
+  display: block;
+  width: 100%;
+  padding: 18px 0 18px 0;
+
+  text-align: center;
+
+  box-shadow: inset 0 0 0 2px rgba(68, 68, 68, 0.1);
+
+  transition: box-shadow 0.25s ease;
+}
+
 .contact {
   padding-top: 34px;
   padding-bottom: 39px;
@@ -1544,29 +1567,6 @@ a {
   }
 }
 
-.checkbox {
-  margin: 0;
-  padding: 0;
-
-  cursor: pointer;
-}
-
-.checkbox__control:checked + .checkbox__label--size--m {
-  box-shadow: inset 0 0 0 2px #63d1bb;
-}
-
-.checkbox__label--size--m {
-  display: block;
-  width: 100%;
-  padding: 18px 0 18px 0;
-
-  text-align: center;
-
-  box-shadow: inset 0 0 0 2px rgba(68, 68, 68, 0.1);
-
-  transition: box-shadow 0.25s ease;
-}
-
 .container {
   width: auto;
   margin: 0 auto;
@@ -1783,29 +1783,6 @@ a {
 
 .hamburger-button--close {
   background-image: url("../img/svg/icon-menu-close.svg");
-}
-
-.htmlacademy-logo {
-  margin: 5px -6px 0 0;
-  padding: 0;
-
-  color: #63d1bb;
-
-  fill: #63d1bb;
-}
-
-@media (min-width: 768px) {
-  .htmlacademy-logo {
-    margin-top: 6px;
-    margin-right: -8px;
-  }
-}
-
-@media (min-width: 1150px) {
-  .htmlacademy-logo {
-    margin-top: 6px;
-    margin-right: -8px;
-  }
 }
 
 .impressions {
@@ -2173,6 +2150,33 @@ a {
   }
 }
 
+.htmlacademy-logo {
+  margin: 5px -6px 0 0;
+  padding: 0;
+
+  color: #63d1bb;
+
+  fill: #63d1bb;
+}
+
+@media (min-width: 768px) {
+  .htmlacademy-logo {
+    margin-top: 6px;
+    margin-right: -8px;
+  }
+}
+
+@media (min-width: 1150px) {
+  .htmlacademy-logo {
+    margin-top: 6px;
+    margin-right: -8px;
+  }
+}
+
+.is-unclickable {
+  pointer-events: none;
+}
+
 .input {
   background-color: darkred;
 }
@@ -2180,10 +2184,6 @@ a {
 .input.input--type--text {
   font-size: 20px;
   color: #0e84b5;
-}
-
-.is-unclickable {
-  pointer-events: none;
 }
 
 .js-dropdown-navigation {
@@ -3130,7 +3130,7 @@ a {
   visibility: hidden;
   opacity: 0;
 
-  transition: opacity 0.25s ease, visibility 0.3s ease, top 0.25s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
 }
 
 @media (min-width: 768px) {
@@ -3222,17 +3222,21 @@ a {
   left: 0;
   z-index: 999;
 
-  display: none;
   width: 100%;
   height: 100vh;
   margin: 0;
   padding: 0;
 
   background-color: rgba(255, 255, 255, 0.9);
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity 0.35s ease, visibility 0.3s ease;
 }
 
 .modal-overlay--open {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .order-form {

@@ -107,7 +107,7 @@
                   </div>
                   <div class="product-card__bottom">
                     <span class="product-card__price">1 200 руб.</span>
-                    <a href="#" class="link link--icon product-card__link js-order-button">
+                    <a href="#" class="link link--icon product-card__link js-modal-button">
                       <span class="visually-hidden">Корзина</span>
                       <svg aria-hidden="true" width="20.29" height="18.85" class="svg-image product-card__icon">
                         <use xlink:href="img/svg/sprite.svg#cart-icon"/>
@@ -142,7 +142,7 @@
                   </div>
                   <div class="product-card__bottom">
                     <span class="product-card__price">690 руб.</span>
-                    <a href="#" class="link link--icon product-card__link js-order-button">
+                    <a href="#" class="link link--icon product-card__link js-modal-button">
                       <span class="visually-hidden">Корзина</span>
                       <svg aria-hidden="true" width="20.29" height="18.85" class="svg-image product-card__icon">
                         <use xlink:href="img/svg/sprite.svg#cart-icon"/>
@@ -177,7 +177,7 @@
                   </div>
                   <div class="product-card__bottom">
                     <span class="product-card__price">1 500 руб.</span>
-                    <a href="#" class="link link--icon product-card__link js-order-button">
+                    <a href="#" class="link link--icon product-card__link js-modal-button">
                       <span class="visually-hidden">Корзина</span>
                       <svg aria-hidden="true" width="20.29" height="18.85" class="svg-image product-card__icon">
                         <use xlink:href="img/svg/sprite.svg#cart-icon"/>
@@ -268,6 +268,33 @@
       </p>
     </div>
   </footer>
+  <div class="modal-overlay visually-hidden">
+    <div class="modal-cart">
+      <div class="modal-cart__inner">
+        <h2 class="modal-cart__title">Добавить в корзину</h2>
+        <p class="modal-cart__paragraph">Выберите размер:</p>
+        <form action="https://echo.htmlacademy.ru" method="post" class="size-form">
+          <div class="size-form__inner">
+            <div class="checkbox size-form__checkbox">
+              <input type="checkbox" name="small" id="small-field" checked class="visually-hidden checkbox__control">
+              <label for="small-field" class="checkbox__label checkbox__label--size--m">s</label>
+            </div>
+            <div class="checkbox size-form__checkbox">
+              <input type="checkbox" name="medium" id="medium-field" class="visually-hidden checkbox__control">
+              <label for="medium-field" class="checkbox__label checkbox__label--size--m">m</label>
+            </div>
+            <div class="checkbox size-form__checkbox">
+              <input type="checkbox" name="large" id="large-field" class="visually-hidden checkbox__control">
+              <label for="large-field" class="checkbox__label checkbox__label--size--m">l</label>
+            </div>
+          </div>
+          <div class="modal-cart__button-wrapper">
+            <button class="button button--primary modal-cart__button" type="submit">Добавить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
   <script src="js/libs/svg4everybody/svg4everybody.min.js"></script>
   <script>svg4everybody();</script>
   <script src="js/main.min.js" async></script>

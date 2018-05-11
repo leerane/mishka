@@ -186,12 +186,6 @@
   }
 }
 
-.break-text {
-  @media (min-width: breakpoint(tablet)) {
-    display: none;
-  }
-}
-
 .best-product {
   position: relative;
   padding-top: 27px;
@@ -535,6 +529,12 @@
 
   @media (min-width: breakpoint(desktop)) {
     height: 636px;
+  }
+}
+
+.break-text {
+  @media (min-width: breakpoint(tablet)) {
+    display: none;
   }
 }
 
@@ -967,6 +967,35 @@
   }
 }
 
+.checkbox {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.checkbox__control {
+
+}
+
+.checkbox__control:checked {
+  + .checkbox__label--size--m {
+    @include box-shadow(0, 0, 0, 2px, color($main-c, primary), true);
+  }
+}
+
+.checkbox__label {
+
+}
+
+.checkbox__label--size--m {
+  display: block;
+  padding: 18px 0 18px 0;
+  width: 100%;
+  text-align: center;
+  @include box-shadow(0, 0, 0, 2px, rgba(color($main-c, secondary), 0.1), true);
+  transition: box-shadow 0.25s ease;
+}
+
 .contact {
   padding-top: 34px;
   padding-bottom: 39px;
@@ -1157,35 +1186,6 @@
     padding-bottom: 15px;
     padding-right: 12px;
   }
-}
-
-.checkbox {
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
-.checkbox__control {
-
-}
-
-.checkbox__control:checked {
-  + .checkbox__label--size--m {
-    @include box-shadow(0, 0, 0, 2px, color($main-c, primary), true);
-  }
-}
-
-.checkbox__label {
-
-}
-
-.checkbox__label--size--m {
-  display: block;
-  padding: 18px 0 18px 0;
-  width: 100%;
-  text-align: center;
-  @include box-shadow(0, 0, 0, 2px, rgba(color($main-c, secondary), 0.1), true);
-  transition: box-shadow 0.25s ease;
 }
 
 .container {
@@ -1379,23 +1379,6 @@
 
 .hamburger-button--close {
   background-image: url("../img/svg/icon-menu-close.svg");
-}
-
-.htmlacademy-logo {
-  margin: 5px -6px 0 0;
-  padding: 0;
-  color: color($main-c, primary);
-  fill: color($main-c, primary);
-
-  @media (min-width: breakpoint(tablet)) {
-    margin-top: 6px;
-    margin-right: -8px;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    margin-top: 6px;
-    margin-right: -8px;
-  }
 }
 
 .impressions {
@@ -1670,6 +1653,27 @@
   }
 }
 
+.htmlacademy-logo {
+  margin: 5px -6px 0 0;
+  padding: 0;
+  color: color($main-c, primary);
+  fill: color($main-c, primary);
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: 6px;
+    margin-right: -8px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-top: 6px;
+    margin-right: -8px;
+  }
+}
+
+.is-unclickable {
+  pointer-events: none;
+}
+
 .input {
   background-color: darkred;
 }
@@ -1701,10 +1705,6 @@
 
 .input .input__icon {
 
-}
-
-.is-unclickable {
-  pointer-events: none;
 }
 
 .js-dropdown-navigation {
@@ -2389,7 +2389,7 @@
   box-shadow:
   inset 0 0 0 1px color($grey-c, darker),
   0 6px 10px 0 rgba(color($base-c, black), 0.1);
-  transition: opacity 0.25s ease, visibility 0.3s ease, top 0.25s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
 
   @media (min-width: breakpoint(tablet)) {
     width: 566px;
@@ -2460,7 +2460,8 @@
 }
 
 .modal-overlay {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   margin: 0;
   padding: 0;
   position: fixed;
@@ -2470,10 +2471,12 @@
   width: 100%;
   height: 100vh;
   background-color: rgba(color($base-c, white), 0.9);
+  transition: opacity 0.35s ease, visibility 0.3s ease;
 }
 
 .modal-overlay--open {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .order-form {
