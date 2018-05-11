@@ -1,5 +1,4 @@
 var imageMap = document.querySelector(".main-map__image-wrapper");
-window.onload = hideImageMap;
 
 function initMap() {
   var uluru = {lat: 59.938939, lng: 30.323186};
@@ -19,19 +18,30 @@ function initMap() {
   });
 }
 
+window.onload = hideImageMap;
+
 function hideImageMap() {
   imageMap.classList.add("visually-hidden");
 }
 
+window.addEventListener("load", initMap);
 
-var modalOverlay = document.querySelector(".modal-overlay");
 
-function modalOverlayShow() {
-  modalOverlay.classList.remove("visually-hidden");
+var modalOverlay = document.querySelector(".modal-overlay"),
+  modalCart = modalOverlay.querySelector(".modal-cart"),
+  modalButton = document.querySelector(".js-modal-button");
+
+modalButton.addEventListener("click", function () {
+  modalOverlay.classList.add("modal-overlay--open");
+  modalCart.classList.add("modal-cart--open");
   document.body.style.overflow = "hidden";
-}
+});
 
-window.addEventListener("load", modalOverlayShow);
+/*window.addEventListener("click", function (e) {
+  if (e.target !== modalCart) {
+    modalOverlay.classList.add("visually-hidden");
+  }
+});*/
 
 "use strict";
 

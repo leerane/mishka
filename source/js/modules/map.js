@@ -1,5 +1,4 @@
 var imageMap = document.querySelector(".main-map__image-wrapper");
-window.onload = hideImageMap;
 
 function initMap() {
   var uluru = {lat: 59.938939, lng: 30.323186};
@@ -19,7 +18,11 @@ function initMap() {
   });
 }
 
+window.onload = hideImageMap;
+
 function hideImageMap() {
   imageMap.classList.add("visually-hidden");
 }
+
+window.addEventListener("load", initMap);
 

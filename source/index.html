@@ -145,7 +145,7 @@
                 Цена: <span class="best-product__price-text">990 руб.</span>
               </p>
               <div class="best-product__button-wrapper">
-                <a href="#" class="button button--t--s">Заказать</a>
+                <a href="#" class="button button--t--s js-modal-button">Заказать</a>
               </div>
             </div>
           </div>
@@ -322,7 +322,7 @@
       </p>
     </div>
   </footer>
-  <div class="modal-overlay visually-hidden">
+  <div class="modal-overlay">
     <div class="modal-cart">
       <div class="modal-cart__inner">
         <h2 class="modal-cart__title">Добавить в корзину</h2>
@@ -342,19 +342,17 @@
               <label for="large-field" class="checkbox__label checkbox__label--size--m">l</label>
             </div>
           </div>
+          <div class="modal-cart__button-wrapper">
+            <button class="button button--primary modal-cart__button" type="submit">Добавить</button>
+          </div>
         </form>
-        <div class="modal-cart__button-wrapper">
-          <button class="button button--primary modal-cart__button" type="submit">Добавить</button>
-        </div>
       </div>
     </div>
   </div>
   <script src="js/libs/svg4everybody/svg4everybody.min.js"></script>
   <script>svg4everybody();</script>
   <script src="js/main.min.js" async></script>
-<!--
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv3Mue0MjRxWehq81r_XyQS8Lnr-iQ-VQ&callback=initMap"></script>
--->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv3Mue0MjRxWehq81r_XyQS8Lnr-iQ-VQ&callback"></script>
 </body>
 
 </html>

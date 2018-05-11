@@ -1,4 +1,5 @@
 .modal-overlay {
+  display: none;
   margin: 0;
   padding: 0;
   position: fixed;
@@ -8,4 +9,8 @@
   width: 100%;
   height: 100vh;
   background-color: rgba(color($base-c, white), 0.9);
+}
+
+.modal-overlay--open {
+  display: block;
 }
