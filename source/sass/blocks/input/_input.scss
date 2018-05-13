@@ -1,13 +1,16 @@
 .input {
   padding: 0;
+  width: 100%;
 }
 
 .input--type--text {
 
 }
 
-.input.input--type--number {
-
+.input--type--number, .input--type--email {
+  .input__label {
+    display: none;
+  }
 }
 
 .input__label {
@@ -16,26 +19,40 @@
 }
 
 .input__control {
+  width: 100%;
   padding: 14px 35px 18px 0;
   border: 0;
   background-color: color($base-c, white);
   @include font-par(font-family(opensans), font-weight(normal), font-size(base-t), normal, color($main-c, secondary), 18px);
 
   @include box-shadow(0, -2px, 0, 0, color($base-c, black), true);
-}
 
-.input-control:focus {
-  &::placeholder {
-    color: transparent;
+  @include placeholder() {
+    color: rgba(color($main-c, secondary), 0.3);
   }
 }
 
-.input .input__control.input__control--icon {
+.input__control:focus {
+  @include box-shadow(0, -2px, 0, 0, color($main-c, primary), true);
+
+  @include placeholder() {
+    opacity: 0;
+  }
+}
+
+.input__control:hover {
+  @include box-shadow(0, -2px, 0, 0, color($main-c, primary), true);
+}
+
+.input__control--icon {
 
 }
 
-.input .input__wrap {
-
+.input__wrap {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 .input .input__icon {

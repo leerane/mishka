@@ -172,6 +172,19 @@
 
 // UI
 
+@mixin placeholder() {
+  $prefix-list:
+    "::-webkit-input-placeholder",
+    ":-moz-placeholder",
+    "::-moz-placeholder",
+    ":-ms-input-placeholder";
+  @each $prefix in $prefix-list {
+    &#{$prefix} {
+      @content;
+    }
+  }
+}
+
 @mixin card($background-color: color($base-c, white)) {
   background-color: $background-color;
 

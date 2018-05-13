@@ -136,7 +136,7 @@
                     <span class="form-group__title">Фио</span>
                     <div class="input input--type--text form-group__input">
                       <label for="name-field" class="input__label">Имя:</label>
-                      <input type="text" required name="name" id="name-field" class="input__control" placeholder="">
+                      <input type="text" required name="name" id="name-field" class="input__control" placeholder="Введите ваше имя*">
                     </div>
                     <div class="input input--type--text form-group__input">
                       <label for="surname-field" class="input__label">Фамилия:</label>
@@ -156,20 +156,28 @@
                     <div class="input input--type--number form-group__input">
                       <label for="phone-field" class="visually-hidden input__label">Номер телефона:</label>
                       <div class="input__wrap">
-                        <input type="tel" pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}" required name="phone" id="phone-field" class="input__control input__control--icon" placeholder="+7 XXX XX XX*">
-                        <span class="input__icon"></span>
+                        <input type="tel" required name="phone" pattern="\+7\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}" id="phone-field" class="input__control input__control--icon" placeholder="+7 XXX XX XX*">
+                        <span class="input__icon">
+                          <svg aria-hidden="true" width="24.83" height=" 24.33" class="svg-image catalog-video__svg">
+                            <use xlink:href="img/svg/sprite.svg#phone-icon"/>
+                          </svg>
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="form-group__inner">
-                    <span class="form-group__title">e-mail</span>
-                    <div class="input input--type--text form-group__input">
+                    <span class="form-group__title">E-mail</span>
+                    <div class="input input--type--email form-group__input">
                       <label for="email-field" class="visually-hidden input__label">Ваша почта:</label>
                       <div class="input__wrap">
-                        <input type="text" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required name="email" id="email-field" class="input__control input__control--icon" placeholder="Ваш Email*">
-                        <span class="input__icon"></span>
+                        <input type="email" required name="email" id="email-field" class="input__control input__control--icon" placeholder="Ваш Email*">
+                        <span class="input__icon">
+                          <svg aria-hidden="true" width="32" height="21" class="svg-image catalog-video__svg">
+                            <use xlink:href="img/svg/sprite.svg#mail-icon"/>
+                          </svg>
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -189,7 +197,7 @@
                   <p class="order-form__required-text">
                     *Поля обязательны для заполнения </p>
                   <div class="order-form__button-wrapper">
-                    <button class="button" type="submit">Отправить заказ</button>
+                    <button class="button js-order-button" type="submit">Отправить заказ</button>
                   </div>
                 </div>
               </li>

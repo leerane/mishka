@@ -4,7 +4,7 @@ if (document.querySelector(".modal-overlay")) {
     modalButtons = document.querySelectorAll(".js-modal-button");
   modalButtonArray = Array.prototype.slice.call(modalButtons);
 
-  modalButtonArray.forEach(function(el) {
+  modalButtonArray.forEach(function (el) {
     el.addEventListener("click", function (e) {
       e.preventDefault();
       modalOverlay.classList.remove("visually-hidden");
