@@ -1,16 +1,21 @@
-// --- Variables ---
+/* --- Variables --- */
+
 @import "./utility/variables";
 
-// --- Grid ---
+/* --- Grid --- */
+
 @import "./utility/grid";
 
-// --- Functions ---
+/* --- Functions --- */
+
 @import "./utility/functions";
 
-// --- Mixins ---
+/* --- Mixins --- */
+
 @import "./utility/mixins";
 
-// --- Base styles ---
+/* --- Base styles --- */
+
 @import "./utility/base";
 
 .about-us {
@@ -29,7 +34,7 @@
 }
 
 .about-us__inner {
-  background-color: #fff;
+  background-color: #ffffff;
   width: auto;
   padding: 0 30px 0 30px;
   margin: 0 auto;
@@ -51,6 +56,7 @@
 .about-us__title {
   margin: 0 0 32px -2px;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
@@ -141,6 +147,7 @@
 .about-us__text {
   margin: 0;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), font-lh(base));
 
   @media (min-width: breakpoint(tablet)) {
@@ -180,27 +187,21 @@
     left: -6px;
   }
 
-  &--gift{
+  &--gift {
     top: -52px;
     left: 3px;
+  }
+}
+
+.break-text {
+  @media (min-width: breakpoint(tablet)) {
+    display: none;
   }
 }
 
 .best-product {
   position: relative;
   padding-top: 27px;
-
-  &::after {
-    content: "";
-    padding: 0;
-    margin: 0;
-    background-repeat: repeat no-repeat;
-    background-size: 319px 100%;
-    background-image: url("../img/svg/zigzag-separator--big.svg");
-    height: 7px;
-    display: block;
-    transform: rotate(180deg);
-  }
 
   @media (min-width: breakpoint(tablet)) {
     padding-top: 45px;
@@ -212,6 +213,16 @@
 }
 
 .best-product::after {
+  content: "";
+  padding: 0;
+  margin: 0;
+  background-repeat: repeat no-repeat;
+  background-size: 319px 100%;
+  background-image: url("../img/svg/zigzag-separator--big.svg");
+  height: 7px;
+  display: block;
+  transform: rotate(180deg);
+
   @media (min-width: breakpoint(tablet)) {
     content: "";
     position: absolute;
@@ -315,6 +326,7 @@
   order: -1;
   margin: 0 0 5px 0;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
@@ -333,8 +345,9 @@
 
 .best-product__paragraph {
   @include clear-list();
-  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-md));
   margin-bottom: 20px;
+
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-md));
 
   @media (min-width: breakpoint(tablet)) {
     font-size: font-size(base-t);
@@ -391,6 +404,7 @@
 .best-product__table {
   border-collapse: collapse;
   width: 100%;
+
   @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base));
 
   @media (min-width: breakpoint(tablet)) {
@@ -406,6 +420,7 @@
 .best-product__row {
   margin: 0;
   padding: 0;
+
   @include box-shadow(0, -1px, 0, 0, color($grey-c, darker), true);
 }
 
@@ -441,8 +456,8 @@
   @media (min-width: breakpoint(desktop)) {
     margin-left: -4px;
   }
-
 }
+
 .best-product__buy {
   @media (min-width: breakpoint(tablet)) {
     position: absolute;
@@ -463,8 +478,9 @@
 .best-product__text {
   margin: 0 0 26px 0;
   padding: 0 3px 0 0;
-  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, secondary), font-lh(base-md));
   text-align: center;
+
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, secondary), font-lh(base-md));
 
   @media (min-width: breakpoint(tablet)) {
     padding: 0;
@@ -532,192 +548,6 @@
   }
 }
 
-.break-text {
-  @media (min-width: breakpoint(tablet)) {
-    display: none;
-  }
-}
-
-.button {
-  @include box-shadow(0, 0, 0, 2px, color($main-c, secondary), true);
-  @include font-par(font-family(opensans), font-weight(bold), font-size(other), normal, color($main-c, secondary), font-lh(base));
-  background-color: transparent;
-  text-transform: uppercase;
-  padding: 15px 10px 17px 10px;
-  width: 100%;
-  display: block;
-  text-align: center;
-  margin: 0;
-  cursor: pointer;
-  border: 0;
-
-  &:focus, &:hover {
-    background-color: color($main-c, secondary);
-    color: color($base-c, white);
-  }
-
-  &:active {
-    color: rgba(color($base-c, white), 0.3);
-  }
-
-  @media (min-width: breakpoint(tablet)) {
-    font-size: font-size(base-t);
-  }
-}
-
-.button__inner {
-  width: 100%;
-  padding: 25px 0 15px 29px;
-  min-height: 103px;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  @media (min-width: breakpoint(tablet)) {
-    padding: 28px 0 15px 36px;
-    min-height: 119px;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    padding: 28px 0 15px 37px;
-  }
-}
-
-.button--primary {
-  position: relative;
-  color: color($base-c, white);
-  background-color: color($main-c, primary);
-  box-shadow: none;
-  font-size: font-size(base-t);
-
-  &:focus, &:hover {
-    background-color: #59d5bc;
-  }
-
-  &:active {
-    background-color: #59d5bc;
-  }
-}
-
-.button--primary::after {
-  @include pseudo-ie11-fix();
-}
-
-.button--icon--interior {
-  &:focus, &:hover {
-    position: relative;
-    background-color: #59d5bc;
-  }
-
-  &:active {
-    background-color: #59d5bc;
-    color: rgba(#ffffff, 0.3);
-  }
-}
-
-.button--icon--interior:focus, .button--icon--interior:hover {
-  .button__inner--icon--interior {
-    position: absolute;
-    left: 0;
-    bottom: 5px;
-    background-color: #59d5bc;
-  }
-
-  .button__svg--interior {
-    color: rgba(#149080, 0.7);
-    fill: rgba(#149080, 0.7);
-  }
-}
-
-.button--icon--interior:active {
-  .button__svg--interior {
-    color: rgba(#149080, 0.3);
-    fill: rgba(#149080, 0.3);
-  }
-}
-
-.button--icon--toy {
-  background-color: #56c3b2;
-
-  &:focus, &:hover {
-    position: relative;
-    background-color: color($main-c, accent);
-  }
-
-  &:active {
-    background-color: color($main-c, accent);
-    color: rgba(#ffffff, 0.3);
-  }
-}
-
-.button--icon--toy:focus, .button--icon--toy:hover {
-  .button__inner--icon--toy {
-    position: absolute;
-    left: 0;
-    bottom: 5px;
-    background-color: color($main-c, accent);
-  }
-
-  .button__svg--toy {
-    color: rgba(#149080, 0.7);
-    fill: rgba(#149080, 0.7);
-  }
-}
-
-.button--icon--toy:active {
-  .button__svg--toy {
-    color: rgba(#149080, 0.3);
-    fill: rgba(#149080, 0.3);
-  }
-}
-
-.button__text {
-  white-space: pre-line;
-}
-
-.button__svg--interior {
-  margin-right: 36px;
-  margin-top: -2px;
-  color: rgba(#149080, 0.5);
-  fill: rgba(#149080, 0.5);
-
-  @media (min-width: breakpoint(tablet)) {
-    margin-top: 2px;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    margin-right: 36px;
-  }
-}
-
-.button__svg--toy {
-  margin-right: 27px;
-  margin-top: -4px;
-  color: rgba(#149080, 0.5);
-  fill: rgba(#149080, 0.5);
-
-  @media (min-width: breakpoint(tablet)) {
-    margin-top: 3px;
-    margin-right: 33px;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    margin-right: 35px;
-  }
-}
-
-.button--t--s {
-  width: 99.8%;
-  font-size: font-size(base-t);
-  padding-top: 17px;
-  padding-bottom: 15px;
-
-  @media (min-width: breakpoint(tablet)) {
-    width: 100%;
-  }
-}
-
 .catalog-video {
   margin: 0;
   padding: 31px 0 0 0;
@@ -755,11 +585,13 @@
   margin: 0;
   padding: 0;
   position: relative;
-  @include box-shadow(0, 0, 0, 1px, color($grey-c, dark), true);
   display: flex;
   flex-direction: column;
 
-  &:focus, &:hover {
+  @include box-shadow(0, 0, 0, 1px, color($grey-c, dark), true);
+
+  &:focus,
+  &:hover {
     box-shadow:
       inset 0 0 0 1px color($grey-c, dark),
       0 6px 10px 0 rgba(color($base-c, black), 0.1);
@@ -810,6 +642,7 @@
   margin: 0 0;
   padding: 0;
   letter-spacing: 0.1px;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), font-lh(base-md));
 
   @media (min-width: breakpoint(tablet)) {
@@ -904,15 +737,6 @@
     @include pseudo-ie11-fix();
   }
 
-  &:focus, &:hover {
-    transform: translate(-50%, -51%) scale(1.2);
-  }
-
-  &:active {
-    transform: translate(-50%, -51%) scale(0.8);
-    fill-opacity: 0.3;
-  }
-
   @media (min-width: breakpoint(tablet)) {
     position: absolute;
     top: 50%;
@@ -921,13 +745,19 @@
   }
 }
 
-.catalog-video__play-button:focus, .catalog-video__play-button:hover {
+.catalog-video__play-button:focus,
+.catalog-video__play-button:hover {
+  transform: translate(-50%, -51%) scale(1.2);
+
   @media (min-width: breakpoint(tablet)) {
     transform: translate(-50%, -47%) scale(1.2);
   }
 }
 
 .catalog-video__play-button:active {
+  transform: translate(-50%, -51%) scale(0.8);
+  fill-opacity: 0.3;
+
   @media (min-width: breakpoint(tablet)) {
     transform: translate(-50%, -47%) scale(0.8);
   }
@@ -936,6 +766,7 @@
 .catalog-video__text {
   margin: 0 0 25px 0;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(regular), 13px, normal, color($base-c, black), font-lh(base-md));
 
   @media (min-width: breakpoint(tablet)) {
@@ -968,23 +799,64 @@
 }
 
 .checkbox {
-  margin: 0;
   padding: 0;
-  cursor: pointer;
 }
 
-.checkbox__control {
+.checkbox__control:focus {
+  + .checkbox__label--size--m {
+    @include box-shadow(0, 0, 0, 2px, rgba(color($main-c, secondary), 0.3), true);
+    @include pseudo-focus();
+  }
 
+  + .checkbox__label--mark::before {
+    @include border(2px, solid, color($main-c, primary));
+    @include pseudo-focus();
+  }
+}
+
+.checkbox__control:hover {
+  + .checkbox__label--size--m {
+    @include box-shadow(0, 0, 0, 2px, rgba(color($main-c, secondary), 0.3), true);
+  }
+
+  + .checkbox__label--mark::before {
+    @include border(2px, solid, color($main-c, primary));
+  }
+}
+
+.checkbox__control:active {
+  + .checkbox__label--size--m {
+    @include box-shadow(0, 0, 0, 2px, color($main-c, primary), true);
+  }
+
+  + .checkbox__label--mark::before {
+    @include border(2px, solid, rgba(color($main-c, secondary), 0.3));
+  }
 }
 
 .checkbox__control:checked {
   + .checkbox__label--size--m {
     @include box-shadow(0, 0, 0, 2px, color($main-c, primary), true);
   }
+
+  + .checkbox__label--mark::after {
+    content: "";
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 13px;
+    left: 8px;
+    flex-shrink: 0;
+    width: 23px;
+    height: 17px;
+    background-image: url("../img/svg/checkbox-mark-icon.svg");
+    background-repeat: no-repeat;
+    background-size: 23px 17px;
+  }
 }
 
 .checkbox__label {
-
+  cursor: pointer;
 }
 
 .checkbox__label--size--m {
@@ -992,8 +864,204 @@
   padding: 18px 0 18px 0;
   width: 100%;
   text-align: center;
-  @include box-shadow(0, 0, 0, 2px, rgba(color($main-c, secondary), 0.1), true);
   transition: box-shadow 0.25s ease;
+
+  @include box-shadow(0, 0, 0, 2px, rgba(color($main-c, secondary), 0.1), true);
+}
+
+.checkbox__label--mark {
+  margin: 0;
+  padding: 12px 0 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    margin: -11px 23px 0 0;
+    padding: 0;
+    flex-shrink: 0;
+    width: 40px;
+    height: 39px;
+
+    @include border(2px, solid, color($main-c, secondary));
+  }
+}
+
+.button {
+  @include box-shadow(0, 0, 0, 2px, color($main-c, secondary), true);
+
+  @include font-par(font-family(opensans), font-weight(bold), font-size(other), normal, color($main-c, secondary), font-lh(base));
+  background-color: transparent;
+  text-transform: uppercase;
+  padding: 15px 10px 17px 10px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  border: 0;
+
+  &:focus,
+  &:hover {
+    background-color: color($main-c, secondary);
+    color: color($base-c, white);
+  }
+
+  &:active {
+    color: rgba(color($base-c, white), 0.3);
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(base-t);
+  }
+}
+
+.button__inner {
+  width: 100%;
+  padding: 25px 0 15px 29px;
+  min-height: 103px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 28px 0 15px 36px;
+    min-height: 119px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding: 28px 0 15px 37px;
+  }
+}
+
+.button--primary {
+  position: relative;
+  color: color($base-c, white);
+  background-color: color($main-c, primary);
+  box-shadow: none;
+  font-size: font-size(base-t);
+
+  &:focus,
+  &:hover {
+    background-color: #59d5bc;
+  }
+
+  &:active {
+    background-color: #59d5bc;
+  }
+}
+
+.button--primary::after {
+  @include pseudo-ie11-fix();
+}
+
+.button--icon--interior:focus,
+.button--icon--interior:hover {
+  position: relative;
+  background-color: #59d5bc;
+
+  .button__inner--icon--interior {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    background-color: #59d5bc;
+  }
+
+  .button__svg--interior {
+    color: rgba(#149080, 0.7);
+    fill: rgba(#149080, 0.7);
+  }
+}
+
+.button--icon--interior:active {
+  background-color: #59d5bc;
+  color: rgba(#ffffff, 0.3);
+
+  .button__svg--interior {
+    color: rgba(#149080, 0.3);
+    fill: rgba(#149080, 0.3);
+  }
+}
+
+.button--icon--toy {
+  background-color: #56c3b2;
+}
+
+.button--icon--toy:focus,
+.button--icon--toy:hover {
+  position: relative;
+  background-color: color($main-c, accent);
+
+  .button__inner--icon--toy {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    background-color: color($main-c, accent);
+  }
+
+  .button__svg--toy {
+    color: rgba(#149080, 0.7);
+    fill: rgba(#149080, 0.7);
+  }
+}
+
+.button--icon--toy:active {
+  background-color: color($main-c, accent);
+  color: rgba(#ffffff, 0.3);
+
+  .button__svg--toy {
+    color: rgba(#149080, 0.3);
+    fill: rgba(#149080, 0.3);
+  }
+}
+
+.button__text {
+  white-space: pre-line;
+}
+
+.button__svg--interior {
+  margin-right: 36px;
+  margin-top: -2px;
+  color: rgba(#149080, 0.5);
+  fill: rgba(#149080, 0.5);
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: 2px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-right: 36px;
+  }
+}
+
+.button__svg--toy {
+  margin-right: 27px;
+  margin-top: -4px;
+  color: rgba(#149080, 0.5);
+  fill: rgba(#149080, 0.5);
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: 3px;
+    margin-right: 33px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-right: 35px;
+  }
+}
+
+.button--t--s {
+  width: 99.8%;
+  font-size: font-size(base-t);
+  padding-top: 17px;
+  padding-bottom: 15px;
+
+  @media (min-width: breakpoint(tablet)) {
+    width: 100%;
+  }
 }
 
 .contact {
@@ -1074,6 +1142,7 @@
 .contact__title {
   margin: 0 0 26px -2px;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(other), normal, color($base-c, black), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
@@ -1113,6 +1182,7 @@
   flex-direction: row;
   align-items: flex-start;
   flex-basis: auto;
+
   @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) {
@@ -1213,16 +1283,6 @@
   justify-content: center;
   position: relative;
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 261px;
-    height: 1px;
-    top: -14px;
-    left: -37px;
-    background-color: color($grey-c, darker);
-  }
-
   @media (min-width: breakpoint(tablet)) {
     padding-top: 3px;
   }
@@ -1233,6 +1293,14 @@
 }
 
 .footer-copyright::before {
+  content: "";
+  position: absolute;
+  width: 261px;
+  height: 1px;
+  top: -14px;
+  left: -37px;
+  background-color: color($grey-c, darker);
+
   @media (min-width: breakpoint(tablet)) {
     width: 0;
     height: 0;
@@ -1245,6 +1313,7 @@
   padding: 0;
   display: flex;
   align-items: center;
+  
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-d), normal, color($base-c, black), font-lh(base));
 
   &::after {
@@ -1256,7 +1325,8 @@
   }
 }
 
-.footer-copyright__link:focus, .footer-copyright__link:hover {
+.footer-copyright__link:focus,
+.footer-copyright__link:hover {
   .htmlacademy-logo {
     color: color($main-c, accent);
     fill: color($main-c, accent);
@@ -1285,6 +1355,7 @@
 .form-group {
   margin: 0;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), 18px);
 
   @media (min-width: breakpoint(tablet)) {
@@ -1296,7 +1367,7 @@
   }
 }
 
-.form-group .form-group__inner {
+.form-group__inner {
 
 }
 
@@ -1305,8 +1376,9 @@
   padding: 0;
   display: flex;
   align-items: center;
-  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, primary), 16px);
   text-transform: uppercase;
+
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, primary), 16px);
 
   &::after {
     content: "";
@@ -1323,22 +1395,29 @@
   @media (min-width: breakpoint(desktop)) {
 
   }
-
 }
 
 .form-group__radio {
   margin-bottom: 14px;
 }
 
-.form-group .form-group__checkbox {
-
+.form-group__checkbox {
+  margin-bottom: 21px;
 }
 
-.form-group .form-group__input {
-
+.form-group__input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 17px;
 }
 
-.form-group .form-group__textarea {
+.form-group__input:last-child {
+  .input__control {
+    padding: 13px 0 18px 0;
+  }
+}
+
+.form-group__textarea {
 
 }
 
@@ -1347,11 +1426,11 @@
 }
 
 .form-list__item {
-  margin: 0;
-  padding: 0 0 35px 0;
+  margin: 0 0 32px 0;
+  padding: 0;
 }
 
-.form-list .form-list__bottom {
+.form-list__bottom {
 
 }
 
@@ -1368,7 +1447,8 @@
   background-size: auto;
   background-position: 50% 50%;
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     opacity: 0.6;
   }
 
@@ -1379,23 +1459,29 @@
 
 .hamburger-button--close {
   background-image: url("../img/svg/icon-menu-close.svg");
+  background-size: 20px;
+}
+
+.htmlacademy-logo {
+  margin: 5px -6px 0 0;
+  padding: 0;
+  color: color($main-c, primary);
+  fill: color($main-c, primary);
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: 6px;
+    margin-right: -8px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-top: 6px;
+    margin-right: -8px;
+  }
 }
 
 .impressions {
   position: relative;
   padding-top: 28px;
-
-  &::after {
-    content: "";
-    padding: 0;
-    margin: 0;
-    background-repeat: repeat no-repeat;
-    background-size: 319px 100%;
-    background-image: url("../img/svg/zigzag-separator--big.svg");
-    height: 7px;
-    display: block;
-    transform: rotate(180deg);
-  }
 
   @media (min-width: breakpoint(tablet)) {
     padding-top: 0;
@@ -1408,6 +1494,16 @@
 }
 
 .impressions::after {
+  content: "";
+  padding: 0;
+  margin: 0;
+  background-repeat: repeat no-repeat;
+  background-size: 319px 100%;
+  background-image: url("../img/svg/zigzag-separator--big.svg");
+  height: 7px;
+  display: block;
+  transform: rotate(180deg);
+
   @media (min-width: breakpoint(tablet)) {
     content: "";
     position: absolute;
@@ -1506,6 +1602,7 @@
 .impressions__title {
   margin: 0 0 24px -2px;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
@@ -1528,8 +1625,10 @@
 
 .impressions__blockquote {
   @include clear-list();
-  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($base-c, black), 30px);
+
   margin-bottom: 29px;
+
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($base-c, black), 30px);
 
   @media (min-width: breakpoint(tablet)) {
     flex-basis: 100%;
@@ -1584,6 +1683,7 @@
 
 .impressions__author-contact {
   display: block;
+
   @include font-par(font-family(opensans), font-weight(regular), font-size(base-t), normal, color($main-c, secondary), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) {
@@ -1602,17 +1702,8 @@
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 38px;
-  @include box-shadow(0, 0, 0, 1px, color($grey-c, dark), true);
 
-  &::after {
-    content: " ";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    height: 50px;
-    width: 1px;
-    background-color: color($grey-c, dark);
-  }
+  @include box-shadow(0, 0, 0, 1px, color($grey-c, dark), true);
 
   @media (min-width: breakpoint(tablet)) {
     position: absolute;
@@ -1624,6 +1715,14 @@
 }
 
 .impressions__buttons-wrapper::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 50px;
+  width: 1px;
+  background-color: color($grey-c, dark);
+
   @media (min-width: breakpoint(tablet)) {
     height: 0;
     width: 0;
@@ -1653,46 +1752,36 @@
   }
 }
 
-.htmlacademy-logo {
-  margin: 5px -6px 0 0;
-  padding: 0;
-  color: color($main-c, primary);
-  fill: color($main-c, primary);
-
-  @media (min-width: breakpoint(tablet)) {
-    margin-top: 6px;
-    margin-right: -8px;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    margin-top: 6px;
-    margin-right: -8px;
-  }
-}
-
-.is-unclickable {
-  pointer-events: none;
-}
-
 .input {
-  background-color: darkred;
+  padding: 0;
 }
 
-.input.input--type--text {
-  color: #0e84b5;
-  font-size: 20px;
+.input--type--text {
+
 }
 
 .input.input--type--number {
 
 }
 
-.input .input__label {
-
+.input__label {
+  padding: 5px 0 0 0;
+  margin: 0 0 2px 0;
 }
 
-.input .input__control {
+.input__control {
+  padding: 14px 35px 18px 0;
+  border: 0;
+  background-color: color($base-c, white);
+  @include font-par(font-family(opensans), font-weight(normal), font-size(base-t), normal, color($main-c, secondary), 18px);
 
+  @include box-shadow(0, -2px, 0, 0, color($base-c, black), true);
+}
+
+.input-control:focus {
+  &::placeholder {
+    color: transparent;
+  }
 }
 
 .input .input__control.input__control--icon {
@@ -1705,6 +1794,10 @@
 
 .input .input__icon {
 
+}
+
+.is-unclickable {
+  pointer-events: none;
 }
 
 .js-dropdown-navigation {
@@ -1736,7 +1829,8 @@
   }
 }
 
-.link--icon:focus, .link--icon:hover {
+.link--icon:focus,
+.link--icon:hover {
   .main-navigation__icon {
     color: color($main-c, primary);
     fill: color($main-c, primary);
@@ -1787,7 +1881,8 @@
   }
 }
 
-.link--mail:focus, .link--mail:hover {
+.link--mail:focus,
+.link--mail:hover {
   color: color($main-c, accent);
 
   &::after {
@@ -1804,10 +1899,14 @@
   }
 }
 
+.link--search {
+  min-width: 23px;
+  min-height: 23px;
+}
+
 .main-content {
   @include clear-list();
 }
-
 
 .main-footer {
   background-color: color($grey-c, default);
@@ -1829,7 +1928,7 @@
     position: relative;
     min-height: 143px;
     width: auto;
-    padding: 44px 50px 44px 50px
+    padding: 44px 50px 44px 50px;
   }
 
   @media (min-width: breakpoint(desktop)) {
@@ -1846,7 +1945,6 @@
   &::after {
     @include pseudo-ie11-fix();
   }
-
   @media (min-width: breakpoint(tablet)) {
     display: block;
     position: static;
@@ -1863,7 +1961,8 @@
   }
 }
 
-.main-footer__logo:focus, .main-footer__logo:hover {
+.main-footer__logo:focus,
+.main-footer__logo:hover {
   .main-footer__logo-svg {
     color: color($main-c, accent);
     fill: color($main-c, accent);
@@ -1920,7 +2019,6 @@
   }
 }
 
-
 .main-logo {
   @include centerer(null, null, both);
   padding-bottom: 1px;
@@ -1945,7 +2043,8 @@
   }
 }
 
-.main-logo:focus, .main-logo:hover {
+.main-logo:focus,
+.main-logo:hover {
   .main-logo__svg {
     color: rgba(color($base-c, black), 0.6);
     fill: rgba(color($base-c, black), 0.6);
@@ -2016,7 +2115,7 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-    transform: translate(-35%,-83%);
+    transform: translate(-35%, -83%);
   }
 }
 
@@ -2090,10 +2189,11 @@
 .main-navigation__top {
   margin: 0;
   padding: 0;
-  @include box-shadow(0, -1px, 0, 0, color($grey-c, darker), true);
   background-color: #ffffff;
 
-  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)){
+  @include box-shadow(0, -1px, 0, 0, color($grey-c, darker), true);
+
+  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
     position: absolute;
     box-shadow: none;
     order: -2;
@@ -2152,7 +2252,9 @@
   background-color: transparent;
   flex-basis: auto;
   flex-shrink: 0;
+
   @include clear-list();
+
   @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-md));
 
   @media (min-width: breakpoint(tablet)) {
@@ -2201,6 +2303,7 @@
   @media (min-width: breakpoint(desktop)) {
     min-width: 83px;
     padding-left: 36px;
+
     @include box-shadow(1px, 0, 0, 0, color($grey-c, darker), true);
   }
 }
@@ -2236,6 +2339,7 @@
   background-color: transparent;
   padding-top: 26px;
   padding-bottom: 29px;
+
   @include box-shadow(0, -1px, 0, 0, color($grey-c, darker), true);
 
   @media (min-width: breakpoint(tablet)) {
@@ -2251,6 +2355,7 @@
 
 .main-navigation__link {
   position: relative;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), font-lh(base-md));
 }
 
@@ -2313,7 +2418,6 @@
   }
 }
 
-
 .main-page {
   padding: 0;
   margin: 0;
@@ -2333,12 +2437,14 @@
 
 .main-paragraph {
   @include clear-list();
+
   @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-md));
 }
 
 .main-title {
   margin: 0;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
@@ -2370,10 +2476,6 @@
   }
 }
 
-.main-title--size--s {
-
-}
-
 .modal-cart {
   padding: 0;
   margin: 0;
@@ -2387,12 +2489,13 @@
   transform: translate(-50%, -50%);
   background-color: color($base-c, white);
   box-shadow:
-  inset 0 0 0 1px color($grey-c, darker),
-  0 6px 10px 0 rgba(color($base-c, black), 0.1);
+    inset 0 0 0 1px color($grey-c, darker),
+    0 6px 10px 0 rgba(color($base-c, black), 0.1);
   transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
 
   @media (min-width: breakpoint(tablet)) {
     width: 566px;
+
     @include box-shadow(0, 0, 0, 1px, color($grey-c, darker), false);
   }
 }
@@ -2416,7 +2519,9 @@
   padding: 0;
   margin: 0 auto;
   width: 60%;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
+
   text-transform: uppercase;
   text-align: center;
 
@@ -2436,8 +2541,9 @@
 .modal-cart__paragraph {
   padding: 0;
   margin: 12px 0 23px 0;
-  @include font-par(font-family(opensans), font-weight(normal), font-size(base-m), normal, color($base-c, black), font-lh(base-l));
   text-align: center;
+
+  @include font-par(font-family(opensans), font-weight(normal), font-size(base-m), normal, color($base-c, black), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) {
     margin: 14px 0 21px 0;
@@ -2511,6 +2617,7 @@
 .order-page__paragraph {
   margin: 0 0 24px 0;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(regular), 13px, normal, color($main-c, secondary), font-lh(base-md));
 
   @media (min-width: breakpoint(tablet)) {
@@ -2546,8 +2653,9 @@
   margin: 0;
   padding: 0;
 
-  &:focus, &:hover {
-   @include box-shadow(0, 6px, 10px, 0, rgba(color($base-c, black), 0.1), false);
+  &:focus,
+  &:hover {
+    @include box-shadow(0, 6px, 10px, 0, rgba(color($base-c, black), 0.1), false);
   }
 
   &:active {
@@ -2630,6 +2738,7 @@
 .product-card__description {
   margin: 0;
   padding: 27px 28px 28px 28px;
+
   @include box-shadow(0, 0, 0, 1px, color($grey-c, dark), true);
 
   @media (min-width: breakpoint(tablet)) {
@@ -2658,6 +2767,7 @@
 .product-card__title {
   margin: 0 0 5px 0;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), font-lh(base-md));
 
   @media (min-width: breakpoint(tablet)) {
@@ -2669,6 +2779,7 @@
 .product-card__text {
   margin: 0;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(regular), 13px, normal, color($base-c, black), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) {
@@ -2688,16 +2799,6 @@
   align-items: flex-start;
   position: relative;
 
-  &::after {
-    position: absolute;
-    top: -22px;
-    left: 0;
-    content: "";
-    width: 100%;
-    height: 1px;
-    background-color: color($grey-c, dark);
-  }
-
   @media (min-width: breakpoint(tablet)) {
     padding-left: 4px;
     padding-right: 6px;
@@ -2711,6 +2812,14 @@
 }
 
 .product-card__bottom::after {
+  position: absolute;
+  top: -22px;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: color($grey-c, dark);
+
   @media (min-width: breakpoint(tablet)) {
     position: absolute;
     top: -23px;
@@ -2741,6 +2850,7 @@
 .product-card__price {
   margin: 0;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-m), normal, color($base-c, black), font-lh(base-md));
 
   @media (min-width: breakpoint(tablet)) {
@@ -2807,10 +2917,6 @@
   width: 100%;
   margin-bottom: 30px;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-
   @media (min-width: breakpoint(tablet)) {
     padding: 0;
     margin-bottom: 54px;
@@ -2825,6 +2931,8 @@
 }
 
 .products__item:last-child {
+  margin-bottom: 0;
+
   @media (min-width: breakpoint(desktop)) {
     margin-bottom: 54px;
   }
@@ -2851,7 +2959,6 @@
     letter-spacing: -0.1px;
   }
 }
-
 
 .promo-things {
   background-color: color($grey-c, light);
@@ -2897,7 +3004,7 @@
     background-image: url("../img/hero-mobile@2x.jpg");
   }
 
-  @media (min-width: breakpoint(tablet)){
+  @media (min-width: breakpoint(tablet)) {
     padding-top: 153px;
     padding-bottom: 373px;
     background-color: color($grey-c, light);
@@ -2911,7 +3018,7 @@
     background-image: url("../img/hero-tablet@2x.jpg");
   }
 
-  @media (min-width: breakpoint(desktop)){
+  @media (min-width: breakpoint(desktop)) {
     padding-bottom: 359px;
   }
 }
@@ -2922,12 +3029,12 @@
   background-image: none;
   padding-bottom: 76px;
 
-  @media (min-width: breakpoint(tablet)){
+  @media (min-width: breakpoint(tablet)) {
     padding-top: 95px;
     padding-bottom: 79px;
   }
 
-  @media (min-width: breakpoint(desktop)){
+  @media (min-width: breakpoint(desktop)) {
     padding-top: 93px;
     padding-bottom: 102px;
   }
@@ -2938,13 +3045,15 @@
   padding: 0;
   min-height: 103px;
   position: relative;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-d), normal, color($base-c, white), font-lh(base-md));
+
   text-transform: none;
   border: 0;
   box-shadow: none;
   text-align: left;
 
-  @media (min-width: breakpoint(tablet))  {
+  @media (min-width: breakpoint(tablet)) {
     font-size: font-size(other-l);
     line-height: font-lh(base-l);
     min-height: 119px;
@@ -2974,42 +3083,67 @@
 }
 
 .radio {
-  padding: 10px 0 0 0;
+  padding: 0;
 }
 
-.radio__control {
-
-}
-
-.radio__label {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-
-  &::before {
-    margin-right: 23px;
-    flex-shrink: 0;
-    margin-top: -9px;
-    content: "";
-    width: 39px;
-    height: 39px;
-    @include border(2px, solid, color($main-c, secondary));
-    @include border-radius(50%);
+.radio__control:focus {
+  + .radio__label--dot::before {
+    @include border(2px, solid, color($main-c, primary));
+    @include pseudo-focus();
   }
+}
 
-  &::after {
-    flex-shrink: 0;
-    margin-top: -9px;
+.radio__control:hover {
+  + .radio__label--dot::before {
+    @include border(2px, solid, color($main-c, primary));
+  }
+}
+
+.radio__control:active {
+  + .radio__label--dot::before {
+    @include border(2px, solid, rgba(color($main-c, secondary), 0.3));
+  }
+}
+
+.radio__control:checked {
+  + .radio__label--dot::after {
     content: "";
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 13px;
+    left: 12px;
+    flex-shrink: 0;
     width: 16px;
     height: 16px;
     background-color: color($main-c, primary);
+
     @include border-radius(50%);
   }
 }
 
-.radio .radio__label.radio__label--dot {
+.radio__label {
+  margin: 0;
+  padding: 10px 0 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
 
+.radio__label--dot {
+  &::before {
+    content: "";
+    margin: -9px 23px 0 0;
+    padding: 0;
+    flex-shrink: 0;
+    width: 39px;
+    height: 39px;
+
+    @include border(2px, solid, color($main-c, secondary));
+
+    @include border-radius(50%);
+  }
 }
 
 .size-form {
@@ -3022,15 +3156,16 @@
   flex-direction: row;
   margin: 0 0 31px 0;
   padding: 0;
-  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, secondary), 16px);
   text-transform: uppercase;
+
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, secondary), 16px);
 }
 
 .size-form__checkbox {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 0;
-  margin-right: 7px;
+  margin: 0 7px 0 0;
   min-width: 82px;
 
   &:last-child {
@@ -3060,7 +3195,8 @@
   }
 }
 
-.slider-button:focus, .slider-button:hover {
+.slider-button:focus,
+.slider-button:hover {
   .slider-button__svg {
     color: rgba(color($base-c, black), 0.6);
     fill: rgba(color($base-c, black), 0.6);
@@ -3100,7 +3236,8 @@
   }
 }
 
-.social-link:focus, .social-link:hover {
+.social-link:focus,
+.social-link:hover {
   .social-link__svg {
     color: color($main-c, accent);
     fill: color($main-c, accent);
@@ -3118,7 +3255,6 @@
   color: color($base-c, svg);
   fill: color($base-c, svg);
 }
-
 
 .social-list {
   @include clear-list();
@@ -3151,21 +3287,22 @@
   }
 }
 
-.svg-image {
-
-}
-
 .textarea {
 
 }
 
-.textarea .textarea__label {
+.textarea__label {
 
 }
 
-.textarea .textarea__control {
+.textarea__control {
 
 }
+
+.svg-image {
+
+}
+
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
@@ -3186,5 +3323,4 @@ input[type="radio"].visually-hidden {
   clip-path: inset(100%);
 }
 
-
-
+// -- Last attributes --

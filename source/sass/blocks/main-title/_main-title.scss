@@ -1,6 +1,7 @@
 .main-title {
   margin: 0;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
@@ -30,8 +31,4 @@
     font-size: font-size(h2-d);
     line-height: font-lh(title-l);
   }
-}
-
-.main-title--size--s {
-
 }

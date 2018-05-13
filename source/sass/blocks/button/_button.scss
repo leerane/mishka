@@ -1,5 +1,6 @@
 .button {
   @include box-shadow(0, 0, 0, 2px, color($main-c, secondary), true);
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(other), normal, color($main-c, secondary), font-lh(base));
   background-color: transparent;
   text-transform: uppercase;
@@ -11,7 +12,8 @@
   cursor: pointer;
   border: 0;
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     background-color: color($main-c, secondary);
     color: color($base-c, white);
   }
@@ -51,7 +53,8 @@
   box-shadow: none;
   font-size: font-size(base-t);
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     background-color: #59d5bc;
   }
 
@@ -64,19 +67,11 @@
   @include pseudo-ie11-fix();
 }
 
-.button--icon--interior {
-  &:focus, &:hover {
-    position: relative;
-    background-color: #59d5bc;
-  }
+.button--icon--interior:focus,
+.button--icon--interior:hover {
+  position: relative;
+  background-color: #59d5bc;
 
-  &:active {
-    background-color: #59d5bc;
-    color: rgba(#ffffff, 0.3);
-  }
-}
-
-.button--icon--interior:focus, .button--icon--interior:hover {
   .button__inner--icon--interior {
     position: absolute;
     left: 0;
@@ -91,6 +86,9 @@
 }
 
 .button--icon--interior:active {
+  background-color: #59d5bc;
+  color: rgba(#ffffff, 0.3);
+
   .button__svg--interior {
     color: rgba(#149080, 0.3);
     fill: rgba(#149080, 0.3);
@@ -99,19 +97,13 @@
 
 .button--icon--toy {
   background-color: #56c3b2;
-
-  &:focus, &:hover {
-    position: relative;
-    background-color: color($main-c, accent);
-  }
-
-  &:active {
-    background-color: color($main-c, accent);
-    color: rgba(#ffffff, 0.3);
-  }
 }
 
-.button--icon--toy:focus, .button--icon--toy:hover {
+.button--icon--toy:focus,
+.button--icon--toy:hover {
+  position: relative;
+  background-color: color($main-c, accent);
+
   .button__inner--icon--toy {
     position: absolute;
     left: 0;
@@ -126,6 +118,9 @@
 }
 
 .button--icon--toy:active {
+  background-color: color($main-c, accent);
+  color: rgba(#ffffff, 0.3);
+
   .button__svg--toy {
     color: rgba(#149080, 0.3);
     fill: rgba(#149080, 0.3);

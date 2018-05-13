@@ -11,7 +11,8 @@
   }
 }
 
-.link--icon:focus, .link--icon:hover {
+.link--icon:focus,
+.link--icon:hover {
   .main-navigation__icon {
     color: color($main-c, primary);
     fill: color($main-c, primary);
@@ -62,7 +63,8 @@
   }
 }
 
-.link--mail:focus, .link--mail:hover {
+.link--mail:focus,
+.link--mail:hover {
   color: color($main-c, accent);
 
   &::after {
@@ -77,4 +79,9 @@
     width: 88%;
     background-color: rgba(color($main-c, accent), 0.3);
   }
+}
+
+.link--search {
+  min-width: 23px;
+  min-height: 23px;
 }

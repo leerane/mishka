@@ -1,22 +1,33 @@
 .input {
-  background-color: darkred;
+  padding: 0;
 }
 
-.input.input--type--text {
-  color: #0e84b5;
-  font-size: 20px;
+.input--type--text {
+
 }
 
 .input.input--type--number {
 
 }
 
-.input .input__label {
-
+.input__label {
+  padding: 5px 0 0 0;
+  margin: 0 0 2px 0;
 }
 
-.input .input__control {
+.input__control {
+  padding: 14px 35px 18px 0;
+  border: 0;
+  background-color: color($base-c, white);
+  @include font-par(font-family(opensans), font-weight(normal), font-size(base-t), normal, color($main-c, secondary), 18px);
 
+  @include box-shadow(0, -2px, 0, 0, color($base-c, black), true);
+}
+
+.input-control:focus {
+  &::placeholder {
+    color: transparent;
+  }
 }
 
 .input .input__control.input__control--icon {

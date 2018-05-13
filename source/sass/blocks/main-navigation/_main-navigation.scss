@@ -26,10 +26,11 @@
 .main-navigation__top {
   margin: 0;
   padding: 0;
-  @include box-shadow(0, -1px, 0, 0, color($grey-c, darker), true);
   background-color: #ffffff;
 
-  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)){
+  @include box-shadow(0, -1px, 0, 0, color($grey-c, darker), true);
+
+  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
     position: absolute;
     box-shadow: none;
     order: -2;
@@ -88,7 +89,9 @@
   background-color: transparent;
   flex-basis: auto;
   flex-shrink: 0;
+
   @include clear-list();
+
   @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-md));
 
   @media (min-width: breakpoint(tablet)) {
@@ -137,6 +140,7 @@
   @media (min-width: breakpoint(desktop)) {
     min-width: 83px;
     padding-left: 36px;
+
     @include box-shadow(1px, 0, 0, 0, color($grey-c, darker), true);
   }
 }
@@ -172,6 +176,7 @@
   background-color: transparent;
   padding-top: 26px;
   padding-bottom: 29px;
+
   @include box-shadow(0, -1px, 0, 0, color($grey-c, darker), true);
 
   @media (min-width: breakpoint(tablet)) {
@@ -187,6 +192,7 @@
 
 .main-navigation__link {
   position: relative;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), font-lh(base-md));
 }
 
@@ -248,4 +254,3 @@
     @include visually-hidden();
   }
 }
-

@@ -53,7 +53,7 @@ $base-c: (
 );
 
 $primary-color: #63d1bb !default;
-$secondary-color: map-get($grey-c,  darkest) !default;
+$secondary-color: map-get($grey-c, darkest) !default;
 $accent-color: #46c1ae !default;
 $success-color: #39b54a !default;
 $warning-color: #f9c301 !default;
@@ -71,7 +71,7 @@ $main-c: (
 );
 
 $brand-color--facebook: #3b5998;
-$brand-color--github: #333;
+$brand-color--github: #333333;
 $brand-color--google: #dc4e41;
 $brand-color--instagram: #3f729b;
 $brand-color--linkedin: #0077b5;
@@ -154,6 +154,5 @@ $font-line-height: (
 );
 
 $font-stack: (
-  opensans: ("Open Sans", Arial, sans-serif),
+  opensans: ("Open Sans", arial, sans-serif),
 );
-

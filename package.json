@@ -40,20 +40,24 @@
     "js-beautify": "^1.7.5",
     "merge-stream": "^1.0.1",
     "pug": "^2.0.3",
-    "stylelint": "9.2.x",
+    "stylelint": "^9.2.0",
     "stylelint-config-htmlacademy": "0.1.x",
+    "stylelint-scss": "^3.1.0",
     "svg4everybody": "^2.1.9"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint .",
+    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss \"!**/normalize.scss\"",
     "test": "npm run editorconfig",
     "build": "gulp build",
     "start": "gulp build:watch"
   },
   "editorconfig-cli": [
     "*.json",
-    "source/*.html"
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/sass/**/*.{sass,scss}"
   ],
   "engines": {
     "node": "8.11"

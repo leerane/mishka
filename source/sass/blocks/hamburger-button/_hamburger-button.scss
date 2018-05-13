@@ -11,7 +11,8 @@
   background-size: auto;
   background-position: 50% 50%;
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     opacity: 0.6;
   }
 
@@ -22,4 +23,5 @@
 
 .hamburger-button--close {
   background-image: url("../img/svg/icon-menu-close.svg");
+  background-size: 20px;
 }

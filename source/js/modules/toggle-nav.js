@@ -32,12 +32,3 @@ toggleButton.addEventListener("click", function() {
   this.classList.toggle("hamburger-button--close");
   mainNav.classList.toggle("js-dropdown-navigation--active");
 });
-
-
-
-
-
-
-
-
-

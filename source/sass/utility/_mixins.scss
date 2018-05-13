@@ -8,7 +8,8 @@
   @each $font-ext, $font-format in $font-formats {
     @if ($font-ext == "eot") {
       $font-ext: "#{$font-ext}#iefix";
-    } @else if ($font-ext == "svg" and $font-svg-id != null) {
+    }
+    @else if ($font-ext == "svg" and $font-svg-id != null) {
       $font-ext: "#{$font-ext}#{$font-svg-id}";
     }
 
@@ -51,8 +52,7 @@
     border: $border-size $border-pattern $border-color;
   }
   @else {
-    border-#{$border-position}: $border-size
-    $border-pattern $border-color;
+    border-#{$border-position}: $border-size $border-pattern $border-color;
   }
   @if $border-clear == none {
     $border-position: all;
@@ -64,29 +64,20 @@
 
 // Border-radius
 
-@mixin border-radius($top-left: 10px, $top-right: null, $bottom-right: null, $bottom-left: null){
-  -webkit-border-radius: $top-left $top-right $bottom-right $bottom-left;
-     -moz-border-radius: $top-left $top-right $bottom-right $bottom-left;
-      -ms-border-radius: $top-left $top-right $bottom-right $bottom-left;
-          border-radius: $top-left $top-right $bottom-right $bottom-left;
+@mixin border-radius($top-left: 10px, $top-right: null, $bottom-right: null, $bottom-left: null) {
+  border-radius: $top-left $top-right $bottom-right $bottom-left;
 }
 
 // Opacity
 
 @mixin opacity($opacity: 0.5) {
-  $opacityPercentage: ($opacity * 100);
-  filter: alpha(opacity=$opacityPercentage);
   opacity: $opacity;
 }
 
 // Transform
 
 @mixin rotate($deg: 0) {
-  -webkit-transform: rotate($deg + deg);
-     -moz-transform: rotate($deg + deg);
-      -ms-transform: rotate($deg + deg);
-       -o-transform: rotate($deg + deg);
-          transform: rotate($deg + deg);
+  transform: rotate($deg + deg);
 }
 
 // Other
@@ -126,6 +117,7 @@
   right: 0;
   top: 0;
   background-color: color($base-c, white);
+
   @include opacity();
 }
 
@@ -143,24 +135,29 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-    } @else if $direction == vertical {
+    }
+    @else if $direction == vertical {
       top: 50%;
       transform: translateY(-50%);
-    } @else {
+    }
+    @else {
       left: 50%;
       transform: translateX(-50%);
     }
-  } @else if $width and $height {
+  }
+  @else if $width and $height {
     top: 50%;
     left: 50%;
     width: $width;
     height: $height;
     margin: -($width / 2) #{0 0} -($height / 2);
-  } @else if not $height {
+  }
+  @else if not $height {
     left: 50%;
     width: $width;
     margin-left: -($width / 2);
-  } @else {
+  }
+  @else {
     top: 50%;
     height: $height;
     margin-top: -($height / 2);
@@ -177,15 +174,22 @@
 
 @mixin card($background-color: color($base-c, white)) {
   background-color: $background-color;
+
   @include border(1px, solid, color($grey-c, dark), all, none);
 }
 
 @mixin box-shadow($x: 0, $y: 0, $blur: 0, $dist: 2px, $color: color($main-c, secondary), $inset: false) {
   @if $inset == true {
     box-shadow: inset $x $y $blur $dist $color;
-  } @else {
+  }
+  @else {
     box-shadow: $x $y $blur $dist $color;
   }
+}
+
+@mixin pseudo-focus() {
+  outline: dotted thin;
+  outline: -webkit-focus-ring-color auto 5px;
 }
 
 @mixin link() {

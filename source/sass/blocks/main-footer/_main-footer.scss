@@ -18,7 +18,7 @@
     position: relative;
     min-height: 143px;
     width: auto;
-    padding: 44px 50px 44px 50px
+    padding: 44px 50px 44px 50px;
   }
 
   @media (min-width: breakpoint(desktop)) {
@@ -35,7 +35,6 @@
   &::after {
     @include pseudo-ie11-fix();
   }
-
   @media (min-width: breakpoint(tablet)) {
     display: block;
     position: static;
@@ -52,7 +51,8 @@
   }
 }
 
-.main-footer__logo:focus, .main-footer__logo:hover {
+.main-footer__logo:focus,
+.main-footer__logo:hover {
   .main-footer__logo-svg {
     color: color($main-c, accent);
     fill: color($main-c, accent);

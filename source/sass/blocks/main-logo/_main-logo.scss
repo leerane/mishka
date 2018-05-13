@@ -22,7 +22,8 @@
   }
 }
 
-.main-logo:focus, .main-logo:hover {
+.main-logo:focus,
+.main-logo:hover {
   .main-logo__svg {
     color: rgba(color($base-c, black), 0.6);
     fill: rgba(color($base-c, black), 0.6);

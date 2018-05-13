@@ -76,6 +76,7 @@
 .contact__title {
   margin: 0 0 26px -2px;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(other), normal, color($base-c, black), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
@@ -115,6 +116,7 @@
   flex-direction: row;
   align-items: flex-start;
   flex-basis: auto;
+
   @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($main-c, secondary), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) {

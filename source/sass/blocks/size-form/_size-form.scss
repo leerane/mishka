@@ -8,15 +8,16 @@
   flex-direction: row;
   margin: 0 0 31px 0;
   padding: 0;
-  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, secondary), 16px);
   text-transform: uppercase;
+
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($main-c, secondary), 16px);
 }
 
 .size-form__checkbox {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 0;
-  margin-right: 7px;
+  margin: 0 7px 0 0;
   min-width: 82px;
 
   &:last-child {

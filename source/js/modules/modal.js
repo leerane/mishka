@@ -1,6 +1,7 @@
-var modalOverlay = document.querySelector(".modal-overlay"),
-  modalCart = modalOverlay.querySelector(".modal-cart"),
-  modalButtons = document.querySelectorAll(".js-modal-button");
+if (document.querySelector(".modal-overlay")) {
+  var modalOverlay = document.querySelector(".modal-overlay"),
+    modalCart = modalOverlay.querySelector(".modal-cart"),
+    modalButtons = document.querySelectorAll(".js-modal-button");
   modalButtonArray = Array.prototype.slice.call(modalButtons);
 
   modalButtonArray.forEach(function(el) {
@@ -21,6 +22,4 @@ var modalOverlay = document.querySelector(".modal-overlay"),
       }
     });
   });
-
-
-
+}

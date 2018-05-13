@@ -8,7 +8,8 @@
   }
 }
 
-.social-link:focus, .social-link:hover {
+.social-link:focus,
+.social-link:hover {
   .social-link__svg {
     color: color($main-c, accent);
     fill: color($main-c, accent);
@@ -26,4 +27,3 @@
   color: color($base-c, svg);
   fill: color($base-c, svg);
 }
-

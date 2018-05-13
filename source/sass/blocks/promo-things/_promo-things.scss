@@ -42,7 +42,7 @@
     background-image: url("../img/hero-mobile@2x.jpg");
   }
 
-  @media (min-width: breakpoint(tablet)){
+  @media (min-width: breakpoint(tablet)) {
     padding-top: 153px;
     padding-bottom: 373px;
     background-color: color($grey-c, light);
@@ -56,7 +56,7 @@
     background-image: url("../img/hero-tablet@2x.jpg");
   }
 
-  @media (min-width: breakpoint(desktop)){
+  @media (min-width: breakpoint(desktop)) {
     padding-bottom: 359px;
   }
 }
@@ -67,12 +67,12 @@
   background-image: none;
   padding-bottom: 76px;
 
-  @media (min-width: breakpoint(tablet)){
+  @media (min-width: breakpoint(tablet)) {
     padding-top: 95px;
     padding-bottom: 79px;
   }
 
-  @media (min-width: breakpoint(desktop)){
+  @media (min-width: breakpoint(desktop)) {
     padding-top: 93px;
     padding-bottom: 102px;
   }
@@ -83,13 +83,15 @@
   padding: 0;
   min-height: 103px;
   position: relative;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-d), normal, color($base-c, white), font-lh(base-md));
+
   text-transform: none;
   border: 0;
   box-shadow: none;
   text-align: left;
 
-  @media (min-width: breakpoint(tablet))  {
+  @media (min-width: breakpoint(tablet)) {
     font-size: font-size(other-l);
     line-height: font-lh(base-l);
     min-height: 119px;

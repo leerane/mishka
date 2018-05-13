@@ -20,7 +20,8 @@
   }
 }
 
-.slider-button:focus, .slider-button:hover {
+.slider-button:focus,
+.slider-button:hover {
   .slider-button__svg {
     color: rgba(color($base-c, black), 0.6);
     fill: rgba(color($base-c, black), 0.6);

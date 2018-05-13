@@ -2,18 +2,6 @@
   position: relative;
   padding-top: 28px;
 
-  &::after {
-    content: "";
-    padding: 0;
-    margin: 0;
-    background-repeat: repeat no-repeat;
-    background-size: 319px 100%;
-    background-image: url("../img/svg/zigzag-separator--big.svg");
-    height: 7px;
-    display: block;
-    transform: rotate(180deg);
-  }
-
   @media (min-width: breakpoint(tablet)) {
     padding-top: 0;
     padding-bottom: 71px;
@@ -25,6 +13,16 @@
 }
 
 .impressions::after {
+  content: "";
+  padding: 0;
+  margin: 0;
+  background-repeat: repeat no-repeat;
+  background-size: 319px 100%;
+  background-image: url("../img/svg/zigzag-separator--big.svg");
+  height: 7px;
+  display: block;
+  transform: rotate(180deg);
+
   @media (min-width: breakpoint(tablet)) {
     content: "";
     position: absolute;
@@ -123,6 +121,7 @@
 .impressions__title {
   margin: 0 0 24px -2px;
   padding: 0;
+
   @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
@@ -145,8 +144,10 @@
 
 .impressions__blockquote {
   @include clear-list();
-  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($base-c, black), 30px);
+
   margin-bottom: 29px;
+
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($base-c, black), 30px);
 
   @media (min-width: breakpoint(tablet)) {
     flex-basis: 100%;
@@ -201,6 +202,7 @@
 
 .impressions__author-contact {
   display: block;
+
   @include font-par(font-family(opensans), font-weight(regular), font-size(base-t), normal, color($main-c, secondary), font-lh(base-l));
 
   @media (min-width: breakpoint(tablet)) {
@@ -219,17 +221,8 @@
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 38px;
-  @include box-shadow(0, 0, 0, 1px, color($grey-c, dark), true);
 
-  &::after {
-    content: " ";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    height: 50px;
-    width: 1px;
-    background-color: color($grey-c, dark);
-  }
+  @include box-shadow(0, 0, 0, 1px, color($grey-c, dark), true);
 
   @media (min-width: breakpoint(tablet)) {
     position: absolute;
@@ -241,6 +234,14 @@
 }
 
 .impressions__buttons-wrapper::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 50px;
+  width: 1px;
+  background-color: color($grey-c, dark);
+
   @media (min-width: breakpoint(tablet)) {
     height: 0;
     width: 0;

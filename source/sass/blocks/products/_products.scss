@@ -45,10 +45,6 @@
   width: 100%;
   margin-bottom: 30px;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-
   @media (min-width: breakpoint(tablet)) {
     padding: 0;
     margin-bottom: 54px;
@@ -63,6 +59,8 @@
 }
 
 .products__item:last-child {
+  margin-bottom: 0;
+
   @media (min-width: breakpoint(desktop)) {
     margin-bottom: 54px;
   }
@@ -89,4 +87,3 @@
     letter-spacing: -0.1px;
   }
 }
-

@@ -4,7 +4,7 @@
 
 @function color($color-map, $color-value) {
   @if map-has-key($color-map, $color-value) {
-    @return map-get($color-map, $color-value)
+    @return map-get($color-map, $color-value);
   }
 }
 
@@ -12,25 +12,25 @@
 
 @function font-weight($weight) {
   @if map-has-key($font-weights, $weight) {
-    @return map-get($font-weights, $weight)
+    @return map-get($font-weights, $weight);
   }
 }
 
 @function font-size($size) {
   @if map-has-key($font-sizes, $size) {
-    @return map-get($font-sizes, $size)
+    @return map-get($font-sizes, $size);
   }
 }
 
 @function font-family($family) {
   @if map-has-key($font-stack, $family) {
-    @return map-get($font-stack, $family)
+    @return map-get($font-stack, $family);
   }
 }
 
 @function font-lh($line-height) {
   @if map-has-key($font-line-height, $line-height) {
-    @return map-get($font-line-height, $line-height)
+    @return map-get($font-line-height, $line-height);
   }
 }
 
@@ -38,6 +38,6 @@
 
 @function breakpoint($bp-size) {
   @if map-has-key($breakpoints, $bp-size) {
-    @return map-get($breakpoints, $bp-size)
+    @return map-get($breakpoints, $bp-size);
   }
 }
