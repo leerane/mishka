@@ -3,11 +3,15 @@
   width: 100%;
 }
 
-.input--type--text {
-
+.input--type--text:last-child {
+  margin-bottom: 0;
 }
 
-.input--type--number, .input--type--email {
+.input--type--tel {
+  margin-bottom: 32px;
+}
+
+.input--type--tel, .input--type--email {
   .input__label {
     display: none;
   }
@@ -16,6 +20,12 @@
 .input__label {
   padding: 5px 0 0 0;
   margin: 0 0 2px 0;
+}
+
+.input__label--text {
+  @media (min-width: breakpoint(tablet)) {
+    margin-right: 25px;
+  }
 }
 
 .input__control {
@@ -30,6 +40,10 @@
   @include placeholder() {
     color: rgba(color($main-c, secondary), 0.3);
   }
+
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(base-d);
+  }
 }
 
 .input__control:focus {
@@ -38,14 +52,32 @@
   @include placeholder() {
     opacity: 0;
   }
+
+  + .input__svg {
+    color: color($main-c, primary);
+    fill: color($main-c, primary);
+  }
 }
 
 .input__control:hover {
   @include box-shadow(0, -2px, 0, 0, color($main-c, primary), true);
+
+  + .input__svg {
+    color: color($main-c, primary);
+    fill: color($main-c, primary);
+  }
+}
+
+.input__control--patronymic {
+  padding: 13px 0 18px 0;
 }
 
 .input__control--icon {
+  margin-left: -1px;
 
+  @media (min-width: breakpoint(tablet)) {
+    background-color: color($grey-c, default);
+  }
 }
 
 .input__wrap {
@@ -55,6 +87,15 @@
   width: 100%;
 }
 
-.input .input__icon {
+.input__svg {
+  position: absolute;
+  top: 9px;
+  right: 8px;
+  color: rgba(color($base-c, black), 0.2);
+  fill: rgba(color($base-c, black), 0.2);
 
+  &--mail {
+    top: 14px;
+    right: 4px;
+  }
 }

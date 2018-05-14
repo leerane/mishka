@@ -73,7 +73,7 @@
     </header>
     <main class="main-content">
       <section class="promo-things">
-        <div class="promo-things__inner promo-things__inner--no-image">
+        <div class="promo-things__inner promo-things__inner--no-image promo-things__inner--order">
           <h2 class="main-title promo-things__title main-title--size--l main-content__title">
             Вязание на заказ</h2>
         </div>
@@ -88,13 +88,15 @@
                 <div class="form-group">
                   <div class="form-group__inner">
                     <span class="form-group__title">Тип</span>
-                    <div class="radio form-group__radio">
-                      <input type="radio" name="toggle" id="accessory-field" value="accessory" checked class="visually-hidden radio__control">
-                      <label for="accessory-field" class="radio__label radio__label--dot">Аксессуар для интерьера</label>
-                    </div>
-                    <div class="radio form-group__radio">
-                      <input type="radio" name="toggle" id="toy-field" value="toy" class="visually-hidden radio__control">
-                      <label for="toy-field" class="radio__label radio__label--dot">Детская игрушка</label>
+                    <div class="form-group__wrapper">
+                      <div class="radio form-group__radio">
+                        <input type="radio" name="toggle" id="accessory-field" value="accessory" checked class="visually-hidden radio__control">
+                        <label for="accessory-field" class="radio__label radio__label--dot">Аксессуар для интерьера</label>
+                      </div>
+                      <div class="radio form-group__radio">
+                        <input type="radio" name="toggle" id="toy-field" value="toy" class="visually-hidden radio__control">
+                        <label for="toy-field" class="radio__label radio__label--dot">Детская игрушка</label>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -103,29 +105,31 @@
                 <div class="form-group">
                   <div class="form-group__inner">
                     <span class="form-group__title">Цвет</span>
-                    <div class="checkbox form-group__checkbox">
-                      <input type="checkbox" name="white" id="white-field" value="white-color" checked class="visually-hidden checkbox__control checkbox__control--mark">
-                      <label for="white-field" class="checkbox__label checkbox__label--mark">Белый</label>
-                    </div>
-                    <div class="checkbox form-group__checkbox">
-                      <input type="checkbox" name="grey" id="grey-field" value="grey-color" checked class="visually-hidden checkbox__control checkbox__control--mark">
-                      <label for="grey-field" class="checkbox__label checkbox__label--mark">Серый</label>
-                    </div>
-                    <div class="checkbox form-group__checkbox">
-                      <input type="checkbox" name="tiffani" id="tiffani-field" value="tiffani-color" class="visually-hidden checkbox__control checkbox__control--mark">
-                      <label for="tiffani-field" class="checkbox__label checkbox__label--mark">«Тиффани»</label>
-                    </div>
-                    <div class="checkbox form-group__checkbox">
-                      <input type="checkbox" name="black" id="black-field" value="black-color" class="visually-hidden checkbox__control checkbox__control--mark">
-                      <label for="black-field" class="checkbox__label checkbox__label--mark">Черный</label>
-                    </div>
-                    <div class="checkbox form-group__checkbox">
-                      <input type="checkbox" name="pink" id="pink-field" value="pink-color" class="visually-hidden checkbox__control checkbox__control--mark">
-                      <label for="pink-field" class="checkbox__label checkbox__label--mark">Розовый</label>
-                    </div>
-                    <div class="checkbox form-group__checkbox">
-                      <input type="checkbox" name="orange" id="orange-field" value="orange-color" class="visually-hidden checkbox__control checkbox__control--mark">
-                      <label for="orange-field" class="checkbox__label checkbox__label--mark">Оранжевый</label>
+                    <div class="form-group__wrapper">
+                      <div class="checkbox form-group__checkbox">
+                        <input type="checkbox" name="white" id="white-field" value="white-color" checked class="visually-hidden checkbox__control checkbox__control--mark">
+                        <label for="white-field" class="checkbox__label checkbox__label--mark">Белый</label>
+                      </div>
+                      <div class="checkbox form-group__checkbox">
+                        <input type="checkbox" name="grey" id="grey-field" value="grey-color" checked class="visually-hidden checkbox__control checkbox__control--mark">
+                        <label for="grey-field" class="checkbox__label checkbox__label--mark">Серый</label>
+                      </div>
+                      <div class="checkbox form-group__checkbox">
+                        <input type="checkbox" name="tiffani" id="tiffani-field" value="tiffani-color" class="visually-hidden checkbox__control checkbox__control--mark">
+                        <label for="tiffani-field" class="checkbox__label checkbox__label--mark">«Тиффани»</label>
+                      </div>
+                      <div class="checkbox form-group__checkbox">
+                        <input type="checkbox" name="black" id="black-field" value="black-color" class="visually-hidden checkbox__control checkbox__control--mark">
+                        <label for="black-field" class="checkbox__label checkbox__label--mark">Черный</label>
+                      </div>
+                      <div class="checkbox form-group__checkbox">
+                        <input type="checkbox" name="pink" id="pink-field" value="pink-color" class="visually-hidden checkbox__control checkbox__control--mark">
+                        <label for="pink-field" class="checkbox__label checkbox__label--mark">Розовый</label>
+                      </div>
+                      <div class="checkbox form-group__checkbox">
+                        <input type="checkbox" name="orange" id="orange-field" value="orange-color" class="visually-hidden checkbox__control checkbox__control--mark">
+                        <label for="orange-field" class="checkbox__label checkbox__label--mark">Оранжевый</label>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -134,17 +138,19 @@
                 <div class="form-group">
                   <div class="form-group__inner">
                     <span class="form-group__title">Фио</span>
-                    <div class="input input--type--text form-group__input">
-                      <label for="name-field" class="input__label">Имя:</label>
-                      <input type="text" required name="name" id="name-field" class="input__control" placeholder="Введите ваше имя*">
-                    </div>
-                    <div class="input input--type--text form-group__input">
-                      <label for="surname-field" class="input__label">Фамилия:</label>
-                      <input type="text" required name="surname" id="surname-field" class="input__control" placeholder="Укажите фамилию*">
-                    </div>
-                    <div class="input input--type--text form-group__input">
-                      <label for="patronymic-field" class="input__label">Отчество:</label>
-                      <input type="text" name="patronymic" id="patronymic-field" class="input__control" placeholder="Отчество, если желаете">
+                    <div class="form-group__wrapper">
+                      <div class="input input--type--text form-group__input">
+                        <label for="name-field" class="input__label input__label--text">Имя:</label>
+                        <input type="text" required name="name" id="name-field" class="input__control" placeholder="Введите ваше имя*">
+                      </div>
+                      <div class="input input--type--text form-group__input">
+                        <label for="surname-field" class="input__label input__label--text">Фамилия:</label>
+                        <input type="text" required name="surname" id="surname-field" class="input__control" placeholder="Укажите фамилию*">
+                      </div>
+                      <div class="input input--type--text form-group__input">
+                        <label for="patronymic-field" class="input__label input__label--text">Отчество:</label>
+                        <input type="text" name="patronymic" id="patronymic-field" class="input__control input__control--patronymic" placeholder="Отчество, если желаете">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -152,32 +158,28 @@
               <li class="form-list__item">
                 <div class="form-group">
                   <div class="form-group__inner">
-                    <span class="form-group__title">Тел</span>
-                    <div class="input input--type--number form-group__input">
+                    <span class="form-group__title form-group__title--tel">Тел</span>
+                    <div class="input input--type--tel form-group__input">
                       <label for="phone-field" class="visually-hidden input__label">Номер телефона:</label>
                       <div class="input__wrap">
                         <input type="tel" required name="phone" pattern="\+7\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}" id="phone-field" class="input__control input__control--icon" placeholder="+7 XXX XX XX*">
-                        <span class="input__icon">
-                          <svg aria-hidden="true" width="24.83" height=" 24.33" class="svg-image catalog-video__svg">
-                            <use xlink:href="img/svg/sprite.svg#phone-icon"/>
-                          </svg>
-                        </span>
+                        <svg aria-hidden="true" width="24.83" height=" 24.33" class="svg-image input__svg">
+                          <use xlink:href="img/svg/sprite.svg#phone-icon"/>
+                        </svg>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="form-group__inner">
-                    <span class="form-group__title">E-mail</span>
+                    <span class="form-group__title form-group__title--mail">E-mail</span>
                     <div class="input input--type--email form-group__input">
                       <label for="email-field" class="visually-hidden input__label">Ваша почта:</label>
                       <div class="input__wrap">
                         <input type="email" required name="email" id="email-field" class="input__control input__control--icon" placeholder="Ваш Email*">
-                        <span class="input__icon">
-                          <svg aria-hidden="true" width="32" height="21" class="svg-image catalog-video__svg">
-                            <use xlink:href="img/svg/sprite.svg#mail-icon"/>
-                          </svg>
-                        </span>
+                        <svg aria-hidden="true" width="32" height="21" class="svg-image input__svg input__svg--mail">
+                          <use xlink:href="img/svg/sprite.svg#mail-icon"/>
+                        </svg>
                       </div>
                     </div>
                   </div>
@@ -186,7 +188,7 @@
               <li class="form-list__item">
                 <div class="form-group">
                   <div class="form-group__inner">
-                    <span class="form-group__title">доп</span>
+                    <span class="form-group__title form-group__title--textarea">доп</span>
                     <div class="textarea form-group__textarea">
                       <label for="suggestions-field" class="visually-hidden textarea__label">Ваши пожелания:</label>
                       <textarea name="suggestions" id="suggestions-field" class="textarea__control" placeholder="Опишите все ваши пожелания к заказу"></textarea>
@@ -197,7 +199,7 @@
                   <p class="order-form__required-text">
                     *Поля обязательны для заполнения </p>
                   <div class="order-form__button-wrapper">
-                    <button class="button js-order-button" type="submit">Отправить заказ</button>
+                    <button class="button order-form__button" type="submit">Отправить заказ</button>
                   </div>
                 </div>
               </li>

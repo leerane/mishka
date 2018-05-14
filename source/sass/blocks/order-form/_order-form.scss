@@ -4,13 +4,29 @@
 }
 
 .order-form__list {
-
+  @include clear-list();
 }
 
 .order-form__required-text {
+  padding: 0;
+  margin: 0 0 31px -1px;
 
+  @include font-par(font-family(opensans), font-weight(regular), 14px, normal, color($main-c, secondary), 16px);
+
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(base-t);
+    line-height: font-lh(base-l);
+  }
 }
 
 .order-form__button-wrapper {
+  margin: 0;
+  padding: 0;
+}
 
+.order-form__button {
+  font-size: font-size(base-t);
+  line-height: 16px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }

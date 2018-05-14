@@ -78,6 +78,13 @@
   }
 }
 
+.promo-things__inner--order {
+  @media (min-width: breakpoint(tablet)) {
+    padding-top: 94px;
+    padding-bottom: 80px;
+  }
+}
+
 .promo-things__button {
   margin: 0;
   padding: 0;

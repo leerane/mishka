@@ -1,11 +1,32 @@
 .textarea {
-
+  padding: 0;
 }
 
 .textarea__label {
-
+  display: none;
 }
 
 .textarea__control {
+  width: 100%;
+  padding: 16px;
+  height: 142px;
+  border: 0;
+  resize: none;
+  background-color: color($base-c, white);
+  @include font-par(font-family(opensans), font-weight(normal), font-size(base-t), normal, color($main-c, secondary), 18px);
 
+  @include box-shadow(0, 0, 0, 2px, color($base-c, black), true);
+
+  @include placeholder() {
+    color: rgba(color($main-c, secondary), 0.3);
+  }
+
+  &:focus,
+  &:hover {
+    @include box-shadow(0, 0, 0, 2px, color($main-c, primary), true);
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(base-d);
+  }
 }
