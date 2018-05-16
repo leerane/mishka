@@ -193,12 +193,6 @@
   }
 }
 
-.break-text {
-  @media (min-width: breakpoint(tablet)) {
-    display: none;
-  }
-}
-
 .best-product {
   position: relative;
   padding-top: 27px;
@@ -545,6 +539,12 @@
 
   @media (min-width: breakpoint(desktop)) {
     height: 636px;
+  }
+}
+
+.break-text {
+  @media (min-width: breakpoint(tablet)) {
+    display: none;
   }
 }
 
@@ -1333,7 +1333,6 @@
   padding: 0;
   display: flex;
   align-items: center;
-  
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-d), normal, color($base-c, black), font-lh(base));
 
   &::after {
@@ -2081,10 +2080,6 @@
   pointer-events: none;
 }
 
-.js-hamburger-button {
-
-}
-
 .js-dropdown-navigation {
   width: 100%;
   top: 80px;
@@ -2095,6 +2090,10 @@
 
 .js-dropdown-navigation--active {
   display: block;
+}
+
+.js-hamburger-button {
+
 }
 
 .js-placeholder {
@@ -2271,6 +2270,38 @@
   }
 }
 
+.main-header {
+  background-color: color($base-c, white);
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-shadow:
+    inset 0 1px 0 0 color($grey-c, darker),
+    inset 0 -1px 0 0 color($grey-c, darker);
+
+  @media (min-width: breakpoint(tablet)) {
+    min-height: 89px;
+    overflow: visible;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    box-shadow: none;
+  }
+}
+
+.main-header::after {
+  @media (min-width: breakpoint(desktop)) {
+    content: " ";
+    position: absolute;
+    @include centerer(1150px, null, horizontal);
+    bottom: 0;
+    width: 1150px;
+    max-width: 1150px;
+    height: 1px;
+    background-color: color($grey-c, darker);
+  }
+}
+
 .main-logo {
   @include centerer(null, null, both);
   padding-bottom: 1px;
@@ -2338,38 +2369,6 @@
 
   @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
     display: block;
-  }
-}
-
-.main-header {
-  background-color: color($base-c, white);
-  margin: 0;
-  padding: 0;
-  position: relative;
-  box-shadow:
-    inset 0 1px 0 0 color($grey-c, darker),
-    inset 0 -1px 0 0 color($grey-c, darker);
-
-  @media (min-width: breakpoint(tablet)) {
-    min-height: 89px;
-    overflow: visible;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    box-shadow: none;
-  }
-}
-
-.main-header::after {
-  @media (min-width: breakpoint(desktop)) {
-    content: " ";
-    position: absolute;
-    @include centerer(1150px, null, horizontal);
-    bottom: 0;
-    width: 1150px;
-    max-width: 1150px;
-    height: 1px;
-    background-color: color($grey-c, darker);
   }
 }
 
@@ -3192,96 +3191,6 @@
   color: #d3d2d2;
 }
 
-.products {
-  margin: 0;
-  padding: 30px 0 0 0;
-
-  @media (min-width: breakpoint(tablet)) {
-    padding: 80px 0 0 0;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    padding: 130px 0 0 0;
-  }
-}
-
-.products__inner {
-  width: auto;
-  margin: 0 auto;
-  padding: 0 30px;
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: breakpoint(tablet)) {
-    position: relative;
-    width: auto;
-    padding: 0 50px 42px 50px;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    width: auto;
-    padding: 0 49px 3px 49px;
-    max-width: 1150px;
-  }
-}
-
-.products__list {
-  @include clear-list();
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: breakpoint(desktop)) {
-    flex-direction: row;
-  }
-}
-
-.products__item {
-  width: 100%;
-  margin-bottom: 30px;
-
-  @media (min-width: breakpoint(tablet)) {
-    padding: 0;
-    margin-bottom: 54px;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    flex-basis: auto;
-    width: 316px;
-    margin-right: 51px;
-    display: flex;
-  }
-}
-
-.products__item:last-child {
-  margin-bottom: 0;
-
-  @media (min-width: breakpoint(desktop)) {
-    margin-bottom: 54px;
-  }
-}
-
-.products__item:nth-child(3n) {
-  @media (min-width: breakpoint(desktop)) {
-    margin-right: 0;
-  }
-}
-
-.products__item:nth-of-type(2) .product-card__title {
-  @media (min-width: breakpoint(tablet)) {
-    margin-bottom: 8px;
-  }
-
-  @media (min-width: breakpoint(desktop)) {
-    margin-bottom: 5px;
-  }
-}
-
-.products__item:nth-of-type(2) .product-card__text {
-  @media (min-width: breakpoint(tablet)) {
-    letter-spacing: -0.1px;
-  }
-}
-
 .promo-things {
   background-color: color($grey-c, light);
   position: relative;
@@ -3422,6 +3331,96 @@
   }
 }
 
+.products {
+  margin: 0;
+  padding: 30px 0 0 0;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 80px 0 0 0;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding: 130px 0 0 0;
+  }
+}
+
+.products__inner {
+  width: auto;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: breakpoint(tablet)) {
+    position: relative;
+    width: auto;
+    padding: 0 50px 42px 50px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: auto;
+    padding: 0 49px 3px 49px;
+    max-width: 1150px;
+  }
+}
+
+.products__list {
+  @include clear-list();
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: breakpoint(desktop)) {
+    flex-direction: row;
+  }
+}
+
+.products__item {
+  width: 100%;
+  margin-bottom: 30px;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 0;
+    margin-bottom: 54px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    flex-basis: auto;
+    width: 316px;
+    margin-right: 51px;
+    display: flex;
+  }
+}
+
+.products__item:last-child {
+  margin-bottom: 0;
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: 54px;
+  }
+}
+
+.products__item:nth-child(3n) {
+  @media (min-width: breakpoint(desktop)) {
+    margin-right: 0;
+  }
+}
+
+.products__item:nth-of-type(2) .product-card__title {
+  @media (min-width: breakpoint(tablet)) {
+    margin-bottom: 8px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: 5px;
+  }
+}
+
+.products__item:nth-of-type(2) .product-card__text {
+  @media (min-width: breakpoint(tablet)) {
+    letter-spacing: -0.1px;
+  }
+}
+
 .radio {
   padding: 0;
 }
@@ -3496,7 +3495,6 @@
     left: 0;
   }
 }
-
 
 .size-form {
   margin: 0;
@@ -3639,10 +3637,6 @@
   }
 }
 
-.svg-image {
-
-}
-
 .textarea {
   padding: 0;
 }
@@ -3658,6 +3652,7 @@
   border: 0;
   resize: none;
   background-color: color($base-c, white);
+
   @include font-par(font-family(opensans), font-weight(normal), font-size(base-t), normal, color($main-c, secondary), 18px);
 
   @include box-shadow(0, 0, 0, 2px, color($base-c, black), true);

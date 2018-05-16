@@ -13,6 +13,7 @@
   border: 0;
   resize: none;
   background-color: color($base-c, white);
+
   @include font-par(font-family(opensans), font-weight(normal), font-size(base-t), normal, color($main-c, secondary), 18px);
 
   @include box-shadow(0, 0, 0, 2px, color($base-c, black), true);

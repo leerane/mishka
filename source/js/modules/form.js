@@ -46,4 +46,3 @@ function createDataPlaceholder(e) {
 
 setDataPlaceholder.call(inputControlArray);
 */
-

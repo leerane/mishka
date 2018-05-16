@@ -47,7 +47,6 @@ function createDataPlaceholder(e) {
 setDataPlaceholder.call(inputControlArray);
 */
 
-
 if (document.querySelector(".main-map")) {
   var imageMap = document.querySelector(".main-map__image-wrapper");
 
