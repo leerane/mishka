@@ -7,7 +7,7 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-    padding-top: 22px;
+    padding-top: 122px;
   }
 }
 
@@ -25,7 +25,9 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-    margin-top: 0;
+    padding: 0 225px 0 225px;
+    max-width: 1150px;
+    margin: 0 auto 3px auto;
   }
 }
 
@@ -37,12 +39,11 @@
   @media (min-width: breakpoint(tablet)) {
     position: relative;
     width: auto;
-    padding: 0 0 42px 0;
+    padding: 0;
   }
 
   @media (min-width: breakpoint(desktop)) {
     width: auto;
-    padding: 0 49px 3px 49px;
-    max-width: 1150px;
+    padding: 0;
   }
 }

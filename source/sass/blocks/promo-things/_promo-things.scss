@@ -19,13 +19,20 @@
     background-position: 50% 100%;
   }
 
-  @media (min-width: breakpoint(tablet)) {
+  @media (min-width: breakpoint(desktop)) {
     bottom: -19px;
     height: 37px;
     max-height: 37px;
     padding-top: 0;
     background-repeat: repeat-x;
     background-position: 50% 50%;
+    background-size: 1250px 100%;
+  }
+}
+
+.promo-things--inner-page::after {
+  @media (min-width: breakpoint(desktop)) {
+    background-size: 1150px 100%;
   }
 }
 
@@ -82,6 +89,10 @@
   @media (min-width: breakpoint(tablet)) {
     padding-top: 94px;
     padding-bottom: 80px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding-bottom: 102px;
   }
 }
 

@@ -21,10 +21,9 @@
   @media (min-width: breakpoint(desktop)) {
     content: " ";
     position: absolute;
+    @include centerer(1150px, null, horizontal);
     bottom: 0;
-    left: 50%;
-    width: 100%;
-    transform: translateX(-50%);
+    width: 1150px;
     max-width: 1150px;
     height: 1px;
     background-color: color($grey-c, darker);

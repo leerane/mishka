@@ -9,11 +9,30 @@
 
 .input--type--tel {
   margin-bottom: 32px;
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-bottom: 39px;
+  }
+}
+
+.input--type--email {
+  @media (min-width: breakpoint(tablet)) {
+    margin-bottom: 0;
+  }
 }
 
 .input--type--tel, .input--type--email {
   .input__label {
     display: none;
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-left: auto;
+    width: (501px/666px)*100%;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: 86%;
   }
 }
 
@@ -25,6 +44,13 @@
 .input__label--text {
   @media (min-width: breakpoint(tablet)) {
     margin-right: 25px;
+    padding: 0;
+  }
+}
+
+.input__label--patronymic {
+  @media (min-width: breakpoint(tablet)) {
+    margin-right: 27px;
   }
 }
 
@@ -42,6 +68,8 @@
   }
 
   @media (min-width: breakpoint(tablet)) {
+    padding: 0 35px 15px 16px;
+    margin-top: -4px;
     font-size: font-size(base-d);
   }
 }
@@ -70,6 +98,10 @@
 
 .input__control--patronymic {
   padding: 13px 0 18px 0;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 0 35px 15px 16px;
+  }
 }
 
 .input__control--icon {
@@ -77,6 +109,7 @@
 
   @media (min-width: breakpoint(tablet)) {
     background-color: color($grey-c, default);
+    padding-left: 17px;
   }
 }
 
@@ -94,8 +127,27 @@
   color: rgba(color($base-c, black), 0.2);
   fill: rgba(color($base-c, black), 0.2);
 
-  &--mail {
-    top: 14px;
+  @media (min-width: breakpoint(tablet)) {
+    top: -4px;
+    right: 26px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    top: -4px;
+    right: 8px;
+  }
+}
+
+.input__svg--mail {
+  top: 14px;
+  right: 4px;
+
+  @media (min-width: breakpoint(tablet)) {
+    top: 1px;
+    right: 22px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
     right: 4px;
   }
 }

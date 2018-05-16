@@ -13,7 +13,7 @@
     </script>
     <script src="js/libs/picturefill/picturefill.min.js" async></script>
   </head>
-  <body>
+  <body class="order-body">
     <header class="main-header">
       <nav class="main-navigation">
         <div class="main-navigation__top">
@@ -72,7 +72,7 @@
       </nav>
     </header>
     <main class="main-content">
-      <section class="promo-things">
+      <section class="promo-things promo-things--inner-page">
         <div class="promo-things__inner promo-things__inner--no-image promo-things__inner--order">
           <h2 class="main-title promo-things__title main-title--size--l main-content__title">
             Вязание на заказ</h2>
@@ -87,7 +87,7 @@
               <li class="form-list__item">
                 <div class="form-group">
                   <div class="form-group__inner">
-                    <span class="form-group__title">Тип</span>
+                    <span class="form-group__title form-group__title--radio">Тип</span>
                     <div class="form-group__wrapper">
                       <div class="radio form-group__radio">
                         <input type="radio" name="toggle" id="accessory-field" value="accessory" checked class="visually-hidden radio__control">
@@ -134,11 +134,11 @@
                   </div>
                 </div>
               </li>
-              <li class="form-list__item">
+              <li class="form-list__item form_list__item--name">
                 <div class="form-group">
-                  <div class="form-group__inner">
+                  <div class="form-group__inner form-group__inner--info">
                     <span class="form-group__title">Фио</span>
-                    <div class="form-group__wrapper">
+                    <div class="form-group__wrapper form-group__wrapper--name">
                       <div class="input input--type--text form-group__input">
                         <label for="name-field" class="input__label input__label--text">Имя:</label>
                         <input type="text" required name="name" id="name-field" class="input__control" placeholder="Введите ваше имя*">
@@ -148,22 +148,22 @@
                         <input type="text" required name="surname" id="surname-field" class="input__control" placeholder="Укажите фамилию*">
                       </div>
                       <div class="input input--type--text form-group__input">
-                        <label for="patronymic-field" class="input__label input__label--text">Отчество:</label>
+                        <label for="patronymic-field" class="input__label input__label--text input__label--patronymic">Отчество:</label>
                         <input type="text" name="patronymic" id="patronymic-field" class="input__control input__control--patronymic" placeholder="Отчество, если желаете">
                       </div>
                     </div>
                   </div>
                 </div>
               </li>
-              <li class="form-list__item">
+              <li class="form-list__item form_list__item--contact">
                 <div class="form-group">
-                  <div class="form-group__inner">
+                  <div class="form-group__inner form-group__inner--info">
                     <span class="form-group__title form-group__title--tel">Тел</span>
                     <div class="input input--type--tel form-group__input">
                       <label for="phone-field" class="visually-hidden input__label">Номер телефона:</label>
                       <div class="input__wrap">
                         <input type="tel" required name="phone" pattern="\+7\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}" id="phone-field" class="input__control input__control--icon" placeholder="+7 XXX XX XX*">
-                        <svg aria-hidden="true" width="24.83" height=" 24.33" class="svg-image input__svg">
+                        <svg aria-hidden="true" width="24.83" height="24.33" class="svg-image input__svg">
                           <use xlink:href="img/svg/sprite.svg#phone-icon"/>
                         </svg>
                       </div>
@@ -171,8 +171,8 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <div class="form-group__inner">
-                    <span class="form-group__title form-group__title--mail">E-mail</span>
+                  <div class="form-group__inner form-group__inner--info">
+                    <span class="form-group__title form-group__title--email">E-mail</span>
                     <div class="input input--type--email form-group__input">
                       <label for="email-field" class="visually-hidden input__label">Ваша почта:</label>
                       <div class="input__wrap">
@@ -185,9 +185,9 @@
                   </div>
                 </div>
               </li>
-              <li class="form-list__item">
+              <li class="form-list__item form_list__item--message">
                 <div class="form-group">
-                  <div class="form-group__inner">
+                  <div class="form-group__inner form-group__inner--info">
                     <span class="form-group__title form-group__title--textarea">доп</span>
                     <div class="textarea form-group__textarea">
                       <label for="suggestions-field" class="visually-hidden textarea__label">Ваши пожелания:</label>
