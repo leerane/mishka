@@ -1,0 +1,29 @@
+.social-link {
+  position: relative;
+  cursor: pointer;
+  display: block;
+
+  &::after {
+    @include pseudo-ie11-fix();
+  }
+}
+
+.social-link:focus,
+.social-link:hover {
+  .social-link__svg {
+    color: color($main-c, accent);
+    fill: color($main-c, accent);
+  }
+}
+
+.social-link:active {
+  .social-link__svg {
+    color: rgba(color($main-c, accent), 0.3);
+    fill: rgba(color($main-c, accent), 0.3);
+  }
+}
+
+.social-link__svg {
+  color: color($base-c, svg);
+  fill: color($base-c, svg);
+}

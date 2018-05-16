@@ -1,0 +1,16 @@
+.htmlacademy-logo {
+  margin: 5px -6px 0 0;
+  padding: 0;
+  color: color($main-c, primary);
+  fill: color($main-c, primary);
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: 6px;
+    margin-right: -8px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-top: 6px;
+    margin-right: -8px;
+  }
+}

@@ -1,0 +1,80 @@
+.modal-cart {
+  padding: 0;
+  margin: 0;
+  width: 320px;
+  height: 336px;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: color($base-c, white);
+  box-shadow:
+    inset 0 0 0 1px color($grey-c, darker),
+    0 6px 10px 0 rgba(color($base-c, black), 0.1);
+  transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
+
+  @media (min-width: breakpoint(tablet)) {
+    width: 566px;
+
+    @include box-shadow(0, 0, 0, 1px, color($grey-c, darker), false);
+  }
+}
+
+.modal-cart--open {
+  opacity: 1;
+  visibility: visible;
+  top: 50%;
+}
+
+.modal-cart__inner {
+  padding: 33px 30px 20px 30px;
+  margin: 0 auto;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 33px 108px 20px 108px;
+  }
+}
+
+.modal-cart__title {
+  padding: 0;
+  margin: 0 auto;
+  width: 60%;
+
+  @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
+
+  text-transform: uppercase;
+  text-align: center;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding-left: 2px;
+    width: 100%;
+    font-size: 30px;
+    line-height: font-lh(title-l);
+    letter-spacing: -0.3px;
+  }
+}
+
+.modal-cart__paragraph {
+  padding: 0;
+  margin: 12px 0 23px 0;
+  text-align: center;
+
+  @include font-par(font-family(opensans), font-weight(normal), font-size(base-m), normal, color($base-c, black), font-lh(base-l));
+
+  @media (min-width: breakpoint(tablet)) {
+    margin: 14px 0 21px 0;
+    font-size: font-size(base-t);
+  }
+}
+
+.modal-cart__button-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-cart__button {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}

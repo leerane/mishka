@@ -1,0 +1,87 @@
+.link {
+  @include link();
+  display: block;
+}
+
+.link--icon {
+  position: relative;
+
+  &::after {
+    @include pseudo-ie11-fix();
+  }
+}
+
+.link--icon:focus,
+.link--icon:hover {
+  .main-navigation__icon {
+    color: color($main-c, primary);
+    fill: color($main-c, primary);
+  }
+
+  .product-card__icon {
+    color: color($main-c, primary);
+    fill: color($main-c, primary);
+  }
+}
+
+.link--icon:active {
+  .main-navigation__icon {
+    color: rgba(color($main-c, primary), 0.3);
+    fill: rgba(color($main-c, primary), 0.3);
+  }
+
+  .product-card__icon {
+    color: rgba(color($main-c, primary), 0.3);
+    fill: rgba(color($main-c, primary), 0.3);
+  }
+}
+
+.link--cart {
+  @media (min-width: breakpoint(tablet)) {
+    padding-left: 51px;
+    padding-right: 1px;
+  }
+}
+
+.link--mail {
+  position: relative;
+  line-height: font-lh(base-l);
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: " ";
+    height: 1px;
+    width: 100%;
+    background-color: color($main-c, primary);
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(base-t);
+    letter-spacing: -0.1px;
+  }
+}
+
+.link--mail:focus,
+.link--mail:hover {
+  color: color($main-c, accent);
+
+  &::after {
+    background-color: color($main-c, accent);
+  }
+}
+
+.link--mail:active {
+  color: rgba(color($main-c, accent), 0.3);
+
+  &::after {
+    width: 88%;
+    background-color: rgba(color($main-c, accent), 0.3);
+  }
+}
+
+.link--search {
+  min-width: 23px;
+  min-height: 23px;
+}

@@ -1,0 +1,272 @@
+.impressions {
+  position: relative;
+  padding-top: 28px;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding-top: 0;
+    padding-bottom: 71px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding-bottom: 82px;
+  }
+}
+
+.impressions::after {
+  content: "";
+  padding: 0;
+  margin: 0;
+  background-repeat: repeat no-repeat;
+  background-size: 319px 100%;
+  background-image: url("../img/svg/zigzag-separator--big.svg");
+  height: 7px;
+  display: block;
+  transform: rotate(180deg);
+
+  @media (min-width: breakpoint(tablet)) {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    margin: 0;
+    left: 0;
+    display: block;
+    min-width: 768px;
+    width: 100%;
+    height: 17px;
+    max-height: 23px;
+    padding-top: (23px/1150px)*100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    transform: rotate(180deg);
+    background-size: 100% 100%;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin: 0;
+    height: 23px;
+    padding-top: 0;
+    width: 1052px;
+    left: 50%;
+    bottom: -15px;
+    background-position: 50% 50%;
+    transform: translate(-50%, 0) rotate(180deg);
+  }
+}
+
+.impressions__img-wrapper {
+  @media (min-width: breakpoint(tablet)) {
+    background-image: url("../img/review@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 350px 457px;
+    min-height: 457px;
+  }
+
+  @media (min-width: breakpoint(tablet)) and (min-resolution: 144dpi),
+    (min-width: breakpoint(tablet)) and (min-resolution: 1.5dppx) {
+    background-image: url("../img/review@2x.jpg");
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    background-image: none;
+  }
+}
+
+.impressions__inner {
+  width: auto;
+  padding: 0 30px 45px 30px;
+  margin: 0 auto;
+
+
+  @media (min-width: breakpoint(tablet)) {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: auto;
+    padding: 76px 50px 0 50px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: auto;
+    padding: 76px 50px 0 223px;
+    max-width: 1150px;
+    position: relative;
+  }
+}
+
+.impressions__inner::before {
+  @media (min-width: breakpoint(desktop)) {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 50px;
+    width: 350px;
+    height: 457px;
+    padding: 0;
+    z-index: -1;
+    background-image: url("../img/review@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 350px 457px;
+  }
+
+  @media (min-width: breakpoint(desktop)) and (min-resolution: 144dpi),
+    (min-width: breakpoint(desktop)) and (min-resolution: 1.5dppx) {
+    background-image: url("../img/review@2x.jpg");
+  }
+}
+
+.impressions__title {
+  margin: 0 0 24px -2px;
+  padding: 0;
+
+  @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
+
+  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
+    order: -2;
+    font-size: font-size(h2-t);
+    line-height: font-lh(title-md);
+    margin-left: -5px;
+    margin-top: 1px;
+    margin-bottom: 49px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    order: -2;
+    font-size: font-size(h2-d);
+    line-height: font-lh(title-l);
+    margin-top: 1px;
+    margin-bottom: 49px;
+  }
+}
+
+.impressions__blockquote {
+  @include clear-list();
+
+  margin-bottom: 29px;
+
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($base-c, black), 30px);
+
+  @media (min-width: breakpoint(tablet)) {
+    flex-basis: 100%;
+    font-size: font-size(base-t);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-left: 2px;
+    flex-basis: 90%;
+  }
+}
+
+.impressions__break {
+  display: none;
+
+  @media (min-width: breakpoint(desktop)) {
+    display: block;
+  }
+}
+
+.impressions__footer {
+  margin-top: 27px;
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: 57px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-top: 39px;
+  }
+}
+
+.impressions__author {
+  @include clear-list();
+}
+
+.impressions__author-name {
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), font-lh(base-md));
+  display: block;
+  margin-bottom: 3px;
+  letter-spacing: 0.1px;
+
+  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
+    margin-bottom: 4px;
+    font-size: font-size(other);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    font-size: font-size(base-t);
+  }
+}
+
+.impressions__author-contact {
+  display: block;
+
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-t), normal, color($main-c, secondary), font-lh(base-l));
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-left: -2px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-left: 0;
+  }
+}
+
+.impressions__buttons-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+
+  @include box-shadow(0, 0, 0, 1px, color($grey-c, dark), true);
+
+  @media (min-width: breakpoint(tablet)) {
+    position: absolute;
+    bottom: -6px;
+    right: 69px;
+    box-shadow: none;
+    width: 137px;
+  }
+}
+
+.impressions__buttons-wrapper::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 50px;
+  width: 1px;
+  background-color: color($grey-c, dark);
+
+  @media (min-width: breakpoint(tablet)) {
+    height: 0;
+    width: 0;
+  }
+}
+
+.impressions__button-wrapper {
+  @media (min-width: breakpoint(tablet)) {
+    margin-left: auto;
+    order: -1;
+    padding-top: 3px;
+    width: 175px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-left: auto;
+    order: -1;
+    padding-top: 10px;
+    width: 175px;
+  }
+}
+
+.impressions__button {
+  @media (min-width: breakpoint(tablet)) {
+    padding-top: 17px;
+    padding-bottom: 15px;
+  }
+}

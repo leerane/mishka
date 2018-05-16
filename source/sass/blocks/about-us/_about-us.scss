@@ -1,0 +1,174 @@
+.about-us {
+  padding-top: 26px;
+  padding-bottom: 27px;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding-top: 63px;
+    padding-bottom: 83px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: auto;
+    padding-top: 74px;
+  }
+}
+
+.about-us__inner {
+  background-color: #ffffff;
+  width: auto;
+  padding: 0 30px 0 30px;
+  margin: 0 auto;
+
+
+  @media (min-width: breakpoint(tablet)) {
+    position: relative;
+    width: auto;
+    padding: 0 50px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: auto;
+    padding: 0 100px 0 224px;
+    max-width: 1150px;
+  }
+}
+
+.about-us__title {
+  margin: 0 0 32px -2px;
+  padding: 0;
+
+  @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
+
+  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
+    font-size: font-size(h2-t);
+    line-height: font-lh(title-md);
+    margin-left: -6px;
+    margin-bottom: 49px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    font-size: font-size(h2-d);
+    line-height: font-lh(title-l);
+    letter-spacing: -0.4px;
+    margin-left: -4px;
+    margin-bottom: 49px;
+  }
+}
+
+.about-us__list {
+  @include clear-list();
+  padding-top: 54px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: breakpoint(tablet)) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-left: 2px;
+    max-width: 700px;
+  }
+}
+
+.about-us__item {
+  flex-basis: auto;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 83px;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    flex-basis: auto;
+    width: 50%;
+    margin-bottom: 111px;
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    flex-basis: 50%;
+  }
+}
+
+.about-us__item:first-child {
+  @media (min-width: breakpoint(tablet)) {
+    order: -3;
+  }
+}
+
+.about-us__item:nth-child(4) {
+  @media (min-width: breakpoint(tablet)) {
+    order: -2;
+  }
+}
+
+.about-us__item:nth-child(2) {
+  @media (min-width: breakpoint(tablet)) {
+    order: -1;
+  }
+}
+
+.about-us__item:nth-child(5) {
+  @media (min-width: breakpoint(tablet)) {
+    order: -1;
+  }
+}
+
+.about-us__item--heart {
+  @media (min-width: breakpoint(tablet)) {
+    margin-bottom: 0;
+  }
+}
+
+.about-us__text {
+  margin: 0;
+  padding: 0;
+
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), font-lh(base));
+
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(other-l);
+    line-height: 22px;
+  }
+}
+
+.about-us__svg {
+  color: color($main-c, primary);
+  fill: color($main-c, primary);
+  position: absolute;
+  top: -50px;
+  margin: 0;
+  padding: 0;
+
+  &--flower {
+    top: -54px;
+    left: 8px;
+  }
+
+  &--money {
+    top: -53px;
+  }
+
+  &--heart {
+    top: -49px;
+    left: 8px;
+  }
+
+  &--ball {
+    top: -51px;
+    left: 3px;
+  }
+
+  &--rocket {
+    left: -6px;
+  }
+
+  &--gift {
+    top: -52px;
+    left: 3px;
+  }
+}

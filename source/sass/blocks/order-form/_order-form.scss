@@ -1,0 +1,45 @@
+.order-form {
+  margin: 0;
+  padding: 0;
+}
+
+.order-form__list {
+  @include clear-list();
+}
+
+.order-form__required-text {
+  padding: 0;
+  margin: 0 0 31px -1px;
+
+  @include font-par(font-family(opensans), font-weight(regular), 14px, normal, color($main-c, secondary), 16px);
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-bottom: 0;
+    padding-bottom: 4px;
+    font-size: font-size(base-t);
+    line-height: font-lh(base-l);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding-bottom: 2px;
+  }
+}
+
+.order-form__button-wrapper {
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: breakpoint(tablet)) {
+    width: 230px;
+    order: -1;
+    margin-right: auto;
+  }
+}
+
+.order-form__button {
+  font-size: font-size(base-t);
+  padding-top: 18px;
+  padding-bottom: 18px;
+  line-height: 16px;
+  padding-right: 14px;
+}

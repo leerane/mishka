@@ -1,0 +1,155 @@
+.input {
+  padding: 0;
+  width: 100%;
+}
+
+.input--type--text:last-child {
+  margin-bottom: 0;
+}
+
+.input--type--tel {
+  margin-bottom: 32px;
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-bottom: 39px;
+  }
+}
+
+.input--type--email {
+  @media (min-width: breakpoint(tablet)) {
+    margin-bottom: 0;
+  }
+}
+
+.input--type--tel,
+.input--type--email {
+  .input__label {
+    display: none;
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-left: auto;
+    width: (501px/666px)*100%;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: 86%;
+  }
+}
+
+.input__label {
+  padding: 5px 0 0 0;
+  margin: 0 0 2px 0;
+}
+
+.input__label--text {
+  @media (min-width: breakpoint(tablet)) {
+    margin-right: 25px;
+    padding: 0;
+  }
+}
+
+.input__label--patronymic {
+  @media (min-width: breakpoint(tablet)) {
+    margin-right: 27px;
+  }
+}
+
+.input__control {
+  width: 100%;
+  padding: 14px 35px 18px 0;
+  border: 0;
+  background-color: color($base-c, white);
+
+  @include font-par(font-family(opensans), font-weight(normal), font-size(base-t), normal, color($main-c, secondary), 18px);
+
+  @include box-shadow(0, -2px, 0, 0, color($base-c, black), true);
+
+  @include placeholder() {
+    color: rgba(color($main-c, secondary), 0.3);
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 0 35px 15px 16px;
+    margin-top: -4px;
+    font-size: font-size(base-d);
+  }
+}
+
+.input__control:focus {
+  @include box-shadow(0, -2px, 0, 0, color($main-c, primary), true);
+
+  @include placeholder() {
+    opacity: 0;
+  }
+
+  + .input__svg {
+    color: color($main-c, primary);
+    fill: color($main-c, primary);
+  }
+}
+
+.input__control:hover {
+  @include box-shadow(0, -2px, 0, 0, color($main-c, primary), true);
+
+  + .input__svg {
+    color: color($main-c, primary);
+    fill: color($main-c, primary);
+  }
+}
+
+.input__control--patronymic {
+  padding: 13px 0 18px 0;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 0 35px 15px 16px;
+  }
+}
+
+.input__control--icon {
+  margin-left: -1px;
+
+  @media (min-width: breakpoint(tablet)) {
+    background-color: color($grey-c, default);
+    padding-left: 17px;
+  }
+}
+
+.input__wrap {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.input__svg {
+  position: absolute;
+  top: 9px;
+  right: 8px;
+  color: rgba(color($base-c, black), 0.2);
+  fill: rgba(color($base-c, black), 0.2);
+
+  @media (min-width: breakpoint(tablet)) {
+    top: -4px;
+    right: 26px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    top: -4px;
+    right: 8px;
+  }
+}
+
+.input__svg--mail {
+  top: 14px;
+  right: 4px;
+
+  @media (min-width: breakpoint(tablet)) {
+    top: 1px;
+    right: 22px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    right: 4px;
+  }
+}
