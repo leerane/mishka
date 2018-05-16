@@ -178,6 +178,7 @@
     ":-moz-placeholder",
     "::-moz-placeholder",
     ":-ms-input-placeholder";
+
   @each $prefix in $prefix-list {
     &#{$prefix} {
       @content;

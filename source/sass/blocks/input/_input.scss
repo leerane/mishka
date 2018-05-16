@@ -21,7 +21,8 @@
   }
 }
 
-.input--type--tel, .input--type--email {
+.input--type--tel,
+.input--type--email {
   .input__label {
     display: none;
   }
@@ -59,6 +60,7 @@
   padding: 14px 35px 18px 0;
   border: 0;
   background-color: color($base-c, white);
+
   @include font-par(font-family(opensans), font-weight(normal), font-size(base-t), normal, color($main-c, secondary), 18px);
 
   @include box-shadow(0, -2px, 0, 0, color($base-c, black), true);

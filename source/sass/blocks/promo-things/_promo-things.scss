@@ -59,7 +59,7 @@
   }
 
   @media (min-width: breakpoint(tablet)) and (min-resolution: 144dpi),
-  (min-width: breakpoint(tablet)) and (min-resolution: 1.5dppx) {
+    (min-width: breakpoint(tablet)) and (min-resolution: 1.5dppx) {
     background-image: url("../img/hero-tablet@2x.jpg");
   }
 

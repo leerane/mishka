@@ -35,6 +35,7 @@
   &::after {
     @include pseudo-ie11-fix();
   }
+
   @media (min-width: breakpoint(tablet)) {
     display: block;
     position: static;

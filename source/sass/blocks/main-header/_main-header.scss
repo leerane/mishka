@@ -21,6 +21,7 @@
   @media (min-width: breakpoint(desktop)) {
     content: " ";
     position: absolute;
+
     @include centerer(1150px, null, horizontal);
     bottom: 0;
     width: 1150px;

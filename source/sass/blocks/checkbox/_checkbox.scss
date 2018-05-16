@@ -5,11 +5,13 @@
 .checkbox__control:focus {
   + .checkbox__label--size--m {
     @include box-shadow(0, 0, 0, 2px, rgba(color($main-c, secondary), 0.3), true);
+
     @include pseudo-focus();
   }
 
   + .checkbox__label--mark::before {
     @include border(2px, solid, color($main-c, primary));
+
     @include pseudo-focus();
   }
 }

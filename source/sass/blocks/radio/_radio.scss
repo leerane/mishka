@@ -4,6 +4,7 @@
 
 .radio__control:focus + .radio__label--dot::before {
   @include border(2px, solid, color($main-c, primary));
+
   @include pseudo-focus();
 }
 
