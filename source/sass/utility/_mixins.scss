@@ -106,7 +106,6 @@
   border: 0;
 
   clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(100%);
   clip-path: inset(100%);
 }
 
@@ -202,8 +201,7 @@
 }
 
 @mixin pseudo-focus() {
-  outline: dotted thin;
-  outline: -webkit-focus-ring-color auto 5px;
+  outline: auto 5px Highlight;
 }
 
 @mixin link() {
