@@ -13,7 +13,7 @@ if (document.querySelector(".main-map")) {
       draggable: true,
       animation: google.maps.Animation.DROP,
       icon: {
-        url: "../../img/svg/map-pin.svg",
+        url: "./img/svg/map-pin.svg",
         scaledSize: new google.maps.Size(67, 100)
       }
     });
