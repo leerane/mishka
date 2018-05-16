@@ -49,6 +49,7 @@ var path = {
 var gulp = require("gulp"),
   sass = require("gulp-sass"),
   postcss = require("gulp-postcss"),
+  postcssSort = require("postcss-sorting"),
   posthtml = require("gulp-posthtml"),
   csscomb = require("gulp-csscomb"),
   pug = require("gulp-pug"),
@@ -226,8 +227,8 @@ gulp.task("sprite", () => {
 });
 
 gulp.task("sort-sass", () => {
-  return gulp.src(path.sourcePath + path.scssPath + path.scssPattern)
-    .pipe(csscomb("csscomb.json"))
+  return gulp.src(path.sourcePath + path.scssPath + path._scssPattern)
+    .pipe(postcss([postcssSort()]))
     .pipe(gulp.dest(path.sourcePath + path.scssPath))
 });
 
