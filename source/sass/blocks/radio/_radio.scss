@@ -1,0 +1,75 @@
+.radio {
+  padding: 0;
+}
+
+.radio__control:focus + .radio__label--dot::before {
+  @include border(2px, solid, color($main-c, primary));
+
+  @include pseudo-focus();
+}
+
+
+.radio__control:hover + .radio__label--dot::before {
+  @include border(2px, solid, color($main-c, primary));
+}
+
+.radio__control:active + .radio__label--dot::before {
+  @include border(2px, solid, rgba(color($main-c, secondary), 0.3));
+}
+
+.radio__control:checked + .radio__label--dot::after {
+  content: "";
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 13px;
+  left: 12px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  background-color: color($main-c, primary);
+
+  @include border-radius(50%);
+
+  @media (min-width: breakpoint(tablet)) {
+    top: 0;
+    left: 16px;
+    width: 21px;
+    height: 21px;
+  }
+}
+
+.radio__label {
+  margin: 0;
+  padding: 10px 0 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 0 0 0 80px;
+  }
+}
+
+.radio__label--dot::before {
+  content: "";
+  margin: -9px 23px 0 0;
+  padding: 0;
+  flex-shrink: 0;
+  width: 39px;
+  height: 39px;
+
+  @include border(2px, solid, color($main-c, secondary));
+
+  @include border-radius(50%);
+
+  @media (min-width: breakpoint(tablet)) {
+    width: 52px;
+    height: 52px;
+    margin: 0;
+    position: absolute;
+    top: -15px;
+    left: 0;
+  }
+}

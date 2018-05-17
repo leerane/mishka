@@ -1,0 +1,30 @@
+.social-list {
+  @include clear-list();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-left: -4px;
+  width: 141px;
+
+  @media (min-width: breakpoint(tablet)) {
+    @include centerer();
+    margin-left: -2px;
+    margin-top: 7px;
+  }
+}
+
+.social-list__item {
+  margin-right: 40px;
+  margin-bottom: 6px;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+.social-list__item:nth-child(2n) {
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: -4px;
+  }
+}

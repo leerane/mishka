@@ -1,0 +1,32 @@
+.main-header {
+  background-color: color($base-c, white);
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-shadow:
+    inset 0 1px 0 0 color($grey-c, darker),
+    inset 0 -1px 0 0 color($grey-c, darker);
+
+  @media (min-width: breakpoint(tablet)) {
+    min-height: 89px;
+    overflow: visible;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    box-shadow: none;
+  }
+}
+
+.main-header::after {
+  @media (min-width: breakpoint(desktop)) {
+    content: " ";
+    position: absolute;
+
+    @include centerer(1150px, null, horizontal);
+    bottom: 0;
+    width: 1150px;
+    max-width: 1150px;
+    height: 1px;
+    background-color: color($grey-c, darker);
+  }
+}

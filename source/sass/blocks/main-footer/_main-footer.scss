@@ -1,0 +1,78 @@
+.main-footer {
+  background-color: color($grey-c, default);
+}
+
+.main-footer__inner {
+  position: relative;
+  width: auto;
+  margin: 0 auto;
+  padding: 26px 30px 15px 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @media (min-width: breakpoint(tablet)) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 143px;
+    width: auto;
+    padding: 44px 50px 44px 50px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: auto;
+    padding: 44px 50px;
+    max-width: 1150px;
+  }
+}
+
+.main-footer__logo {
+  position: relative;
+  display: none;
+
+  &::after {
+    @include pseudo-ie11-fix();
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    display: block;
+    position: static;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    padding-top: 0;
+    padding-bottom: 7px;
+    padding-right: 2px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-left: 1px;
+  }
+}
+
+.main-footer__logo:focus,
+.main-footer__logo:hover {
+  .main-footer__logo-svg {
+    color: color($main-c, accent);
+    fill: color($main-c, accent);
+  }
+}
+
+.main-footer__logo:active {
+  .main-footer__logo-svg {
+    color: rgba(color($main-c, accent), 0.3);
+    fill: rgba(color($main-c, accent), 0.3);
+  }
+}
+
+.main-footer__logo-svg {
+  display: none;
+
+  @media (min-width: breakpoint(tablet)) {
+    display: block;
+    color: color($base-c, svg);
+    fill: color($base-c, svg);
+  }
+}

@@ -1,0 +1,174 @@
+.button {
+  @include box-shadow(0, 0, 0, 2px, color($main-c, secondary), true);
+
+  @include font-par(font-family(opensans), font-weight(bold), font-size(other), normal, color($main-c, secondary), font-lh(base));
+  background-color: transparent;
+  text-transform: uppercase;
+  padding: 15px 10px 17px 10px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  border: 0;
+
+  &:focus,
+  &:hover {
+    background-color: color($main-c, secondary);
+    color: color($base-c, white);
+  }
+
+  &:active {
+    color: rgba(color($base-c, white), 0.3);
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(base-t);
+  }
+}
+
+.button__inner {
+  width: 100%;
+  padding: 25px 0 15px 29px;
+  min-height: 103px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 28px 0 15px 36px;
+    min-height: 119px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding: 28px 0 15px 37px;
+  }
+}
+
+.button--primary {
+  position: relative;
+  color: color($base-c, white);
+  background-color: color($main-c, primary);
+  box-shadow: none;
+  font-size: font-size(base-t);
+
+  &:focus,
+  &:hover {
+    background-color: #59d5bc;
+  }
+
+  &:active {
+    background-color: #59d5bc;
+  }
+}
+
+.button--primary::after {
+  @include pseudo-ie11-fix();
+}
+
+.button--icon--interior:focus,
+.button--icon--interior:hover {
+  position: relative;
+  background-color: #59d5bc;
+
+  .button__inner--icon--interior {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    background-color: #59d5bc;
+  }
+
+  .button__svg--interior {
+    color: rgba(#149080, 0.7);
+    fill: rgba(#149080, 0.7);
+  }
+}
+
+.button--icon--interior:active {
+  background-color: #59d5bc;
+  color: rgba(#ffffff, 0.3);
+
+  .button__svg--interior {
+    color: rgba(#149080, 0.3);
+    fill: rgba(#149080, 0.3);
+  }
+}
+
+.button--icon--toy {
+  background-color: #56c3b2;
+}
+
+.button--icon--toy:focus,
+.button--icon--toy:hover {
+  position: relative;
+  background-color: color($main-c, accent);
+
+  .button__inner--icon--toy {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    background-color: color($main-c, accent);
+  }
+
+  .button__svg--toy {
+    color: rgba(#149080, 0.7);
+    fill: rgba(#149080, 0.7);
+  }
+}
+
+.button--icon--toy:active {
+  background-color: color($main-c, accent);
+  color: rgba(#ffffff, 0.3);
+
+  .button__svg--toy {
+    color: rgba(#149080, 0.3);
+    fill: rgba(#149080, 0.3);
+  }
+}
+
+.button__text {
+  white-space: pre-line;
+}
+
+.button__svg--interior {
+  margin-right: 36px;
+  margin-top: -2px;
+  color: rgba(#149080, 0.5);
+  fill: rgba(#149080, 0.5);
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: 2px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-right: 36px;
+  }
+}
+
+.button__svg--toy {
+  margin-right: 27px;
+  margin-top: -4px;
+  color: rgba(#149080, 0.5);
+  fill: rgba(#149080, 0.5);
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: 3px;
+    margin-right: 33px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-right: 35px;
+  }
+}
+
+.button--t--s {
+  width: 99.8%;
+  font-size: font-size(base-t);
+  padding-top: 17px;
+  padding-bottom: 15px;
+
+  @media (min-width: breakpoint(tablet)) {
+    width: 100%;
+  }
+}

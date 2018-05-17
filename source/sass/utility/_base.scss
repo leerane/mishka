@@ -1,0 +1,28 @@
+/* --- Base styles -- */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+@include font-face(Open Sans, "../fonts/", opensans, normal, 400, swap, null, null, (woff2: woff2, woff: woff));
+
+@include font-face(Open Sans, "../fonts/", opensansbold, normal, 700, swap, null, null, (woff2: woff2, woff: woff));

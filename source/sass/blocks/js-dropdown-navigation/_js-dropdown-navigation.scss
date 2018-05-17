@@ -1,0 +1,11 @@
+.js-dropdown-navigation {
+  width: 100%;
+  top: 80px;
+  background-color: #ffffff;
+  display: none;
+  z-index: -1;
+}
+
+.js-dropdown-navigation--active {
+  display: block;
+}

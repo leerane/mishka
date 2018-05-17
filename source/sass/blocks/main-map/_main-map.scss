@@ -1,0 +1,71 @@
+.main-map {
+  min-height: 457px;
+  max-height: 457px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 39px;
+
+  @media (min-width: breakpoint(tablet)) {
+    margin: 0 auto 55px auto;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: 525px;
+    position: absolute;
+    top: 9px;
+    right: 51px;
+  }
+}
+
+.main-map::after {
+  @media (min-width: breakpoint(tablet)) {
+    transform: translate(-30%, -91%);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    transform: translate(-35%, -83%);
+  }
+}
+
+.main-map__api {
+  width: 100%;
+  height: 457px;
+  background-color: #f6e9d6;
+}
+
+.main-map__image-wrapper {
+  width: 100%;
+  height: auto;
+  position: relative;
+  min-height: 457px;
+
+  &::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-31%, -84%);
+    content: "";
+    width: 67px;
+    height: 100px;
+    background-image: url("../img/svg/map-pin.svg");
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    width: 768px;
+  }
+}
+
+.main-map__image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 768px;
+
+  @media (min-width: breakpoint(desktop)) {
+    left: 0;
+    transform: translateX(0%);
+  }
+}
