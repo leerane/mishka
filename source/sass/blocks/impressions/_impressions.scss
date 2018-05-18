@@ -1,6 +1,6 @@
 .impressions {
   position: relative;
-  padding-top: 28px;
+  padding-top: 0;
 
   @media (min-width: breakpoint(tablet)) {
     padding-top: 0;
@@ -8,7 +8,7 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-    padding-bottom: 82px;
+    padding-bottom: 63px;
   }
 }
 
@@ -46,10 +46,11 @@
     height: 23px;
     padding-top: 0;
     width: 1052px;
-    left: 50%;
     bottom: -15px;
+
+    @include centerer(1052px, null, horizontal);
     background-position: 50% 50%;
-    transform: translate(-50%, 0) rotate(180deg);
+    transform: rotate(180deg);
   }
 }
 
@@ -68,14 +69,18 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
-    background-image: none;
+    padding: 76px 50px 0 223px;
+    background-position: 50px 7px;
+    max-width: 1150px;
+    margin: -28px auto 0 auto;
+    min-height: 476px;
   }
 }
 
 .impressions__inner {
   width: auto;
   padding: 0 30px 45px 30px;
-  margin: 0 auto;
+  margin: -28px auto 0 auto;
 
 
   @media (min-width: breakpoint(tablet)) {
@@ -90,13 +95,13 @@
 
   @media (min-width: breakpoint(desktop)) {
     width: auto;
-    padding: 76px 50px 0 223px;
-    max-width: 1150px;
+    padding: 0;
+    margin: 0 auto;
     position: relative;
   }
 }
 
-.impressions__inner::before {
+/*.impressions__inner::before {
   @media (min-width: breakpoint(desktop)) {
     content: "";
     position: absolute;
@@ -116,7 +121,7 @@
     (min-width: breakpoint(desktop)) and (min-resolution: 1.5dppx) {
     background-image: url("../img/review@2x.jpg");
   }
-}
+}*/
 
 .impressions__title {
   margin: 0 0 24px -2px;
@@ -230,6 +235,10 @@
     right: 69px;
     box-shadow: none;
     width: 137px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    right: 19px;
   }
 }
 

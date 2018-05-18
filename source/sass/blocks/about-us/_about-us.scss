@@ -1,10 +1,10 @@
 .about-us {
   padding-top: 26px;
-  padding-bottom: 27px;
+  padding-bottom: 0;
 
   @media (min-width: breakpoint(tablet)) {
     padding-top: 63px;
-    padding-bottom: 83px;
+    padding-bottom: 0;
   }
 
   @media (min-width: breakpoint(desktop)) {
@@ -79,10 +79,6 @@
   margin-bottom: 83px;
   position: relative;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-
   @media (min-width: breakpoint(tablet)) {
     flex-basis: auto;
     width: 50%;
@@ -115,12 +111,6 @@
 .about-us__item:nth-child(5) {
   @media (min-width: breakpoint(tablet)) {
     order: -1;
-  }
-}
-
-.about-us__item--heart {
-  @media (min-width: breakpoint(tablet)) {
-    margin-bottom: 0;
   }
 }
 

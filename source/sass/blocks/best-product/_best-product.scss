@@ -46,10 +46,11 @@
     height: 23px;
     padding-top: 0;
     width: 1052px;
-    left: 50%;
     bottom: -15px;
+
+    @include centerer(1052px, null, horizontal);
     background-position: 50% 50%;
-    transform: translate(-50%, 0) rotate(180deg);
+    transform: rotate(180deg);
   }
 }
 

@@ -25,45 +25,38 @@
 .main-logo:focus,
 .main-logo:hover {
   .main-logo__svg {
-    color: rgba(color($base-c, black), 0.6);
-    fill: rgba(color($base-c, black), 0.6);
+    @include opacity(0.6);
   }
 }
 
 .main-logo:active {
   .main-logo__svg {
-    color: rgba(color($base-c, black), 0.3);
-    fill: rgba(color($base-c, black), 0.3);
+    @include opacity(0.3);
   }
 }
 
 .main-logo__svg {
+  width: 85.59px;
+  max-width: 85.59px;
+  height: 35.03px;
+  display: block;
   color: color($base-c, black);
   fill: color($base-c, black);
-  display: none;
 
   g[data-name="Layer 1"] {
     color: #ffffff;
     fill: #ffffff;
   }
 
-  @media (min-width: breakpoint(desktop)) {
-    display: block;
-  }
-}
-
-.main-logo__svg--mobile {
-  display: block;
-
   @media (min-width: breakpoint(tablet)) {
-    display: none;
+    width: 112.39px;
+    max-width: 112.39px;
+    height: 46.09px;
   }
-}
 
-.main-logo__svg--tablet {
-  display: none;
-
-  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
-    display: block;
+  @media (min-width: breakpoint(desktop)) {
+    width: 149.05px;
+    max-width: 149.05px;
+    height: 73.71px;
   }
 }

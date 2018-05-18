@@ -1,9 +1,9 @@
 .catalog-video {
   margin: 0;
-  padding: 31px 0 0 0;
+  padding: 1px 0 0 0;
 
   @media (min-width: breakpoint(tablet)) {
-    padding: 11px 0 0 0;
+    padding: 0;
   }
 
   @media (min-width: breakpoint(desktop)) {
@@ -22,11 +22,13 @@
     position: relative;
     width: auto;
     padding: 0 50px 63px 50px;
+    margin: -1px auto 0 auto;
   }
 
   @media (min-width: breakpoint(desktop)) {
     width: auto;
     padding: 0 50px 105px 50px;
+    margin: -1px auto 0 auto;
     max-width: 1150px;
   }
 }

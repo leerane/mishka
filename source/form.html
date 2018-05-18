@@ -19,15 +19,11 @@
         <div class="main-navigation__top">
           <div class="main-navigation__inner">
             <a href="index.html" class="main-logo">
-              <svg aria-label="Мобильный логотип" width="85.59" height="35.03" class="main-logo__svg main-logo__svg--mobile">
-                <use xlink:href="img/svg/sprite.svg#mishka-logo--mobile"/>
-              </svg>
-              <svg aria-label="Планшетный логотип" width="112.39" height="46.09" class="main-logo__svg main-logo__svg--tablet">
-                <use xlink:href="img/svg/sprite.svg#mishka-logo--tablet"/>
-              </svg>
-              <svg aria-label="Десктопный логотип" width="148.05" height="72.71" class="main-logo__svg">
-                <use xlink:href="img/svg/sprite.svg#mishka-logo--main"/>
-              </svg>
+              <picture>
+                <source media="(min-width: 1150px)" srcset="img/svg/mishka-logo--main.svg">
+                <source media="(min-width: 768px)" srcset="img/svg/mishka-logo--tablet.svg">
+                <img src="img/svg/mishka-logo--mobile.svg" alt="Логотип" class="main-logo__svg">
+              </picture>
             </a>
             <button class="hamburger-button main-navigation__hamburger-button js-hamburger-button visually-hidden" type="button" aria-label="Кнопка выпадающего меню"></button>
           </div>
@@ -72,6 +68,7 @@
       </nav>
     </header>
     <main class="main-content">
+      <h1 class="visually-hidden">Страница заказа</h1>
       <section class="promo-things promo-things--inner-page">
         <div class="promo-things__inner promo-things__inner--no-image promo-things__inner--order">
           <h2 class="main-title promo-things__title main-title--size--l main-content__title">
@@ -80,7 +77,7 @@
       </section>
       <section class="order-page">
         <div class="order-page__inner">
-          <h1 class="visually-hidden">Форма заказа</h1>
+          <h2 class="visually-hidden">Форма заказа</h2>
           <p class="order-page__paragraph">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
           <form action="https://echo.htmlacademy.ru" method="post" class="order-form">
             <ul class="order-form__list form-list">
@@ -134,7 +131,7 @@
                   </div>
                 </div>
               </li>
-              <li class="form-list__item form_list__item--name">
+              <li class="form-list__item form-list__item--name">
                 <div class="form-group">
                   <div class="form-group__inner form-group__inner--info">
                     <span class="form-group__title">Фио</span>
@@ -155,7 +152,7 @@
                   </div>
                 </div>
               </li>
-              <li class="form-list__item form_list__item--contact">
+              <li class="form-list__item form-list__item--contact">
                 <div class="form-group">
                   <div class="form-group__inner form-group__inner--info">
                     <span class="form-group__title form-group__title--tel">Тел</span>
@@ -185,7 +182,7 @@
                   </div>
                 </div>
               </li>
-              <li class="form-list__item form_list__item--message">
+              <li class="form-list__item form-list__item--message">
                 <div class="form-group">
                   <div class="form-group__inner form-group__inner--info">
                     <span class="form-group__title form-group__title--textarea">доп</span>
