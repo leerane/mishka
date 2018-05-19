@@ -19,15 +19,11 @@
       <div class="main-navigation__top">
         <div class="main-navigation__inner">
           <a class="main-logo main-page__main-logo">
-            <svg aria-label="Мобильный логотип" width="85.59" height="35.03" class="main-logo__svg main-logo__svg--mobile">
-              <use xlink:href="img/svg/sprite.svg#mishka-logo--mobile"/>
-            </svg>
-            <svg aria-label="Планшетный логотип" width="112.39" height="46.09" class="main-logo__svg main-logo__svg--tablet">
-              <use xlink:href="img/svg/sprite.svg#mishka-logo--tablet"/>
-            </svg>
-            <svg aria-label="Десктопный логотип" width="148.05" height="72.71" class="main-logo__svg">
-              <use xlink:href="img/svg/sprite.svg#mishka-logo--main"/>
-            </svg>
+            <picture>
+              <source media="(min-width: 1150px)" srcset="img/svg/mishka-logo--main.svg">
+              <source media="(min-width: 768px)" srcset="img/svg/mishka-logo--tablet.svg">
+              <img src="img/svg/mishka-logo--mobile.svg" alt="Логотип" class="main-logo__svg">
+            </picture>
           </a>
           <button class="hamburger-button main-navigation__hamburger-button js-hamburger-button visually-hidden" type="button" aria-label="Кнопка выпадающего меню"></button>
         </div>
@@ -72,6 +68,7 @@
     </nav>
   </header>
     <main class="main-content">
+      <h1 class="visually-hidden">Главная страница магазина</h1>
       <section class="promo-things">
         <div class="promo-things__inner container">
           <h2 class="main-title promo-things__title main-title--size--l">Милые штуки ручной<br>работы для дома</h2>
@@ -82,7 +79,7 @@
               <p class="button__inner button__inner--icon--interior">
                 <span class="button__text">Предметы
                 интерьера</span>
-                <svg aria-hidden="true" width="40.22" height="62.41" class="button__svg--interior">
+                <svg aria-hidden="true" width="40.22" height="62.41" class="button__svg button__svg--interior">
                   <use xlink:href="img/svg/sprite.svg#interior-icon"/>
                 </svg>
               </p>
@@ -93,7 +90,7 @@
               <p class="button__inner button__inner--icon--toy">
                 <span class="button__text">Детские
                   игрушки</span>
-                <svg aria-hidden="true" width="60" height="59.62" class="button__svg--toy">
+                <svg aria-hidden="true" width="60" height="59.62" class="button__svg button__svg--toy">
                   <use xlink:href="img/svg/sprite.svg#toy-icon"/>
                 </svg>
               </p>
@@ -102,7 +99,7 @@
         </div>
       </section>
       <section class="best-product">
-        <h1 class="visually-hidden">Товар недели</h1>
+        <h2 class="visually-hidden">Товар недели</h2>
         <div class="best-product__inner">
           <div class="best-product__top">
             <span class="best-product__subtitle">Товар <br class="best-product__break">недели</span>
