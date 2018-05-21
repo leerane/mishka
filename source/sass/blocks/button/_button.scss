@@ -67,12 +67,12 @@
   @include pseudo-ie11-fix();
 }
 
-.button--icon--interior:focus,
-.button--icon--interior:hover {
+.button--interior:focus,
+.button--interior:hover {
   position: relative;
   background-color: #59d5bc;
 
-  .button__inner--icon--interior {
+  .button__inner--interior {
     position: absolute;
     left: 0;
     bottom: 5px;
@@ -85,7 +85,7 @@
   }
 }
 
-.button--icon--interior:active {
+.button--interior:active {
   background-color: #59d5bc;
   color: rgba(#ffffff, 0.3);
 
@@ -95,16 +95,16 @@
   }
 }
 
-.button--icon--toy {
+.button--toy {
   background-color: #56c3b2;
 }
 
-.button--icon--toy:focus,
-.button--icon--toy:hover {
+.button--toy:focus,
+.button--toy:hover {
   position: relative;
   background-color: color($main-c, accent);
 
-  .button__inner--icon--toy {
+  .button__inner--toy {
     position: absolute;
     left: 0;
     bottom: 5px;
@@ -117,7 +117,7 @@
   }
 }
 
-.button--icon--toy:active {
+.button--toy:active {
   background-color: color($main-c, accent);
   color: rgba(#ffffff, 0.3);
 
@@ -167,13 +167,8 @@
   }
 }
 
-.button--t--s {
-  width: 99.8%;
+.button--text--s {
   font-size: font-size(base-t);
   padding-top: 17px;
   padding-bottom: 15px;
-
-  @media (min-width: breakpoint(tablet)) {
-    width: 100%;
-  }
 }

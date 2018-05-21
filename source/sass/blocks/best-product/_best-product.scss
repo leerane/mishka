@@ -294,9 +294,13 @@
 }
 
 .best-product__button-wrapper {
-  width: auto;
+  width: 99.8%;
   display: flex;
   justify-content: space-between;
+
+  @media (min-width: breakpoint(tablet)) {
+    width: 100%;
+  }
 }
 
 .best-product__right {
