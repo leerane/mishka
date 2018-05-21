@@ -141,7 +141,7 @@ gulp.task("sass-glob", () => {
     .pipe(reload({ stream: true }));
 });
 
-gulp.task("css", gulp.series("sass-styles")); // sass-concat was deleted
+gulp.task("css", gulp.series("sass-styles")); // sass-concat was deleted!
 
 gulp.task("js", () => {
   return gulp.src(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, {
