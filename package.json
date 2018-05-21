@@ -4,8 +4,8 @@
   "private": true,
   "description": "Личный проект «Мишка» от HTML Academy",
   "devDependencies": {
-    "autoprefixer": "8.4.1",
     "@htmlacademy/editorconfig-cli": "1.x",
+    "autoprefixer": "8.4.1",
     "browser-sync": "^2.23.6",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
@@ -26,6 +26,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
     "gulp-sass": "^4.0.1",
+    "gulp-sass-glob": "^1.0.9",
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svg-sprite": "^1.4.0",

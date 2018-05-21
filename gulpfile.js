@@ -77,6 +77,7 @@ var gulp = require("gulp"),
   imageminWebp = require("imagemin-webp"),
   webp = require("gulp-webp"),
   clean = require("del"),
+  glob = require("gulp-sass-glob"),
   browserSync = require("browser-sync").create(),
   reload = browserSync.reload;
 
@@ -132,7 +133,15 @@ gulp.task("sass-styles", () => {
     .pipe(reload({ stream: true }));
 });
 
-gulp.task("css", gulp.series("sass-concat", "sass-styles"));
+gulp.task("sass-glob", () => {
+  return gulp.src(path.sourcePath + path.scssPath + path.utilityPath + path._configFilePattern, { since: gulp.lastRun("sass-glob")})
+    .pipe(clean(path.sourcePath + path.scssPath + path.scssFilePattern))
+    .pipe(glob())
+    .pipe(gulp.dest(path.sourcePath + path.scssPath + path.scssFilePattern))
+    .pipe(reload({ stream: true }));
+});
+
+gulp.task("css", gulp.series("sass-styles")); // sass-concat was deleted
 
 gulp.task("js", () => {
   return gulp.src(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, {
