@@ -1,6 +1,6 @@
 "use strict";
 
-// Name variables
+/* Name variables */
 
 var name = {
   jsFile: "main.js",
@@ -12,7 +12,7 @@ var name = {
   lastAttrFile: "_last-attr.scss"
 };
 
-// Path variables
+/* Path variables */
 
 var path = {
   sourcePath: "./source",
@@ -44,56 +44,59 @@ var path = {
   levels: ["blocks"]
 };
 
-// Packages
+/* Packages */
 
-var gulp = require("gulp"),
-  sass = require("gulp-sass"),
-  postcss = require("gulp-postcss"),
-  posthtml = require("gulp-posthtml"),
-  csscomb = require("gulp-csscomb"),
-  pug = require("gulp-pug"),
-  sourcemaps = require("gulp-sourcemaps"),
-  htmlbeautify = require("gulp-html-beautify"),
-  gulpBemCss = require("gulp-bem-css"),
-  concat = require("gulp-concat"),
-  merge = require("gulp-merge"),
-  cheerio = require("gulp-cheerio"),
-  plumber = require("gulp-plumber"),
-  rename = require("gulp-rename"),
-  replace = require("gulp-replace"),
-  uglify = require("gulp-uglify"),
-  svgSprite = require("gulp-svg-sprites"),
-  svgmin = require("gulp-svgmin"),
-  svgo = require("gulp-svgo"),
-  imagemin = require("gulp-imagemin"),
-  size = require("gulp-size"),
-  util = require("gulp-util"),
-  jsbeautify = require("js-beautify"),
-  mergeStream = require("merge-stream"),
-  autoprefixer = require("autoprefixer"),
-  cssnano = require("cssnano"),
-  imageminMozjpeg = require("imagemin-mozjpeg"),
-  imageminPngquant = require("imagemin-pngquant"),
-  imageminWebp = require("imagemin-webp"),
-  webp = require("gulp-webp"),
-  clean = require("del"),
-  glob = require("gulp-sass-glob"),
-  browserSync = require("browser-sync").create(),
-  reload = browserSync.reload;
+var gulp = require("gulp");
+var sass = require("gulp-sass");
+var postcss = require("gulp-postcss");
+var posthtml = require("gulp-posthtml");
+var csscomb = require("gulp-csscomb");
+var pug = require("gulp-pug");
+var sourcemaps = require("gulp-sourcemaps");
+var htmlbeautify = require("gulp-html-beautify");
+var gulpBemCss = require("gulp-bem-css");
+var concat = require("gulp-concat");
+var merge = require("gulp-merge");
+var cheerio = require("gulp-cheerio");
+var plumber = require("gulp-plumber");
+var rename = require("gulp-rename");
+var replace = require("gulp-replace");
+var uglify = require("gulp-uglify");
+var svgSprite = require("gulp-svg-sprites");
+var svgmin = require("gulp-svgmin");
+var svgo = require("gulp-svgo");
+var imagemin = require("gulp-imagemin");
+var size = require("gulp-size");
+var util = require("gulp-util");
+var jsbeautify = require("js-beautify");
+var mergeStream = require("merge-stream");
+var autoprefixer = require("autoprefixer");
+var cssnano = require("cssnano");
+var imageminMozjpeg = require("imagemin-mozjpeg");
+var imageminPngquant = require("imagemin-pngquant");
+var imageminWebp = require("imagemin-webp");
+var webp = require("gulp-webp");
+var clean = require("del");
+var glob = require("gulp-sass-glob");
+var browserSync = require("browser-sync").create();
+var reload = browserSync.reload;
 
-// Tasks
+/* Tasks */
 
+// Server
 gulp.task("browser-sync", () => {
   browserSync.init({
     server: {
       baseDir: path.buildPath
     },
-    notify: false
+    notify: false,
+    uf: false
   });
 
   browserSync.watch(path.buildPath).on("change", reload);
 });
 
+// HTML
 gulp.task("html", () => {
   return gulp.src(path.sourcePath + path.htmlPattern, { since: gulp.lastRun("html") })
     .pipe(plumber())
@@ -101,20 +104,21 @@ gulp.task("html", () => {
     .pipe(reload({ stream: true }));
 });
 
-gulp.task("sass-concat", () => {
-  return gulp.src([
-    path.sourcePath + path.scssPath + path.utilityPath + path._configFilePattern,
-    path.sourcePath + path.scssPath + path.blocksPath + path._scssPattern,
-    path.sourcePath + path.scssPath + path.utilityPath + path._lastAttrPattern
-    ])
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(concat(name.scssFile))
-    .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(path.sourcePath + path.scssPath))
-    .pipe(reload({ stream: true }));
-});
+// gulp.task("sass-concat", () => {
+//   return gulp.src([
+//     path.sourcePath + path.scssPath + path.utilityPath + path._configFilePattern,
+//     path.sourcePath + path.scssPath + path.blocksPath + path._scssPattern,
+//     path.sourcePath + path.scssPath + path.utilityPath + path._lastAttrPattern
+//     ])
+//     .pipe(plumber())
+//     .pipe(sourcemaps.init())
+//     .pipe(concat(name.scssFile))
+//     .pipe(sourcemaps.write("."))
+//     .pipe(gulp.dest(path.sourcePath + path.scssPath))
+//     .pipe(reload({ stream: true }));
+// });
 
+// SCSS to CSS
 gulp.task("sass-styles", () => {
   return gulp.src(path.sourcePath + path.scssPath + path.scssPattern, { since: gulp.lastRun("sass-styles")})
     .pipe(plumber())
@@ -133,16 +137,17 @@ gulp.task("sass-styles", () => {
     .pipe(reload({ stream: true }));
 });
 
-gulp.task("sass-glob", () => {
-  return gulp.src(path.sourcePath + path.scssPath + path.utilityPath + path._configFilePattern, { since: gulp.lastRun("sass-glob")})
-    .pipe(clean(path.sourcePath + path.scssPath + path.scssFilePattern))
-    .pipe(glob())
-    .pipe(gulp.dest(path.sourcePath + path.scssPath + path.scssFilePattern))
-    .pipe(reload({ stream: true }));
-});
+// gulp.task("sass-glob", () => {
+//   return gulp.src(path.sourcePath + path.scssPath + path.utilityPath + path._configFilePattern, { since: gulp.lastRun("sass-glob")})
+//     .pipe(clean(path.sourcePath + path.scssPath + path.scssFilePattern))
+//     .pipe(glob())
+//     .pipe(gulp.dest(path.sourcePath + path.scssPath + path.scssFilePattern))
+//     .pipe(reload({ stream: true }));
+// });
 
-gulp.task("css", gulp.series("sass-styles")); // sass-concat was deleted!
+gulp.task("css", gulp.series("sass-styles"));
 
+// JavaScript
 gulp.task("js", () => {
   return gulp.src(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, {
     base: process.cwd()
@@ -161,6 +166,7 @@ gulp.task("js", () => {
     .pipe(reload({ stream: true }));
 });
 
+// JavaScript libs
 gulp.task("libs-js", () => {
   return gulp.src(path.sourcePath + path.libsPath + path.jsPattern, { since: gulp.lastRun("libs-js") })
     .pipe(plumber())
@@ -174,6 +180,7 @@ gulp.task("libs-js", () => {
     .pipe(gulp.dest(path.buildPath + path.jsPath + path.libsPath))
 });
 
+// Compress images
 gulp.task("compress", () => {
   return gulp.src(path.sourcePath + path.imgPath + path.imgPattern, { since: gulp.lastRun("compress") })
     .pipe(imagemin([
@@ -190,8 +197,8 @@ gulp.task("compress", () => {
     .pipe(gulp.dest(path.buildPath + path.imgPath))
     .pipe(imagemin([
       imageminWebp({
-          quality: 98
-        })
+        quality: 98
+      })
     ]))
     .pipe(rename({
       extname: ".webp"
@@ -199,6 +206,7 @@ gulp.task("compress", () => {
     .pipe(gulp.dest(path.buildPath + path.imgPath));
 });
 
+// SVG sprite
 gulp.task("sprite", () => {
   return gulp.src(path.sourcePath + path.imgPath + path.svgPath + "/to-sprite" + path.svgPattern)
     .pipe(svgSprite({
@@ -234,18 +242,21 @@ gulp.task("sprite", () => {
     .pipe(gulp.dest(path.buildPath + path.imgPath + path.svgPath));
 });
 
+// Sort SCSS files
 gulp.task("sort-sass", () => {
   return gulp.src(path.sourcePath + path.scssPath + path.scssPattern)
     .pipe(csscomb("csscomb.json"))
     .pipe(gulp.dest(path.sourcePath + path.scssPath))
 });
 
+// Sort HTML files
 gulp.task("sort-html", () => {
   gulp.src(path.sourcePath + path.htmlPattern)
     .pipe(htmlbeautify())
     .pipe(gulp.dest(path.buildPath))
 });
 
+// PUG
 gulp.task("pug", () => {
   return gulp.src(path.sourcePath + path.pugPattern, { since: gulp.lastRun("pug") })
     .pipe(pug({pretty: true}))
@@ -253,6 +264,7 @@ gulp.task("pug", () => {
     .pipe(reload({ stream: true }));
 });
 
+// BEM to CSS
 gulp.task("bem-css", () => {
   gulp.src(path.sourcePath + path.htmlPattern)
     .pipe(gulpBemCss({
@@ -264,6 +276,7 @@ gulp.task("bem-css", () => {
     .pipe(gulp.dest(path.sourcePath))
 });
 
+// Copy the rest to build path
 gulp.task("copy", () => {
   return gulp.src([
     path.sourcePath + path.imgPath + path.svgPath + path.svgPattern,
@@ -275,18 +288,23 @@ gulp.task("copy", () => {
     .pipe(gulp.dest(path.buildPath));
 });
 
-gulp.task("clean", () => {
+// Sort both SCSS and HTML files
+gulp.task("beautify", gulp.series("sort-sass", "sort-html"));
+
+// Clean build
+gulp.task("build:clean", () => {
   return clean(path.buildPath);
 });
 
-gulp.task("beautify", gulp.series("sort-sass", "sort-html"));
+// Build
+gulp.task("build", gulp.series("copy", "sprite", "compress", "html", "css", "libs-js", "js"));
 
-gulp.task("build", gulp.series("clean", "copy", "sprite", "compress", "html", "css", "libs-js", "js"));
-
+// Watch changes
 gulp.task("watch", () => {
   gulp.watch(path.sourcePath + path.scssPath + path._scssPattern, gulp.series("css"));
   gulp.watch(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, gulp.series("js"));
   gulp.watch(path.sourcePath + path.htmlPattern, gulp.series("html"));
 });
 
+// Build and watch
 gulp.task("build:watch", gulp.series("build", gulp.parallel("browser-sync", "watch")));
