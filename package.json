@@ -53,7 +53,7 @@
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss \"!**/normalize.scss\"",
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp build:clean && gulp build",
-    "start": "npm run build && gulp build:watch",
+    "start": "gulp build:clean && gulp build:watch",
     "deploy": "npm run build && gh-pages -d build && gulp build:clean"
   },
   "browserslist": [
