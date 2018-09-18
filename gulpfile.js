@@ -266,7 +266,7 @@ gulp.task("pug", () => {
 
 // BEM to CSS
 gulp.task("bem-css", () => {
-  gulp.src(path.sourcePath + path.htmlPattern)
+  return gulp.src(path.sourcePath + path.htmlPattern)
     .pipe(gulpBemCss({
       folder: path.sourcePath + path.scssPath + path.blocksPath,
       extension: "scss",
