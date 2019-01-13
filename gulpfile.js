@@ -49,35 +49,24 @@ var path = {
 var gulp = require("gulp");
 var sass = require("gulp-sass");
 var postcss = require("gulp-postcss");
-var posthtml = require("gulp-posthtml");
 var csscomb = require("gulp-csscomb");
 var pug = require("gulp-pug");
 var sourcemaps = require("gulp-sourcemaps");
 var htmlbeautify = require("gulp-html-beautify");
 var gulpBemCss = require("gulp-bem-css");
-var concat = require("gulp-concat");
-var merge = require("gulp-merge");
 var cheerio = require("gulp-cheerio");
 var plumber = require("gulp-plumber");
 var rename = require("gulp-rename");
 var replace = require("gulp-replace");
 var uglify = require("gulp-uglify");
 var svgSprite = require("gulp-svg-sprites");
-var svgmin = require("gulp-svgmin");
-var svgo = require("gulp-svgo");
 var imagemin = require("gulp-imagemin");
-var size = require("gulp-size");
-var util = require("gulp-util");
-var jsbeautify = require("js-beautify");
-var mergeStream = require("merge-stream");
 var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
 var imageminMozjpeg = require("imagemin-mozjpeg");
-var imageminPngquant = require("imagemin-pngquant");
 var imageminWebp = require("imagemin-webp");
 var webp = require("gulp-webp");
 var clean = require("del");
-var glob = require("gulp-sass-glob");
 var browserSync = require("browser-sync").create();
 var reload = browserSync.reload;
 
@@ -104,20 +93,6 @@ gulp.task("html", () => {
     .pipe(reload({ stream: true }));
 });
 
-// gulp.task("sass-concat", () => {
-//   return gulp.src([
-//     path.sourcePath + path.scssPath + path.utilityPath + path._configFilePattern,
-//     path.sourcePath + path.scssPath + path.blocksPath + path._scssPattern,
-//     path.sourcePath + path.scssPath + path.utilityPath + path._lastAttrPattern
-//     ])
-//     .pipe(plumber())
-//     .pipe(sourcemaps.init())
-//     .pipe(concat(name.scssFile))
-//     .pipe(sourcemaps.write("."))
-//     .pipe(gulp.dest(path.sourcePath + path.scssPath))
-//     .pipe(reload({ stream: true }));
-// });
-
 // SCSS to CSS
 gulp.task("sass-styles", () => {
   return gulp.src(path.sourcePath + path.scssPath + path.scssPattern, { since: gulp.lastRun("sass-styles")})
@@ -137,32 +112,21 @@ gulp.task("sass-styles", () => {
     .pipe(reload({ stream: true }));
 });
 
-// gulp.task("sass-glob", () => {
-//   return gulp.src(path.sourcePath + path.scssPath + path.utilityPath + path._configFilePattern, { since: gulp.lastRun("sass-glob")})
-//     .pipe(clean(path.sourcePath + path.scssPath + path.scssFilePattern))
-//     .pipe(glob())
-//     .pipe(gulp.dest(path.sourcePath + path.scssPath + path.scssFilePattern))
-//     .pipe(reload({ stream: true }));
-// });
-
 gulp.task("css", gulp.series("sass-styles"));
 
 // JavaScript
 gulp.task("js", () => {
-  return gulp.src(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, {
-    base: process.cwd()
-  })
+  return gulp.src(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern)
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(concat(name.jsFile))
-    .pipe(gulp.dest(path.buildPath + path.jsPath))
+    .pipe(gulp.dest(path.buildPath + path.jsPath + path.jsModulesPath))
     .pipe(uglify())
     .pipe(rename({
       suffix: ".min",
       extname: ".js"
     }))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(path.buildPath + path.jsPath))
+    .pipe(gulp.dest(path.buildPath + path.jsPath + path.jsModulesPath))
     .pipe(reload({ stream: true }));
 });
 

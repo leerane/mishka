@@ -80,7 +80,7 @@
   transform: rotate($deg + deg);
 }
 
-// Other
+// Other stuff
 
 @mixin pseudo-ie11-fix() {
   position: absolute;
