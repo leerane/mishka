@@ -1,4 +1,8 @@
+// Main config
 @import "./utility/config";
+
+// Other
+@import "blocks/swiper/_swiper.scss";
 @import "blocks/about-us/_about-us.scss";
 @import "blocks/best-product/_best-product.scss";
 @import "blocks/button/_button.scss";
@@ -12,6 +16,7 @@
 @import "blocks/hamburger-button/_hamburger-button.scss";
 @import "blocks/htmlacademy-logo/_htmlacademy-logo.scss";
 @import "blocks/impressions/_impressions.scss";
+@import "blocks/impressions-slider/_impressions-slider.scss";
 @import "blocks/input/_input.scss";
 @import "blocks/is-unclickable/_is-unclickable.scss";
 @import "blocks/js-dropdown-navigation/_js-dropdown-navigation.scss";

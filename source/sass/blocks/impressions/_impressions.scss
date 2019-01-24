@@ -101,28 +101,6 @@
   }
 }
 
-/*.impressions__inner::before {
-  @media (min-width: breakpoint(desktop)) {
-    content: "";
-    position: absolute;
-    top: 7px;
-    left: 50px;
-    width: 350px;
-    height: 457px;
-    padding: 0;
-    z-index: -1;
-    background-image: url("../img/review@1x.jpg");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: 350px 457px;
-  }
-
-  @media (min-width: breakpoint(desktop)) and (min-resolution: 144dpi),
-    (min-width: breakpoint(desktop)) and (min-resolution: 1.5dppx) {
-    background-image: url("../img/review@2x.jpg");
-  }
-}*/
-
 .impressions__title {
   margin: 0 0 24px -2px;
   padding: 0;
@@ -161,8 +139,12 @@
 
   @media (min-width: breakpoint(desktop)) {
     margin-left: 2px;
-    flex-basis: 90%;
   }
+}
+
+.impressions__info {
+  padding: 0;
+  margin: 0;
 }
 
 .impressions__break {
@@ -173,7 +155,9 @@
   }
 }
 
-.impressions__footer {
+.impressions__author {
+  @include clear-list();
+
   margin-top: 27px;
 
   @media (min-width: breakpoint(tablet)) {
@@ -183,10 +167,6 @@
   @media (min-width: breakpoint(desktop)) {
     margin-top: 39px;
   }
-}
-
-.impressions__author {
-  @include clear-list();
 }
 
 .impressions__author-name {

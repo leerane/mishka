@@ -101,6 +101,7 @@
   padding: 0;
   min-height: 103px;
   position: relative;
+  transition: all 0.3s ease-in-out;
 
   @include font-par(font-family(opensans), font-weight(bold), font-size(base-d), normal, color($base-c, white), font-lh(base-md));
 
